@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="stylesheets/bootstrap.min.css" />
+	<style type="text/css">
+	body{padding: 0;
+		 margin: 0;
+		}
+
+	#mynav{
+		margin-top: 70px;
+		float: left;
+	}
+	#mynav2{
+		margin-top: 70px;
+		margin-left: 50px;
+		float: left;
+
+	}
+
+ .carousel {
+ 		margin-top: 70px;
+ 		margin-left: 100px;
+        height: 400px;
+        width: 800px;
+        float: left;
+        position: relative;
+    }
+
+    .carousel .item {
+        height: 400px;
+        background-color: #000;
+    }
+
+    .carousel .item img {
+        width: 100%;
+    }
+	/*table{
+		margin:0 auto;
+	}
+	tr{
+		display: block;
+		margin: 30px 0px;
+	}*/
+
+	.container{
+		float: left;
+		margin-top: 100px;
+		margin-left:30px;
+		width: 70%;
+		height: auto;
+	}
+	h2{
+		font-style: italic;
+	}
+
+
+
+	</style>
+</head>
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top">  
+    <div class="navbar-header">  
+      <!-- 自适应隐藏导航展开按钮 -->  
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">  
+        <span class="sr-only">Toggle navigation</span>  
+        <span class="icon-bar"></span>  
+        <span class="icon-bar"></span>  
+        <span class="icon-bar"></span>  
+      </button>  
+            <!-- 导航条LOGO -->  
+      <a class="navbar-brand" href="#" style="color:#FFFFFF">公安便民服务系统</a>  
+    </div>  
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">  
+        <ul class="nav navbar-nav">  
+            <li class="active"><a href="#">首页</a></li>  
+           <li><a href="search.html">新生儿户口查询</a></li>  
+            <li><a href="register.html">新生儿户口登记</a></li>  
+           <li class="dropdown">  
+             <a href="#" class="dropdown-toggle" data-toggle="dropdown">合作部门<span class="caret"></span></a>  
+             <ul class="dropdown-menu" role="menu">  
+                <li><a href="#hospital">医院</a></li>  
+                <li><a href="#bureau">民政局</a></li>  
+                <li><a href="#labor">社保局</a></li>  
+              </ul>  
+            </li>  
+        </ul>  
+        <form class="navbar-form navbar-right" role="search">  
+        <div class="form-group">  
+          <input type="text" class="form-control" placeholder="Search">  
+        </div>  
+        <button type="submit" class="btn btn-default">查询</button>  
+      	</form>  
+    </div>  
+</div> 
+
+<!-- 左侧边栏 -->
+	<div class="col-lg-2 col-sm-2 col-xs-6" id="mynav">
+	    <ul class="nav nav-pills nav-stacked">
+	        <li class="active"><a href="#"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;&nbsp;首页</a></li>
+	        <li class="nav-divider"></li>
+	        <li><a href="#lead"><span class="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp;&nbsp;导航</a></li> 
+	        <li class="nav-divider"></li>
+	        <li><a href="#"><span class="glyphicon glyphicon-tags"></span>&nbsp;&nbsp;&nbsp;已办事项</a></li>
+	        <li class="nav-divider"></li>
+			<script>
+				function press() {
+					window.location.href('register');
+                }
+			</script>
+	        <li class="dropdown">
+		      <a href="##" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-th-list"></span>&nbsp;&nbsp;&nbsp;其他服务<span class="caret"></span></a>
+		        <ul class="dropdown-menu pull-right">
+		            <li onclick="press()">新生儿出生证明</a></li>
+		            <li class="nav-divider"></li>
+			        <li onclick="press()">婚姻证明</a></li>
+			        <li class="nav-divider"></li>
+			        <li onclick="press()">社保信息</a></li>
+		      </ul>
+		   </li>
+		   <li class="nav-divider"></li>
+	        <li><a href="#"><span class="glyphicon glyphicon-cog"></span>&nbsp;&nbsp;&nbsp;配置</a></li>
+	        <li class="nav-divider"></li>
+	        <li><a href="#"><span class="glyphicon glyphicon-earphone"></span>&nbsp;&nbsp;&nbsp;联系方式</a></li> 
+	        <li class="nav-divider"></li>
+	        <li><a href="#"><span class="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp;&nbsp;信息<span class="badge pull-right">4</span></a></li>
+	        <li class="nav-divider"></li>
+	    </ul>
+	</div>
+
+<!-- 广告轮播 -->
+ <div id="ad-carousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#ad-carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#ad-carousel" data-slide-to="1"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="item active">
+            <img src="images/1.jpg" alt="1 slide">
+        </div>
+        <div class="item">
+            <img src="images/2.jpg" alt="2 slide">
+        </div>
+    </div>
+    <a class="left carousel-control" href="#ad-carousel" data-slide="prev"><span
+            class="glyphicon glyphicon-chevron-left"></span></a>
+    <a class="right carousel-control" href="#ad-carousel" data-slide="next"><span
+            class="glyphicon glyphicon-chevron-right"></span></a>
+</div> 
+
+
+<!-- 首页导航 -->
+<!-- <table width="800px" height="100px">
+		<tr id="lead">
+			<td><h2>导航</h2></td>	
+		</tr>
+		<tr>
+			<td><h3 class="title">新生儿户口登记需知</h2>
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;只需提供父母双方中任何一人的身份证信息便在此系统中直接查询到医院开具的新生儿出生证明</p>
+				<p>仅需提供父母双方中一人身份证信息即可进行查询</p>
+			</td>
+		</tr>
+		
+		<tr>
+			<td><h3 class="title">合作单位——医院</h2>
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;只需提供父母双方中任何一人的身份证信息便在此系统中直接查询到医院开具的新生儿出生证明</p>
+			</td>
+		</tr>
+		
+		<tr id="bureau">
+			<td><h3 class="title">合作单位——民政局</h2>
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;只需提供父母双方中任何一人的身份证信息便在此系统中直接查询到医院开具的新生儿出生证明</p>
+				<p>只需提供夫妻双方中一人身份证信息即可进行婚姻状况查询</p>
+			</td>
+		</tr>
+
+		<tr id="labor">
+			<td><h3 class="title">合作单位——社保局</h2>
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;只需提供父母双方中任何一人的身份证信息便在此系统中直接查询到医院开具的新生儿出生证明</p>
+				<p>仅需提供身份证信息即可查询所有社保信息</p>
+			</td>
+		</tr>							
+</table> -->
+<div class="container">
+		<div class="panel panel-primary">
+	    <div class="panel-heading">操作导航</div>
+		    <div class="panel-body">
+				<h3 class="title">新生儿户口登记须知</h3>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;只需提供父母双方中任何一人的身份证信息便在此系统中直接申请新生儿户口申请和新生儿在籍查询</p>
+				<h3 class="title">合作单位——医院</h3>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;只需提供父母双方中任何一人的身份证信息便在此系统中直接查询到医院开具的新生儿出生证明</p>		
+				<h3 class="title">合作单位——民政局</h3>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;只需提供父母双方中任何一人的身份证信息便在此系统中直接查询到医院开具的新生儿出生证明
+						只需提供夫妻双方中一人身份证信息即可进行婚姻状况查询</p>
+				<h3 class="title">合作单位——社保局</h3>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;只需提供父母双方中任何一人的身份证信息便在此系统中直接查询到医院开具的新生儿出生证明
+						仅需提供身份证信息即可查询所有社保信息</p>
+
+		    </div>
+		<div class="panel-footer"></div>
+</div>
+
+
+
+
+	<script src="javascripts/jquery-1.11.1.min.js"></script>
+    <script src="javascripts/bootstrap.min.js"></script>
+	
+</body>
+</html>

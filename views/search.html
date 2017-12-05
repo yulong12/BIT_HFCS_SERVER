@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>search</title>
+	<link rel="stylesheet" href="stylesheets/bootstrap.min.css" />
+	<style type="text/css">
+		
+		.myform{
+			margin-top:100px;
+			margin-left: 400px;
+		}
+
+	</style>
+   
+
+</head>
+<body>
+<div class="panel panel-primary">
+    <div class="panel-heading">新生儿户口在籍查询</div>
+    <div class="panel-body">
+        <form role = "form" class="form-horizontal"> 
+            <div class="myform"> 
+                <div class = "form-group">  
+                    <label class="col-lg-2 control-label" for = "name">姓名</label>  
+                    <div class="col-lg-2">  
+                        <input type = "text" class = "form-control" id = "name"    
+                            placeholder = "输入姓名"></input>  
+                    </div>  
+                </div>  
+                 <div class ="form-group">  
+                    <label class="col-lg-2 control-label" for = "num">身份证号码</label>  
+                    <div class="col-lg-2">  
+                        <input type="text" class="form-control" id = "num"   
+                                placeholder = "输入身份证号码"></input>  
+                    </div>  
+                </div>  
+                <div class="form-group">  
+                    <div class="col-lg-2 col-lg-offset-2">  
+                    <!-- 写死了，需要根据最后后台结果再改 -->
+                        <button type = "submit" class="btn-info btn-lg" id="mybutton">提交</button>  
+                    </div>              
+                </div> 
+              </div>  
+     	 </form>
+    </div>
+<div class="panel-footer"></div>
+</div>
+<script src="javascripts/jquery-1.11.1.min.js"></script>
+<script src="javascripts/bootstrap.min.js"></script>
+<script type="text/javascript">
+    $("#mybutton").click(
+        function (){
+            alert("您已经登记成功！");
+        }
+        );
+</script>
+
+</body>
+</html>
