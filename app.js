@@ -12,6 +12,7 @@ var login=require('./routes/login');
 var app = express();
 var user=require('./routes/user');
 var register=require('./routes/register');
+var search=require('./routes/search');
 
 
 // view engine setup
@@ -33,6 +34,8 @@ app.use('/index', index);
 app.use('/users', users);
 app.use('/user',user);
 app.use('/register',register);
+app.use('/search',search);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');

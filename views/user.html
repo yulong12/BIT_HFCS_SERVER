@@ -73,14 +73,27 @@
       </button>  
             <!-- 导航条LOGO -->  
       <a class="navbar-brand" href="#" style="color:#FFFFFF">公安便民服务系统</a>  
-    </div>  
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">  
+    </div>
+	<script>
+        function press_search() {
+            alert("查询界面");
+            window.location.href=('search');
+
+        }
+        function press_register() {
+            alert("注册界面");
+            window.location.href=('register');
+
+        }
+	</script>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
         <ul class="nav navbar-nav">  
-            <li class="active"><a href="#">首页</a></li>  
-           <li><a href="search.html">新生儿户口查询</a></li>  
-            <li><a href="register.html">新生儿户口登记</a></li>  
+            <li class="active"><a href="#">首页</a></li>
+           <li onclick="press_search()"><a >新生儿户口查询</a></li>
+            <li onclick="press_register()"><a >新生儿户口登记</a></li>
            <li class="dropdown">  
-             <a href="#" class="dropdown-toggle" data-toggle="dropdown">合作部门<span class="caret"></span></a>  
+             <a href="#" class="dropdown-toggle" data-toggle="dropdown">合作部门<span class="caret"></span></a>
              <ul class="dropdown-menu" role="menu">  
                 <li><a href="#hospital">医院</a></li>  
                 <li><a href="#bureau">民政局</a></li>  
@@ -106,19 +119,14 @@
 	        <li class="nav-divider"></li>
 	        <li><a href="#"><span class="glyphicon glyphicon-tags"></span>&nbsp;&nbsp;&nbsp;已办事项</a></li>
 	        <li class="nav-divider"></li>
-			<script>
-				function press() {
-					window.location.href('register');
-                }
-			</script>
 	        <li class="dropdown">
 		      <a href="##" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-th-list"></span>&nbsp;&nbsp;&nbsp;其他服务<span class="caret"></span></a>
 		        <ul class="dropdown-menu pull-right">
-		            <li onclick="press()">新生儿出生证明</a></li>
+		            <li onclick="press_register()" ><a >新生儿出生证明</a></li>
 		            <li class="nav-divider"></li>
-			        <li onclick="press()">婚姻证明</a></li>
+			        <li onclick="press_register()"><a >婚姻证明</a></li>
 			        <li class="nav-divider"></li>
-			        <li onclick="press()">社保信息</a></li>
+			        <li  onclick="press_register()"><a >社保信息</a></li>
 		      </ul>
 		   </li>
 		   <li class="nav-divider"></li>
