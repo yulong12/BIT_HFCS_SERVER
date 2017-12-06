@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>医院首页</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="stylesheets/bootstrap.min.css">
+    <style>
+    #myCarousel
+    {
+        position:absolute;
+        left:170px;
+        top:140px;
+        /*width: 500px;
+        height: 333px;*/
+
+        padding-left: 15%;
+    }
+    #color1{
+        color: #000000;
+        font-weight: bold;
+        /*padding-left: 70px;*/
+        text-align: center;
+    }
+    #color2 a{
+      max-width: 250px;
+      color: #000000;
+      background-color:#FFFFFF;
+      font-weight: bold;
+      text-align: center;
+      padding: 20px;
+      margin-left: 15px;
+    }
+    #aa
+    {
+        position:absolute;
+        left:0px;
+        top:0px;
+        z-index:-1;
+    }
+
+    </style>
+</head>
+    <body>
+
+      <nav class="navbar navbar-default"  role="navigation">
+        <h1 id="color1">医院信息系统</h1>
+
+        <ul class="nav nav-tabs " style="padding-left: 190px;background-color: #000000;font-size: 15px;width: 100%;">
+          <li class="" onclick="switch_to_hospital()"><a >首页</a></li>
+          <li onclick="switch_to_childregister()"><a>新生儿信息登记</a></li>
+          <li onclick="switch_to_childquery()"><a>新生儿信息查询</a></li>
+
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    更多服务 <span class="caret"></span>
+            </a>
+
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1" style="background-color: #FFD306 ">
+                <li role="presentation">
+                    <a role="menuitem" tabindex="-1" href="#">患者电子病历查询入口</a>
+                </li>
+                <li role="presentation">
+                    <a role="menuitem" tabindex="-1" href="#">患者报销查询入口</a>
+                </li>
+            </ul>
+          </li>
+
+        </ul>
+    <li style="float: right;"><form class="navbar-form navbar-right" role="search">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="请输入要查找的信息">
+            </div>
+            <button type="submit" class="btn btn-default">搜索</button>
+        </form>
+    </li>
+    </nav>
+    <div id="color2" class="col-md-6 col-sm-3 col-lg-4">
+    <ul class="nav nav-vertical">
+    <li onclick="switch_to_userQuery()"><a  class="list-group-item"><span class="glyphicon glyphicon-th-list"></span>
+    个人信息查询   &nbsp&nbsp &raquo
+    </a></li>
+
+    <li><a href="#" class="list-group-item"><span class="glyphicon glyphicon-home"></span>&nbsp&nbsp就诊指南&nbsp&nbsp &raquo</a></li>
+    <li><a href="#" class="list-group-item"><span class="glyphicon glyphicon-th-large"></span>&nbsp&nbsp专科介绍&nbsp&nbsp &raquo</a></li>
+    <li><a href="#" class="list-group-item"><span class="glyphicon glyphicon-th"></span>&nbsp&nbsp专家介绍&nbsp&nbsp &raquo</a></li>
+    <li><a href="#" class="list-group-item"><span class="glyphicon glyphicon-user"></span>&nbsp&nbsp医保服务&nbsp&nbsp &raquo</a></li>
+    </ul>
+    </div>
+
+    <div id="myCarousel" class="carousel slide ">
+      <!-- 轮播（Carousel）指标 -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+
+      </ol>
+      <!-- 轮播（Carousel）项目 -->
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="images\17.jpg" alt="First slide" width="100%">
+        </div>
+        <div class="item">
+          <img src="images\18.jpg" alt="Second slide" width="100%">
+        </div>
+
+    </div>
+    </div>
+      <script src="javascripts/jquery-1.11.1.min.js"></script>
+      <script src="javascripts/bootstrap.min.js"></script>
+      <script src="javascripts/page_switch.js"></script>
+    </body>
+
+</html>
