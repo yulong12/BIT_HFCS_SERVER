@@ -37,13 +37,7 @@
     .carousel .item img {
         width: 100%;
     }
-	/*table{
-		margin:0 auto;
-	}
-	tr{
-		display: block;
-		margin: 30px 0px;
-	}*/
+
 
 	.container{
 		float: left;
@@ -72,7 +66,7 @@
         <span class="icon-bar"></span>  
       </button>  
             <!-- 导航条LOGO -->  
-      <a class="navbar-brand" href="#" style="color:#FFFFFF">公安便民服务系统</a>  
+      <a class="navbar-brand" href="#" style="color:#FFFFFF">新生儿户口登记系统</a>
     </div>
 	<script>
         function press_search() {
@@ -94,9 +88,9 @@
              <a href="#" class="dropdown-toggle" data-toggle="dropdown">合作部门<span class="caret"></span></a>
              <ul class="dropdown-menu" role="menu">  
                 <li><a href="#hospital">医院</a></li>  
-                <li><a href="#bureau">民政局</a></li>  
-                <li><a href="#labor">社保局</a></li>  
-              </ul>  
+                <li><a href="#bureau">公安局</a></li>
+                <li><a href="#labor">民政局</a></li>
+			 </ul>
             </li>  
         </ul>  
         <form class="navbar-form navbar-right" role="search">  
@@ -120,20 +114,22 @@
 	        <li class="dropdown">
 		      <a href="##" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-th-list"></span>&nbsp;&nbsp;&nbsp;其他服务<span class="caret"></span></a>
 		        <ul class="dropdown-menu pull-right">
-		            <li onclick="press_register()" ><a >新生儿出生证明</a></li>
+		            <li onclick="press_register()" ><a >医院系统</a></li>
 		            <li class="nav-divider"></li>
-			        <li onclick="press_register()"><a >婚姻证明</a></li>
+			        <li onclick="press_register()"><a >公安局系统</a></li>
 			        <li class="nav-divider"></li>
-			        <li  onclick="press_register()"><a >社保信息</a></li>
+					<li onclick="press_register()"><a >民政局系统</a></li>
+
 		      </ul>
 		   </li>
 		   <li class="nav-divider"></li>
 	        <li><a href="#"><span class="glyphicon glyphicon-cog"></span>&nbsp;&nbsp;&nbsp;配置</a></li>
 	        <li class="nav-divider"></li>
-	        <li><a href="#"><span class="glyphicon glyphicon-earphone"></span>&nbsp;&nbsp;&nbsp;联系方式</a></li> 
+			<li><a href="#"><span class="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp;&nbsp;信息<span class="badge pull-right">4</span></a></li>
 	        <li class="nav-divider"></li>
-	        <li><a href="#"><span class="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp;&nbsp;信息<span class="badge pull-right">4</span></a></li>
-	        <li class="nav-divider"></li>
+			<li><a href="#"><span class="glyphicon glyphicon-log-out"></span>&nbsp;&nbsp;&nbsp;</a></li>
+			<li class="nav-divider"></li>
+
 	    </ul>
 	</div>
 
@@ -158,52 +154,16 @@
 </div> 
 
 
-<!-- 首页导航 -->
-<!-- <table width="800px" height="100px">
-		<tr id="lead">
-			<td><h2>导航</h2></td>	
-		</tr>
-		<tr>
-			<td><h3 class="title">新生儿户口登记需知</h2>
-				<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;只需提供父母双方中任何一人的身份证信息便在此系统中直接查询到医院开具的新生儿出生证明</p>
-				<p>仅需提供父母双方中一人身份证信息即可进行查询</p>
-			</td>
-		</tr>
-		
-		<tr>
-			<td><h3 class="title">合作单位——医院</h2>
-				<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;只需提供父母双方中任何一人的身份证信息便在此系统中直接查询到医院开具的新生儿出生证明</p>
-			</td>
-		</tr>
-		
-		<tr id="bureau">
-			<td><h3 class="title">合作单位——民政局</h2>
-				<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;只需提供父母双方中任何一人的身份证信息便在此系统中直接查询到医院开具的新生儿出生证明</p>
-				<p>只需提供夫妻双方中一人身份证信息即可进行婚姻状况查询</p>
-			</td>
-		</tr>
-
-		<tr id="labor">
-			<td><h3 class="title">合作单位——社保局</h2>
-				<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;只需提供父母双方中任何一人的身份证信息便在此系统中直接查询到医院开具的新生儿出生证明</p>
-				<p>仅需提供身份证信息即可查询所有社保信息</p>
-			</td>
-		</tr>							
-</table> -->
 <div class="container">
 		<div class="panel panel-primary">
 	    <div class="panel-heading">操作导航</div>
 		    <div class="panel-body">
 				<h3 class="title">新生儿户口登记须知</h3>
-						<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;只需提供父母双方中任何一人的身份证信息便在此系统中直接申请新生儿户口申请和新生儿在籍查询</p>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;只需提供父母双方中任何一人的身份证信息便在此系统中直接申请新生儿户口登记、查询已经登记在籍的新生儿两项功能</p>
 				<h3 class="title">合作单位——医院</h3>
-						<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;只需提供父母双方中任何一人的身份证信息便在此系统中直接查询到医院开具的新生儿出生证明</p>		
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;只需提供父母双方中任何一人的身份证信息便可在医院系统中直接查询到民政局的婚姻登记信息以开具新生儿出生证明</p>
 				<h3 class="title">合作单位——民政局</h3>
-						<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;只需提供父母双方中任何一人的身份证信息便在此系统中直接查询到医院开具的新生儿出生证明
-						只需提供夫妻双方中一人身份证信息即可进行婚姻状况查询</p>
-				<h3 class="title">合作单位——社保局</h3>
-						<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;只需提供父母双方中任何一人的身份证信息便在此系统中直接查询到医院开具的新生儿出生证明
-						仅需提供身份证信息即可查询所有社保信息</p>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;只需提供父母双方中任何一人的身份证信息便可在民政局系统中直接查询到民政局的婚姻登记信息，也可办理结婚、离婚</p>
 
 		    </div>
 		<div class="panel-footer"></div>

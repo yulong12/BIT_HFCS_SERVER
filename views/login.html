@@ -35,51 +35,45 @@
         </style>
     </head>
     <body>
-        <form action="user.html" method="post">
-          <div class="mycenter">
+    <form action="user.html" method="post">
+        <div class="mycenter">
             <div class="mysign">
                 <div class="col-lg-11 text-center text-info">
                     <h2>请登录</h2>
                 </div>
-                 <div class="col-lg-10">
-                   <div class="dropdown">
-                      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
-                        身份选择
-                        <span class="caret"></span>
-                      </button>
-                      <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownMenu1">
-                        <li role="presentation" class="active"><a role="menuitem" tabindex="-1" href="#">用户</a></li>
-                        <li role="presentation" class="divider"></li>
-                        <li role="presentation" onclick="switch_to_hospital()"><a role="menuitem" tabindex="-1" href="#">医院</a></li>
-                        <li role="presentation" class="divider"></li>
-                        <li role="presentation" onclick="switch_to_civialAffirs()"><a role="menuitem" tabindex="-1" href="#">民政局</a></li>
-                        <li role="presentation" class="divider"></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">社保局</a></li>
-                      </ul>
-                    </div> 
-                 </div>
                 <div class="col-lg-10">
-                    <input type="text" class="form-control" name="username" placeholder="请输入账户名" required autofocus/>
+                    <input type="text" class="form-control" name="username" placeholder="请输入账户名" />
                 </div>
-              <!--   <div class="col-lg-10"></div> -->
-                <div class="col-lg-10">
-                    <input type="password" class="form-control" name="password" placeholder="请输入密码" required autofocus/>
-                </div>
-                <!-- <div class="col-lg-10"></div> -->
-                <div class="col-lg-10 mycheckbox checkbox">
-                    <input type="checkbox" class="col-lg-1">记住密码</input>
-                </div>
-                <!-- <div class="col-lg-10"></div> -->
 
                 <div class="col-lg-10">
-                    <button type="button" class="btn btn-success col-lg-12" onclick="switch_to_user()">登录</a></button>
+                    <input type="password" class="form-control" name="password" placeholder="请输入密码" />
                 </div>
+
+                <div class="col-lg-10" style="margin-top: 6px;margin-left: 27px;">
+                    <select class="form-control">
+                        <option class="active">身份选择</option>
+                        <option>医院</option>
+                        <option>公安局</option>
+                        <option>民政局</option>
+                    </select>
+                </div>
+
+                <div class="col-lg-10">
+                    <input type="button" class="form-control btn-success" value="登录" onclick="showuser();" />
+                </div>
+
             </div>
         </div>
-        </form>
+    </form>
 
         <script src="javascripts/jquery-1.11.1.min.js"></script>
         <script src="javascripts/bootstrap.min.js"></script>
         <script src="javascripts/page_switch.js"></script>
+        <script type="text/javascript">
+           function showuser(){
+            window.location.replace("user");
+           }
+        </script>
+
     </body>
 </html>
