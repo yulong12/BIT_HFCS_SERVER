@@ -4,6 +4,7 @@
         <meta charset="utf-8" />
         <title>用户登录</title>
         <link rel="stylesheet" href="stylesheets/bootstrap.min.css" />
+        <script src="javascripts/jquery-3.2.1.min.js"></script>
         <style type="text/css">
          body {
             background:url('images/bg-login.jpg');
@@ -38,19 +39,20 @@
     <form action="user.html" method="post">
         <div class="mycenter">
             <div class="mysign">
+
                 <div class="col-lg-11 text-center text-info">
                     <h2>请登录</h2>
                 </div>
                 <div class="col-lg-10">
-                    <input type="text" class="form-control" name="username" placeholder="请输入账户名" />
+                    <input id= "login_name" type="text" class="form-control" name="username" placeholder="请输入账户名" />
                 </div>
 
                 <div class="col-lg-10">
-                    <input type="password" class="form-control" name="password" placeholder="请输入密码" />
+                    <input  id="login_password "type="password" class="form-control" name="password" placeholder="请输入密码" />
                 </div>
 
                 <div class="col-lg-10" style="margin-top: 6px;margin-left: 27px;">
-                    <select class="form-control">
+                    <select  id="sel_identity" class="form-control">
                         <option class="active">身份选择</option>
                         <option>医院</option>
                         <option>公安局</option>
@@ -59,8 +61,30 @@
                 </div>
 
                 <div class="col-lg-10">
-                    <input type="button" class="form-control btn-success" value="登录" onclick="showuser();" />
+                    <input  id="btn_login"  type="button" class="form-control btn-success" value="登录"  />
                 </div>
+               <script >
+                   $(document).ready(function () {
+                       $("#btn_login").click(function () {
+                           var obj=document.getElementById('sel_identity');
+                           var index=obj.selectedIndex;
+                           var val = obj.options[index].value;
+                           var login_name=$("#login_name").val();
+                           var login_password=$("#login_password").val();
+                          if (login_name==""||login_password==""){
+                              alert("请输入姓名和密码");
+                          }else if(val=="公安局"){
+                               switch_to_user();
+                           }else if (val=="民政局"){
+                               switch_to_civialAffirs();
+                           }else if (val=="医院"){
+                               switch_to_hospital();
+                           }
+
+                       });
+
+                   });
+               </script>
 
             </div>
         </div>
@@ -69,11 +93,5 @@
         <script src="javascripts/jquery-1.11.1.min.js"></script>
         <script src="javascripts/bootstrap.min.js"></script>
         <script src="javascripts/page_switch.js"></script>
-        <script type="text/javascript">
-           function showuser(){
-            window.location.replace("user");
-           }
-        </script>
-
     </body>
 </html>
