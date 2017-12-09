@@ -78,7 +78,7 @@
                            data.login_name=login_name;
                            data.login_password=login_password;
 
-                          if (login_name==""||login_password==""){
+                          if (login_name===""||login_password===""){
                               alert("请输入姓名和密码");
                           }else {
                               $.ajax({
@@ -88,13 +88,16 @@
                                   data:JSON.stringify(data),
                                   success:function (data) {
                                       if (data==="ok"){
-                                          if(val=="公安局"){
+                                          if(val==="公安局"){
                                               switch_to_police();
-                                          }else if (val=="民政局"){
+                                          }else if (val==="民政局"){
                                               switch_to_civialAffirs();
-                                          }else if (val=="医院"){
+                                          }else if (val==="医院"){
                                               switch_to_hospital();
+                                          }else if (val==="普通用户"){
+                                              switch_to_user();
                                           }
+
                                       }else {
                                           alert("失败");
                                       }

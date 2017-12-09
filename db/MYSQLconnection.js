@@ -6,7 +6,7 @@ var pool  = mysql.createPool(config);
 exports.executeQuery=function(query,callback){
     pool.getConnection(function(err,connection){
         if (err) {
-            connection.release();
+             connection.release();
             callback("ERR", {detail: err});
         }
 
