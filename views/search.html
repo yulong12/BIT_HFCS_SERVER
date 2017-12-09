@@ -10,24 +10,20 @@
 			margin-top:100px;
 			margin-left: 400px;
 		}
-
+        #mypanel{
+            display: none;
+        }
 	</style>
    
 
 </head>
 <body>
 <div class="panel panel-primary">
-    <div class="panel-heading">新生儿户口在籍查询</div>
+    <div class="panel-heading">用户户口信息查询</div>
     <div class="panel-body">
         <form role = "form" class="form-horizontal"> 
             <div class="myform"> 
-                <div class = "form-group">  
-                    <label class="col-lg-2 control-label" for = "name">姓名</label>  
-                    <div class="col-lg-2">  
-                        <input type = "text" class = "form-control" id = "name"    
-                            placeholder = "输入姓名"></input>  
-                    </div>  
-                </div>  
+
                  <div class ="form-group">  
                     <label class="col-lg-2 control-label" for = "num">身份证号码</label>  
                     <div class="col-lg-2">  
@@ -38,7 +34,7 @@
                 <div class="form-group" style="margin-left: 100px;">
                     <div class="col-lg-2">
                     <!-- 写死了，需要根据最后后台结果再改 -->
-                        <button type = "submit" class="btn-info btn-lg" id="mybutton">提交</button>  
+                        <button type = "submit" class="btn-info btn-lg" id="mybutton">查询</button>
                     </div>
                     <div class="col-lg-2">
                         <button type = "submit" class="btn-info btn-lg" id="mybutton2" onclick="javascript:history.back(-1);">返回</button>
@@ -49,14 +45,65 @@
     </div>
 <div class="panel-footer"></div>
 </div>
+
+<!-- 返回用户自己户口信息 -->
+<div id="mypanel">
+    <div class="panel panel-primary">
+        <div class="panel-heading">用户户口信息表</div>
+        <div class="panel-body">
+            <ul>
+                <li>用户姓名:张三</li>
+                <li>用户身份证号码：1234567</li>
+                <li>用户性别：男</li>
+                <li>父亲身份证号码：1234567</li>
+                <li>母亲身份证号码：1234567</li>
+                <li>配偶姓名：李四</li>
+                <li>配偶身份证号码：1234567</li>
+                <li>孩子ID：6666</li>
+                <li>新生儿ID：7777</li>
+                <li>新生儿密码：99999</li>
+
+            </ul>
+        </div>
+        <!--<table class="table table-border">-->
+            <!--<tr>-->
+                <!--<th>部门</th>-->
+                <!--<th>日期</th>-->
+                <!--<th>信息</th>-->
+
+            <!--</tr>-->
+            <!--<tr>-->
+                <!--<td>用户姓名</td>-->
+                <!--<td>张三</td>-->
+                <!--<td>用户身份证号码</td>-->
+                <!--<td>1234567</td>-->
+                <!--<td>用户性别</td>-->
+                <!--<td>男</td>-->
+            <!--</tr>-->
+            <!--<tr>-->
+                <!--<td>配偶姓名</td>-->
+                <!--<td>李四</td>-->
+                <!--<td>配偶身份证号码</td>-->
+                <!--<td>1234567</td>-->
+                <!--<td>婚姻</td>-->
+                <!--<td>男</td>-->
+            <!--</tr>-->
+        <!--</table>-->
+        <div class="panel-footer" style="text-align: center;">户口信息</div>
+    </div>
+</div>
+
+
 <script src="javascripts/jquery-1.11.1.min.js"></script>
 <script src="javascripts/bootstrap.min.js"></script>
+
+
 <script type="text/javascript">
-    $("#mybutton").click(
-        function (){
-            alert("您已经登记成功！");
-        }
-        );
+    $("#mybutton").click(function(event) {
+        var pnel = document.getElementById("mypanel");
+        pnel.style.display = "block";
+        event.preventDefault();
+    });
 </script>
 
 </body>

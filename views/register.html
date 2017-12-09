@@ -10,9 +10,7 @@
 			margin-top:20px;
 			margin-left: 400px;
 		}
-		#mypanel{
-			display: none;
-		}
+
 		
 	</style>
 </head>
@@ -20,95 +18,81 @@
 
 <!-- 提交身份证信息 -->
 <div class="panel panel-primary">
-    <div class="panel-heading">新生儿户口登记</div>
+    <div class="panel-heading">新生儿户口登记申请</div>
       <div class="panel-body">
-	    <form role = "form" class="form-horizontal"> 
-	    <div class="myform"> 
-	        <div class = "form-group">  
-	            <label class="col-lg-2 control-label" for = "name">姓名</label>  
-	            <div class="col-lg-2">  
-	                <input type = "text" class = "form-control" id = "name"    
-	                    placeholder = "输入姓名"></input>  
-	            </div>  
-	        </div>  
-	        <div class = "form-group">  
-	            <label class="col-lg-2 control-label" for = "tel">电话号码</label>  
-	            <div class="col-lg-2">  
-	                <input type="text" class="form-control" id = "tel"   
-	                        placeholder = "输入电话号码"></input>  
-	            </div>  
-	        </div>  
-	         <div class = "form-group">  
-	            <label class="col-lg-2 control-label" for = "num">身份证号码</label>  
-	            <div class="col-lg-2">  
-	                <input type="text" class="form-control" id = "num"   
-	                        placeholder = "输入身份证号码"></input>  
-	            </div>  
-	        </div>  
-	        <div class = "form-group">  
-	            <label class="col-lg-2 control-label" for = "kname">新生儿姓名</label>  
-	            <div class="col-lg-2">  
-	                <input type="text" class="form-control" id = "kname"   
-	                        placeholder = "新生儿姓名"></input>  
-	            </div>  
-	        </div> 
-	        <div class = "form-group">  
-	            <label class="col-lg-2 control-label" for = "birth">新生儿出生日期</label>  
-	            <div class="col-lg-2">  
-	                <input type="text" class="form-control" id = "birth"   
-	                        placeholder = "新生儿出生日期"></input>  
-	            </div>  
-	        </div> 
+	    <form role = "form" class="form-horizontal">
+	    <div class="myform">
+			<div class = "form-group">
+				<label class="col-lg-2 control-label" for = "name">新生儿户口随籍选择</label>
+				<div class="col-lg-2">
+					<!--<input type = "text" class = "form-control" id = "name"-->
+						   <!--placeholder = "输入姓名"></input>-->
+					<select class="form-control">
+						<option class="active">父亲</option>
+						<option>母亲</option>
+					</select>
+				</div>
+			</div>
+	        <div class = "form-group">
+	            <label class="col-lg-2 control-label" for = "name">父亲/母亲姓名</label>
+	            <div class="col-lg-2">
+	                <input type = "text" class = "form-control" id = "name"
+	                    placeholder = "输入姓名"></input>
+	            </div>
+	        </div>
+	        <div class = "form-group">
+	            <label class="col-lg-2 control-label" for = "tel">电话号码</label>
+	            <div class="col-lg-2">
+	                <input type="text" class="form-control" id = "tel"
+	                        placeholder = "输入电话号码"></input>
+	            </div>
+	        </div>
+	         <div class = "form-group">
+	            <label class="col-lg-2 control-label" for = "num">父亲/母亲身份证号码</label>
+	            <div class="col-lg-2">
+	                <input type="text" class="form-control" id = "num"
+	                        placeholder = "输入身份证号码"></input>
+	            </div>
+	        </div>
+	        <div class = "form-group">
+	            <label class="col-lg-2 control-label" for = "kname">新生儿姓名</label>
+	            <div class="col-lg-2">
+	                <input type="text" class="form-control" id = "kname"
+	                        placeholder = "新生儿姓名"></input>
+	            </div>
+	        </div>
+	        <div class = "form-group">
+	            <label class="col-lg-2 control-label" for = "birth">新生儿出生日期</label>
+	            <div class="col-lg-2">
+	                <input type="text" class="form-control" id = "birth"
+	                        placeholder = "新生儿出生日期"></input>
+	            </div>
+	        </div>
 
 	        <div class="form-group" style="margin-right: 300px;">
-	            <div class="col-lg-2 col-lg-offset-2">  
-	                <button type = "submit" class="btn-info btn-lg" id="send">提交</button>  
+	            <div class="col-lg-2 col-lg-offset-2">
+	                <button type = "submit" class="btn-info btn-lg" id="send">申请</button>
 	            </div>
 				<div class="col-lg-2 col-lg-offset-2">
 					<button type = "submit" class="btn-info btn-lg" id="back" onclick="javascript:history.back(-1);">返回</button>
 				</div>
 			</div>
-	      </div>  
-	 	 </form>  
+	      </div>
+	 	 </form>
  	  </div>
-<div class="panel-footer"></div> 
+<div class="panel-footer"></div>
 </div>
 
-<!-- 返回各部门自己的结果 -->
-<div id="mypanel">
-	<div class="panel panel-primary">
-	   <div class="panel-heading">合作部门登记信息表</div>
-	   <div class="panel-body"></div>
-	   	  <table class="table table-border">
-	   		<tr>
-		   		<th>部门</th>
-		   		<th>日期</th>
-		   		<th>信息</th>
 
-	   		</tr>
-		   	<tr>
-		   		<td>医院</td>
-		   		<td>2017.12.1</td>
-		   		<td>***</td>
-		   	</tr>
-	   		<tr>
-		   		<td>民政局</td>
-		   		<td>2017.9.1</td>
-		   		<td>***</td>
-		   	</tr>
-	  	 </table>
-	    <div class="panel-footer" style="text-align: center;">新生儿户口已登记成功！</div> 
-	</div>
-</div>
 <script src="javascripts/jquery-1.11.1.min.js"></script>
 <script src="javascripts/bootstrap.min.js"></script>
 
 <script type="text/javascript">
-	$("#send").click(function(event) {
-		var pnel = document.getElementById("mypanel");
-		pnel.style.display = "block";
-		event.preventDefault();
-	});
+    $("#send").click(
+        function (){
+            alert("您已经申请成功！");
+        }
+    );
 </script>
 </body>
 </html>
