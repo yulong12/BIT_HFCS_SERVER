@@ -8,31 +8,52 @@
     <script src="javascripts/bootstrap.min.js"></script>
     <script src="javascripts/page_switch.js"></script>
     <style type="text/css">
-    #aa{
-	position:absolute;
-    left:0px;
-    top:0px;
-    z-index:-1;
-    }
+
     .navbar-form{
     	padding-top: 90px;
     }
-    textarea{border-radius:10px;border:1px solid #000;}
+    #mypanel{
+        padding-left: 400px;
+        padding-top: 200px;
+        padding-right: 400px;
+    }
     </style>
 </head>
 <body>
-	<img id="aa" src="images\24.jpg" width="100%" height="100%">
+
 <div class="col-lg-7">  
     <form class="navbar-form navbar-right" role="search">
         <div class="form-group">
             <input type="text" class="form-control" placeholder="要查找人的身份证号">
         </div>
-        <button type="submit" class="btn btn-default">搜索</button>
+        <button type="submit" class="btn btn-default">查询</button>
     </form>
     
-    <textarea  style="margin-left: 370px;" rows="14" cols="70">
-    	此处显示查询信息
- 	</textarea>
+</div>
+<!-- 返回用户自己户口信息 -->
+
+<div id="mypanel" >
+    <div class="panel panel-primary">
+
+        <div class="panel-body">
+            <ul>
+                <li>用户姓名:张三</li>
+                <li>用户身份证号码：1234567</li>
+                <li>用户性别：男</li>
+                <li>父亲身份证号码：1234567</li>
+                <li>母亲身份证号码：1234567</li>
+                <li>配偶姓名：李四</li>
+                <li>配偶身份证号码：1234567</li>
+                <li>孩子ID：6666</li>
+                <li>新生儿ID：7777</li>
+                <li>新生儿密码：99999</li>
+
+            </ul>
+        </div>
+
+
+        <div class="panel-footer" style="text-align: center;">户口信息</div>
+    </div>
 </div>
 
 </body>
