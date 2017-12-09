@@ -29,5 +29,8 @@ function  switch_to_marryquery() {
 function  switch_to_marryregister() {
     window.location.href="marry_register" ;
 }
+function switch_to_police() {
+    window.location.href="police_office" ;
+}
 
 

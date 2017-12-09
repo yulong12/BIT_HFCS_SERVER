@@ -70,16 +70,38 @@
                            var index=obj.selectedIndex;
                            var val = obj.options[index].value;
                            var login_name=$("#login_name").val();
-                           var login_password=$("#login_password").val();
+                        //   var login_password=$("#login_password").val();
+                           var login_password=$("input[name='password']").val();
+
+                           var data={};
+                           data.login_name=login_name;
+                           data.login_password=login_password;
+
                           if (login_name==""||login_password==""){
                               alert("请输入姓名和密码");
-                          }else if(val=="公安局"){
-                               switch_to_user();
-                           }else if (val=="民政局"){
-                               switch_to_civialAffirs();
-                           }else if (val=="医院"){
-                               switch_to_hospital();
-                           }
+                          }else {
+                              $.ajax({
+                                  url:'login',
+                                  type:"POST",
+                                  contentType:"application/json",
+                                  data:JSON.stringify(data),
+                                  success:function (data) {
+                                      if (data==="ok"){
+                                          if(val=="公安局"){
+                                              switch_to_police();
+                                          }else if (val=="民政局"){
+                                              switch_to_civialAffirs();
+                                          }else if (val=="医院"){
+                                              switch_to_hospital();
+                                          }
+                                      }else {
+                                          alert("失败");
+                                      }
+                                  }
+                              });
+                          }
+
+
 
                        });
 
