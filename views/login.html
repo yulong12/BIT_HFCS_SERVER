@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>用户登录</title>
+    <link rel="stylesheet" href="stylesheets/bootstrap.min.css" />
+    <script src="javascripts/jquery-3.2.1.min.js"></script>
+    <style type="text/css">
+        body {
+            background:url('images/bg-login.jpg');
+        }
+        .mycenter{
+            margin-top: 100px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            width:500px;
+            padding: 5%;
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+        .mycenter mysign{
+            width: 440px;
+        }
+        .mycenter input,checkbox,button{
+            margin-top:2%;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+        .mycheckbox{
+            margin-top:10px;
+            margin-left: 40px;
+            margin-bottom: 10px;
+            height: 10px;
+        }
+    </style>
+</head>
+<body>
+<form action="user.html" method="post">
+    <div class="mycenter">
+        <div class="mysign">
+
+            <div class="col-lg-11 text-center text-info">
+                <h2>请登录</h2>
+            </div>
+            <div class="col-lg-10">
+                <input id= "login_name" type="text" class="form-control" name="username" placeholder="请输入账户名" />
+            </div>
+
+            <div class="col-lg-10">
+                <input  id="login_password "type="password" class="form-control" name="password" placeholder="请输入密码" />
+            </div>
+
+            <div class="col-lg-10" style="margin-top: 6px;margin-left: 27px;">
+                <select  id="sel_identity" class="form-control">
+
+                    <option class="active">普通用户</option>
+                    <option>医院</option>
+                    <option>公安局</option>
+                    <option>民政局</option>
+                </select>
+            </div>
+
+            <div class="col-lg-10">
+                <input  id="btn_login"  type="button" class="form-control btn-success" value="登录"  />
+            </div>
+            <script >
+                $(document).ready(function () {
+                    $("#btn_login").click(function () {
+                        var obj=document.getElementById('sel_identity');
+                        var index=obj.selectedIndex;
+                        var val = obj.options[index].value;
+                        var login_name=$("#login_name").val();
+                        //   var login_password=$("#login_password").val();
+                        var login_password=$("input[name='password']").val();
+                        var data={};
+                        data.login_name=login_name;
+                        data.login_password=login_password;
+                        if (login_name==""||login_password==""){
+                            alert("请输入姓名和密码");
+                        }else {
+                            $.ajax({
+                                url:'login',
+                                type:"POST",
+                                contentType:"application/json",
+                                data:JSON.stringify(data),
+                                success:function (data) {
+                                    if (data==="ok"){
+                                        if(val==="公安局"){
+                                            switch_to_police();
+                                        }else if (val==="民政局"){
+                                            switch_to_civialAffirs();
+                                        }else if (val==="医院"){
+                                            switch_to_hospital();
+                                        }else if(val==="普通用户") {
+                                            switch_to_user();
+                                        }
+                                    }else {
+                                        alert("失败");
+                                    }
+                                }
+                            });
+                        }
+                    });
+                });
+            </script>
+
+        </div>
+    </div>
+</form>
+
+<script src="javascripts/jquery-1.11.1.min.js"></script>
+<script src="javascripts/bootstrap.min.js"></script>
+<script src="javascripts/page_switch.js"></script>
+</body>
+</html>
