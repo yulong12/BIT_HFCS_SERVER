@@ -3,7 +3,19 @@ var router = express.Router();
 
 /* GET childquery listing. */
 router.get('/', function(req, res, next) {
-    res.render('child_query');
+    if (req.session.user){
+        var user=req.session.user;
+        var name=user.name;
+        console.log('----------------------'+name);
+        res.render('child_query')
+
+    }else {
+        res.send('你还没有登录，先登录下试试！');
+    }
+
+
+
+    // res.render('child_query');
 });
 
 module.exports = router;

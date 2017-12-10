@@ -2,10 +2,10 @@ var express = require('express');
 var router = express.Router();
 
 /* GET login listing. */
-router.get('/', function(req, res, next) {
+router.get('/login', function(req, res, next) {
     res.render('login');
 });
-router.post('/',function (req, res, next) {
+router.post('/login',function (req, res, next) {
     var name=req.body.login_name;
     var password=req.body.login_password;
     var mysql=require("../db/MYSQLconnection");
@@ -19,6 +19,11 @@ router.post('/',function (req, res, next) {
            }
            else if ((result.rows[0].name===name)&&(result.rows[0].password===password)){
                console.log(result);
+               var user={
+                   name:name,
+                   password:password
+               };
+               req.session.user=user;
                res.send("ok");
 
            }

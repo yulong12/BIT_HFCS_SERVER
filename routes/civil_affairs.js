@@ -4,7 +4,14 @@ var router = express.Router();
 
 /* GET civilaffairs listing. */
 router.get('/', function(req, res, next) {
-    res.render('civil_affairs');
+    if (req.session.user){
+        var user=req.session.user;
+        var name=user.name;
+        res.render('civil_affairs');
+    }else {
+        res.send('您还未登录，请先登录');
+    }
+    //res.render('civil_affairs');
 });
 
 module.exports = router;
