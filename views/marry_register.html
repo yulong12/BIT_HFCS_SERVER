@@ -7,6 +7,12 @@
 	<script src="javascripts/jquery-1.11.1.min.js"></script>
 	<script src="javascripts/bootstrap.min.js"></script>
 	<script src="javascripts/page_switch.js"></script>
+	<script src="jquery.min.js"></script>
+	<script src="bootstrap.min.js"></script>
+	<script src="bootstrap-table.js"></script>
+	<link rel="stylesheet" href="bootstrap.min.css">
+	<link rel="stylesheet" href="bootstrap-table.css">
+	<script src="bootstrap-table-zh-CN.js"></script>
 <style type="text/css">
 .form-horizontal{
 	padding-top: 60px;
@@ -20,70 +26,121 @@
 <body>
 
 
-<form role = "form" class="form-horizontal"> 
+<form role = "form" class="form-horizontal">
+	<!--<table id="table"></table>-->
 	    <div class="myform"> 
 	        <div class = "form-group">  
-	            <label class="col-lg-4 control-label" for = "name1">姓名</label>
+	            <label class="col-lg-4 control-label" for = "name1">男方姓名</label>
 	            <div class="col-lg-3">  
 	                <input type = "text" class = "form-control" id = "name1"    
 	                    placeholder = ""></input>  
 	            </div>  
 	        </div>
 			<div class = "form-group">
-				<label class="col-lg-4 control-label" for = "age1">年龄</label>
+				<label class="col-lg-4 control-label" for = "age1">男方年龄</label>
 				<div class="col-lg-3">
 					<input type="text" class="form-control" id = "age1"
 						   placeholder = ""></input>
 				</div>
 			</div>
 	        <div class = "form-group">  
-	            <label class="col-lg-4 control-label" for = "num1">身份证号</label>
+	            <label class="col-lg-4 control-label" for = "num1" >男方身份证号</label>
 	            <div class="col-lg-3">  
 	                <input type="text" class="form-control" id = "num1"   
 	                        placeholder = ""></input>  
 	            </div>  
 	        </div> 
 	        <div class = "form-group">  
-	            <label class="col-lg-4 control-label" for = "name2">另一半姓名</label>
+	            <label class="col-lg-4 control-label" for = "name2">女方姓名</label>
 	            <div class="col-lg-3">  
 	                <input type="text" class="form-control" id = "name2"   
 	                        placeholder = ""></input>  
 	            </div>  
 	        </div>
 			<div class = "form-group">
-				<label class="col-lg-4 control-label" for = "age2">另一半年龄</label>
+				<label class="col-lg-4 control-label" for = "age2">女方年龄</label>
 				<div class="col-lg-3">
 					<input type="text" class="form-control" id = "age2"
 						   placeholder = ""></input>
 				</div>
 			</div>
 			<div class = "form-group">
-	            <label class="col-lg-4 control-label" for = "num2">另一半身份证号</label>
+	            <label class="col-lg-4 control-label" for = "num2">女方身份证号</label>
 	            <div class="col-lg-3">  
 	                <input type="text" class="form-control" id = "num2"   
 	                        placeholder = ""></input>  
 	            </div>  
-	        </div> 
-	         <div class = "form-group">  
-	            <label class="col-lg-4 control-label" for = "status">婚姻状态</label>
-	            <div class="col-lg-3">  
-	                <input type="text" class="form-control " id = "status"   
-	                        placeholder = ""></input>  
-	            </div>  
-	        </div>  
-	        
-	        <div class = "form-group">  
-	            <label class="col-lg-4 col-sm-3 control-label" for = "children">子女情况</label>
-	            <div class="col-lg-3 col-sm-3" >  
-	                <input type="text" class="form-control" id = "children"   
-	                        placeholder = ""></input>  
-	            </div>  
-	        </div> 
+	        </div>
+			<div class = "form-group">
+				<label class="col-lg-4 control-label" for = "date">结婚年份</label>
+				<div class="col-lg-3">
+					<input type="text" class="form-control" id = "date"
+						   placeholder = ""></input>
+				</div>
+			</div>
+
 	        <div class="form-group">  
 	            <div class="col-lg-4 col-lg-offset-5">
-	                <button type = "submit" class="btn-info btn-lg" onclick="alert('登记成功！')" >提交</button>
+	                <button type = "submit" class="btn-info btn-lg" id="btn_submit">提交</button>
 	            </div>              
-	        </div> 
+	        </div>
+			<script >
+                $(document).ready(function () {
+                    $("#btn_submit").click(function () {
+
+                        //get infomation
+                        var husband_id = $("#num1").val();
+                        var husband_age = $("#age1").val();
+                        var wife_id = $("#num2").val();
+                        var wife_age = $("#age2").val();
+                        var date  = $("#date").val();
+
+
+                        var data = {};
+                        data.husband_id = husband_id;
+                        data.wife_id = wife_id;
+                        data.date=date;
+                        if (husband_age < 22 || wife_age < 20) {
+                            alert("不符合法定婚龄！");
+                        } else {
+
+                            $.ajax({
+                                url: 'marry_register',
+                                type: "POST",
+                                contentType: "application/json",
+                                data: JSON.stringify(data),
+                                success: function (data) {
+                                    if (data === "ok") {
+                                        // $('#table').bootstrapTable({
+                                        //     columns: [{
+                                        //         field: 'id',
+                                        //         title: 'Item ID'
+                                        //     }, {
+                                        //         field: 'name',
+                                        //         title: 'Item Name'
+                                        //     }, {
+                                        //         field: 'price',
+                                        //         title: 'Item Price'
+                                        //     }],
+                                        //     data: [{
+                                        //         id: 1,
+                                        //         name: 'Item 1',
+                                        //         price: '$1'
+                                        //     }, {
+                                        //         id: 2,
+                                        //         name: 'Item 2',
+                                        //         price: '$2'
+                                        //     }]
+                                        // });
+                                    } else {
+                                        alert("登记失败");
+                                    }
+                                }
+                            });
+                        }
+                    });
+                });
+            </script>
 	      </div>  
 	 	 </form>  
 </body>

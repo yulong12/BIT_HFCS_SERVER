@@ -15,6 +15,9 @@
     "jquery": "^3.2.1",
     "morgan": "~1.9.0",
     "mysql": "^2.15.0",
-    "serve-favicon": "~2.4.5"
+    "serve-favicon": "~2.4.5",
+    "fabric-ca-client": "^1.0.2",
+    "fabric-client": "^1.0.2",
+    "grpc": "^1.6.0"
   }
 }

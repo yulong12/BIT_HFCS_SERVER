@@ -24,11 +24,32 @@
 <div class="col-lg-7">  
     <form class="navbar-form navbar-right" role="search">
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="要查找人的身份证号">
+            <input type="text" class="form-control" placeholder="要查找人的身份证号" id = "select">
         </div>
-        <button type="submit" class="btn btn-default">查询</button>
+        <button type="submit" class="btn btn-default" id="select_btn">查询</button>
     </form>
-    
+    <script >
+        $(document).ready(function () {
+            $("#select_btn").click(function () {
+                 // language=JQuery-CSS
+                var select_id=$("#select").val();
+                 var data = {};
+                 data.select_id = select_id;
+                if (select_id===""){
+                    alert("请输入身份证号码");
+                 }else {
+                   $.ajax({
+                       url:'user_query',
+                       type:"POST",
+                       contentType:"application/json",
+                       data:JSON.stringify(data),
+                       success:function (return_value) {
+                           alert(return_value)
+                         }
+                     });
+               }
+        })})
+    </script>
 </div>
 <!-- 返回用户自己户口信息 -->
 
