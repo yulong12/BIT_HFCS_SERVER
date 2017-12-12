@@ -33,9 +33,6 @@ router.post('/', function (req, res, next) {
         res.send(JSON.stringify(str));
     });
 
-    //setTimeout(function(){console.log("-------wait-----");console.log(JSON.stringify(str))},3000);
-
-    //res.send("not ok");
 
 });
 

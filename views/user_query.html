@@ -7,6 +7,7 @@
     <script src="javascripts/jquery-1.11.1.js"></script>
     <script src="javascripts/bootstrap.min.js"></script>
     <!--<script src="javascripts/page_switch.js"></script>-->
+
     <style type="text/css">
 
         .navbar-form {
@@ -51,11 +52,12 @@
 
             </ul>
         </div>
-
+        <div><table id="table"></table></div>
 
         <div class="panel-footer" style="text-align: center;">户口信息</div>
     </div>
 </div>
+
 </body>
 
 <script>
@@ -73,7 +75,9 @@
                 contentType: "application/json",
                 data: JSON.stringify(data),
                 success: function (data) {
-                    console.log(data);
+                    var json = eval("(" + data + ")")
+                    alert("身份证号: "+json.id+"\n姓名: "+json.name+"\n性别: "+json.sex);
+
                 }
             });
         }
