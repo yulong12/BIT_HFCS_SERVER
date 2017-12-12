@@ -19,7 +19,6 @@ router.get('/', function(req, res, next) {
 //post
 router.post('/',function (req, res, next) {
 
-    //get req.information
     var husband_id = req.body.husband_id;
     var wife_id = req.body.wife_id;
     var date = req.body.date;
@@ -32,10 +31,10 @@ router.post('/',function (req, res, next) {
     };
     console.log("------------set req ------------");
     var marry = require('./myhfc/myhfcInvoke');
-    console.log("--------require marry-----------");
-    marry(request);
-    res.send("ok");
 
+    marry(request, function (str) {
+        res.send(JSON.stringify(str));
+    });
 
 
 });

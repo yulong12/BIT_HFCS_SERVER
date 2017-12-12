@@ -33,95 +33,84 @@
 	            <label class="col-lg-4 control-label" for = "name1">男方姓名</label>
 	            <div class="col-lg-3">  
 	                <input type = "text" class = "form-control" id = "name1"    
-	                    placeholder = ""></input>  
+	                    placeholder = ""/>
 	            </div>  
 	        </div>
 			<div class = "form-group">
 				<label class="col-lg-4 control-label" for = "age1">男方年龄</label>
 				<div class="col-lg-3">
 					<input type="text" class="form-control" id = "age1"
-						   placeholder = ""></input>
+						   placeholder = ""/>
 				</div>
 			</div>
 	        <div class = "form-group">  
 	            <label class="col-lg-4 control-label" for = "num1" >男方身份证号</label>
 	            <div class="col-lg-3">  
 	                <input type="text" class="form-control" id = "num1"   
-	                        placeholder = ""></input>  
+	                        placeholder = ""/>
 	            </div>  
 	        </div> 
 	        <div class = "form-group">  
 	            <label class="col-lg-4 control-label" for = "name2">女方姓名</label>
 	            <div class="col-lg-3">  
 	                <input type="text" class="form-control" id = "name2"   
-	                        placeholder = ""></input>  
+	                        placeholder = ""/>
 	            </div>  
 	        </div>
 			<div class = "form-group">
 				<label class="col-lg-4 control-label" for = "age2">女方年龄</label>
 				<div class="col-lg-3">
 					<input type="text" class="form-control" id = "age2"
-						   placeholder = ""></input>
+						   placeholder = ""/>
 				</div>
 			</div>
 			<div class = "form-group">
 	            <label class="col-lg-4 control-label" for = "num2">女方身份证号</label>
 	            <div class="col-lg-3">  
 	                <input type="text" class="form-control" id = "num2"   
-	                        placeholder = ""></input>  
+	                        placeholder = ""/>
 	            </div>  
 	        </div>
 			<div class = "form-group">
 				<label class="col-lg-4 control-label" for = "date">结婚年份</label>
 				<div class="col-lg-3">
 					<input type="text" class="form-control" id = "date"
-						   placeholder = ""></input>
+						   placeholder = ""/>
 				</div>
 			</div>
 
 	        <div class="form-group">  
 	            <div class="col-lg-4 col-lg-offset-5">
-	                <button type = "submit" class="btn-info btn-lg" id="btn_submit">提交</button>
+	                <button type = "button" class="btn-info btn-lg" id="btn_submit">提交</button>
 	            </div>              
 	        </div>
-			<script >
-                $(document).ready(function () {
-                    $("#btn_submit").click(function () {
-
-                        //get infomation
-                        var husband_id = $("#num1").val();
-                        var husband_age = $("#age1").val();
-                        var wife_id = $("#num2").val();
-                        var wife_age = $("#age2").val();
-                        var date  = $("#date").val();
-
-
-                        var data = {};
-                        data.husband_id = husband_id;
-                        data.wife_id = wife_id;
-                        data.date=date;
-                        if (husband_age < 22 || wife_age < 20) {
-                            alert("不符合法定婚龄！");
-                        } else {
-
-                            $.ajax({
-                                url: 'marry_register',
-                                type: "POST",
-                                contentType: "application/json",
-                                data: JSON.stringify(data),
-                                success: function (data) {
-                                    if (data === "ok") {
-										alert("喜结良缘\n您的结婚证编号为：%s","J11011-2017-8888");
-                                    } else {
-                                        alert("登记失败");
-                                    }
-                                }
-                            });
-                        }
-                    });
-                });
-            </script>
 	      </div>  
 	 	 </form>  
 </body>
+<script>
+    $('#btn_submit').click(function () {
+        // language=JQuery-CSS
+
+        //get infomation
+        var husband_age = $("#age1").val();
+        var wife_age = $("#age2").val();
+
+
+        var data = {};
+        data.husband_id = $("#num1").val();
+        data.wife_id = $("#num2").val();
+        data.date = $("#date").val();
+        $.ajax({
+            url: 'marry_register',
+            type: "POST",
+            contentType: "application/json",
+            data: JSON.stringify(data),
+            success: function (data) {
+                var json = eval("(" + data + ")");
+                alert(json);
+
+            }
+        });
+    })
+</script>
 </html>

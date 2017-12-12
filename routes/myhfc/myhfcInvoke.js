@@ -12,6 +12,7 @@ var client = null;
 var targets = [];
 var tx_id = null;
 var request = null;
+var str;
 
 function getKeyFilesInDir(dir) {
 //该函数用于找到keystore目录下的私钥文件的路径
@@ -26,7 +27,7 @@ function getKeyFilesInDir(dir) {
     return keyFiles
 }
 
-function postInvokeRequest(requestJson) {
+function postInvokeRequest(requestJson,callback) {
     request = requestJson;
     Promise.resolve().then(function () {
         console.log("Load privateKey and signedCert");
@@ -89,6 +90,10 @@ function postInvokeRequest(requestJson) {
                 'Successfully sent Proposal and received ProposalResponse: Status - %s, message - "%s", metadata - "%s", endorsement signature: %s',
                 proposalResponses[0].response.status, proposalResponses[0].response.message,
                 proposalResponses[0].response.payload, proposalResponses[0].endorsement.signature));
+
+
+                str = (proposalResponses[0].response.payload).toString();
+
             var request = {
                 proposalResponses: proposalResponses,
                 proposal: proposal,
@@ -150,6 +155,15 @@ function postInvokeRequest(requestJson) {
             return 'Failed to send Proposal or receive valid response. Response null or status is not 200. exiting...';
         }
     }, function (err) {
+        console.error('Failed to send proposal due to error: ' + err.stack ? err.stack :
+            err);
+        return 'Failed to send proposal due to error: ' + err.stack ? err.stack :
+            err;
+    }).then(function (value) {
+        if (callback && typeof(callback) === "function") {
+            callback(str);
+        }
+    },function (err) {
         console.error('Failed to send proposal due to error: ' + err.stack ? err.stack :
             err);
         return 'Failed to send proposal due to error: ' + err.stack ? err.stack :
