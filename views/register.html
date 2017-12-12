@@ -3,7 +3,9 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
-	<link rel="stylesheet" href="stylesheets/bootstrap.min.css" />
+	<link rel="stylesheet" href="stylesheets/bootstrap.min.css">
+	<script src="javascripts/jquery-1.11.1.min.js"></script>
+	<script src="javascripts/bootstrap.min.js"></script>
 	<style type="text/css">
 		
 		.myform{
@@ -37,41 +39,41 @@
 	            <label class="col-lg-2 control-label" for = "name">父亲/母亲姓名</label>
 	            <div class="col-lg-2">
 	                <input type = "text" class = "form-control" id = "name"
-	                    placeholder = "输入姓名"></input>
+	                    placeholder = "输入姓名"/>
 	            </div>
 	        </div>
 	        <div class = "form-group">
 	            <label class="col-lg-2 control-label" for = "tel">电话号码</label>
 	            <div class="col-lg-2">
 	                <input type="text" class="form-control" id = "tel"
-	                        placeholder = "输入电话号码"></input>
+	                        placeholder = "输入电话号码"/>
 	            </div>
 	        </div>
 	         <div class = "form-group">
 	            <label class="col-lg-2 control-label" for = "num">父亲/母亲身份证号码</label>
 	            <div class="col-lg-2">
 	                <input type="text" class="form-control" id = "num"
-	                        placeholder = "输入身份证号码"></input>
+	                        placeholder = "输入身份证号码"/>
 	            </div>
 	        </div>
 	        <div class = "form-group">
 	            <label class="col-lg-2 control-label" for = "kname">新生儿姓名</label>
 	            <div class="col-lg-2">
 	                <input type="text" class="form-control" id = "kname"
-	                        placeholder = "新生儿姓名"></input>
+	                        placeholder = "新生儿姓名"/>
 	            </div>
 	        </div>
 	        <div class = "form-group">
-	            <label class="col-lg-2 control-label" for = "birth">新生儿出生日期</label>
+	            <label class="col-lg-2 control-label" for = "birth">新生儿出生证明编号</label>
 	            <div class="col-lg-2">
 	                <input type="text" class="form-control" id = "birth"
-	                        placeholder = "新生儿出生证明编号"></input>
+	                        placeholder = "新生儿出生证明编号"/>
 	            </div>
 	        </div>
 
 	        <div class="form-group" style="margin-right: 300px;">
 	            <div class="col-lg-2 col-lg-offset-2">
-	                <button type = "submit" class="btn-info btn-lg" id="send">申请</button>
+	                <button type = "button" class="btn-info btn-lg" id="send">申请</button>
 	            </div>
 				<div class="col-lg-2 col-lg-offset-2">
 					<button type = "submit" class="btn-info btn-lg" id="back" onclick="javascript:history.back(-1);">返回</button>
@@ -83,31 +85,24 @@
 <div class="panel-footer"></div>
 </div>
 
-
-<script src="javascripts/jquery-1.11.1.min.js"></script>
-<script src="javascripts/bootstrap.min.js"></script>
-
-<script type="text/javascript">
+</body>
+<script>
     $("#send").click(
         function (){
-            var parent_id = $("#num").val();
-            var child_birth = $("#birth").val();
-            var child_name = $("#kname").val();
-            var data = {};
-
-            data.parent_id = parent_id;
-            data.child_birth = child_birth;
-            data.child_name = child_name;
+			var data = {};
+            data.parent_id = $("#num").val();
+            console.log(typeof(data.parent_id));
+            data.child_name = $("#kname").val();
             $.ajax({
-				url:"register",
-				type:"post",
-				contentType:"application/json",
-				data:JSON.stringify(data),
-				success:function(returnValue){}
-			});
-            alert("您已经申请成功！");
+                url:"register",
+                type:"POST",
+                contentType:"application/json",
+                data:JSON.stringify(data),
+                success:function(data){
+                    alert(data);
+                }
+            });
         }
     );
 </script>
-</body>
 </html>

@@ -29,15 +29,15 @@
 	            <label class="col-lg-5 control-label" for = "name">新生儿姓名</label>
 	            <div class="col-lg-3">
 	                <input type = "text" class = "form-control" id = "name"
-	                    placeholder = ""></input>
+	                    placeholder = ""/>
 	            </div>
 
 	        </div>
-			<div class = "form-group">
+			<div class = "form-group"/>
 				<label class="col-lg-5 control-label" for = "weight">新生儿体重</label>
 				<div class="col-lg-3">
 					<input type="text" class="form-control" id = "weight"
-						   placeholder = ""></input>
+						   placeholder = ""/>
 				</div>
 			</div>
 			<div class = "form-group">
@@ -45,14 +45,14 @@
 				<label class="col-lg-5 control-label" for = "sex">新生儿性别</label>
 				<div class="col-lg-3">
 					<input type="text" class="form-control" id = "sex"
-						   placeholder = ""></input>
+						   placeholder = ""/>
 				</div>
 			</div>
 			<div class = "form-group">
 	            <label class="col-lg-5 control-label" for = "date">出生日期</label>
 	            <div class="col-lg-3">
 	                <input type="text" class="form-control" id = "date"
-	                        placeholder = ""></input>
+	                        placeholder = ""/>
 	            </div>
 
 	        </div>
@@ -60,14 +60,14 @@
 				<label class="col-lg-5 control-label" for = "place">出生地</label>
 				<div class="col-lg-3">
 					<input type="text" class="form-control" id = "place"
-						   placeholder = ""></input>
+						   placeholder = ""/>
 				</div>
 			</div>
 	        <div class = "form-group">
 	            <label class="col-lg-5 control-label" for = "mother_name">母亲姓名</label>
 	            <div class="col-lg-3">
 	                <input type="text" class="form-control" id = "mother_name"
-	                        placeholder = ""></input>
+	                        placeholder = ""/>
 	            </div>
 
 	        </div>
@@ -75,21 +75,21 @@
 				<label class="col-lg-5  control-label" for = "mother_age">年龄</label>
 				<div class="col-lg-3 col-sm-3" >
 					<input type="text" class="form-control" id = "mother_age"
-						   placeholder = ""></input>
+						   placeholder = ""/>
 				</div>
 			</div>
 			<div class = "form-group">
 	            <label class="col-lg-5 col-sm-3 control-label" for = "mother_ID">母亲身份证号</label>
 	            <div class="col-lg-3 col-sm-3" >
 	                <input type="text" class="form-control" id = "mother_ID"
-	                        placeholder = ""></input>
+	                        placeholder = ""/>
 	            </div>
 	        </div>
 	         <div class = "form-group">
 	            <label class="col-lg-5 control-label" for = "father_name">父亲姓名</label>
 	            <div class="col-lg-3">
 	                <input type="text" class="form-control" id = "father_name"
-	                        placeholder = ""></input>
+	                        placeholder = ""/>
 	            </div>
 
 	        </div>
@@ -97,86 +97,60 @@
 				<label class="col-lg-5 col-sm-3 control-label" for = "father_age">年龄</label>
 				<div class="col-lg-3 col-sm-3" >
 					<input type="text" class="form-control" id = "father_age"
-						   placeholder = ""></input>
+						   placeholder = ""/>
 				</div>
 			</div>
 			<div class = "form-group">
 	            <label class="col-lg-5 col-sm-3 control-label" for = "father_ID">父亲身份证号</label>
 	            <div class="col-lg-3 col-sm-3" >
 	                <input type="text" class="form-control" id = "father_ID"
-	                        placeholder = ""></input>
+	                        placeholder = ""/>
 	            </div>
 	        </div>
 	        <div class = "form-group">
 	            <label class="col-lg-5 col-sm-3 control-label" for = "health">健康情况</label>
 	            <div class="col-lg-3 col-sm-3" >
 	                <input type="text" class="form-control" id = "health"
-	                        placeholder = ""></input>
+	                        placeholder = ""/>
 	            </div>
 	        </div>
 	        <div class = "form-group">
 	            <label class="col-lg-5 control-label" for = "hospital_name">接生机构名称</label>
 	            <div class="col-lg-3">
 	                <input type="text" class="form-control" id = "hospital_name"
-	                        placeholder = ""></input>
+	                        placeholder = ""/>
 	            </div>
 	        </div>
 	        <div class="form-group">
 	            <div class="col-lg-4 col-lg-offset-6">
-	                <button type = "submit" class="btn-info btn-lg" id="btn_submit">提交</button>
+	                <button type = "button" class="btn-info btn-lg" id="btn_submit">提交</button>
 	            </div>
-				<script >
-                    $(document).ready(function () {
-                        $("#btn_submit").click(function () {
 
-                            //get infomation
-                            var child__name = $("#name").val();
-                        	var child_weight= $("#weight").val();
-                        	var child_sex   = $("#sex").val();
-                        	var child_date  = $("#date").val();
-                        	var child_place = $("#place").val();
-                        	var mother_name = $("#mother_name").val();
-                        	var mother_age  = $("#mother_age").val();
-                        	var mother_ID   = $("#mother_ID").val();
-                            var father_name = $("#father_name").val();
-                            var father_age  = $("#father_age").val();
-                            var father_ID   = $("#father_ID").val();
-                            var health      = $("#health").val();
-                            var hospital    = $("#hospital_name").val();
-
-                            var data={};
-                            data.child__name = child__name;
-                            data.child_weight= child_weight;
-                            data.child_sex   = child_sex;
-							data.child_date  = child_date;
-							data.child_place = child_place;
-							data.mother_name = mother_name;
-							data.mother_age  = mother_age;
-                            data.mother_ID   = mother_ID;
-                            data.father_name = father_name;
-                            data.father_age  = father_age;
-                            data.father_ID   = father_ID;
-                            data.health      = health;
-                            data.hospital    = hospital;
-
-							$.ajax({
-                                    url:'child_register',
-                                    type:"POST",
-                                    contentType:"application/json",
-                                    data:JSON.stringify(data),
-                                    success:function (data) {
-                                        if (data==="ok"){
-                                            alert("ok");
-                                        }else {
-                                            alert("失败");
-                                        }
-                                    }
-                                });
-                        });
-                    });
-				</script>
 	        </div>
 	      </div>
 	 	 </form>
 </body>
+<script>
+        $("#btn_submit").click(function () {
+
+            //get infomation
+
+            var data = {};
+            data.child_sex = $("#sex").val();
+            data.child_date = $("#date").val();
+            data.mother_ID = $("#mother_ID").val();
+            data.father_ID = $("#father_ID").val();
+            data.hospital = $("#hospital_name").val();
+
+            $.ajax({
+                url: 'child_register',
+                type: "POST",
+                contentType: "application/json",
+                data: JSON.stringify(data),
+                success: function (data) {
+                   alert(data)
+                }
+            });
+        });
+</script>
 </html>

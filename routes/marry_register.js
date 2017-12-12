@@ -22,14 +22,14 @@ router.post('/',function (req, res, next) {
     var husband_id = req.body.husband_id;
     var wife_id = req.body.wife_id;
     var date = req.body.date;
-    console.log("-----------get info------------");
+
     var request = {
         chaincodeId: options.chaincode_id,
         fcn: 'marry',
         args: [husband_id, wife_id, date],
         chainId: options.channel_id
     };
-    console.log("------------set req ------------");
+
     var marry = require('./myhfc/myhfcInvoke');
 
     marry(request, function (str) {
