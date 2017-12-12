@@ -23,16 +23,17 @@ router.post('/',function (req, res, next) {
     var husband_id = req.body.husband_id;
     var wife_id = req.body.wife_id;
     var date = req.body.date;
+    console.log("-----------get info------------");
     var request = {
-        //targets: targets,
         chaincodeId: options.chaincode_id,
         fcn: 'marry',
         args: [husband_id, wife_id, date],
-        chainId: options.channel_id,
-        //txId: tx_id
+        chainId: options.channel_id
     };
-    //var creat_birth = require('/myhfc/myhfcInvoke');
-    //creat_birth.postInvokeRequest(request);
+    console.log("------------set req ------------");
+    var marry = require('./myhfc/myhfcInvoke');
+    console.log("--------require marry-----------");
+    marry(request);
     res.send("ok");
 
 

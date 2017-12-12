@@ -65,7 +65,7 @@
 	            <label class="col-lg-2 control-label" for = "birth">新生儿出生日期</label>
 	            <div class="col-lg-2">
 	                <input type="text" class="form-control" id = "birth"
-	                        placeholder = "新生儿出生日期"></input>
+	                        placeholder = "新生儿出生证明编号"></input>
 	            </div>
 	        </div>
 
@@ -90,6 +90,21 @@
 <script type="text/javascript">
     $("#send").click(
         function (){
+            var parent_id = $("#num").val();
+            var child_birth = $("#birth").val();
+            var child_name = $("#kname").val();
+            var data = {};
+
+            data.parent_id = parent_id;
+            data.child_birth = child_birth;
+            data.child_name = child_name;
+            $.ajax({
+				url:"register",
+				type:"post",
+				contentType:"application/json",
+				data:JSON.stringify(data),
+				success:function(returnValue){}
+			});
             alert("您已经申请成功！");
         }
     );

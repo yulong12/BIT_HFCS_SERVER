@@ -4,7 +4,7 @@ var hfc = require('fabric-client');
 var path = require('path');
 var util = require('util');
 var sdkUtils = require('fabric-client/lib/utils')
-const fs = require('fs');
+var fs = require('fs');
 var options = require('./config');
 
 var channel = {};
@@ -14,6 +14,7 @@ var tx_id = null;
 var request = null;
 
 function getKeyFilesInDir(dir) {
+//该函数用于找到keystore目录下的私钥文件的路径
     var files = fs.readdirSync(dir);
     var keyFiles = [];
     files.forEach(function (file_name) {
@@ -37,7 +38,7 @@ function postInvokeRequest(requestJson) {
                 privateKey: getKeyFilesInDir(options.privateKeyFolder)[0],
                 signedCert: options.signedCert
             }
-        }
+        };
 //以上代码指定了当前用户的私钥，证书等基本信息
         return sdkUtils.newKeyValueStore({
             path: "/tmp/fabric-client-stateStore/"
@@ -65,12 +66,11 @@ function postInvokeRequest(requestJson) {
 
         channel.addOrderer(orderer);
         targets.push(peer);
-        return;
     }).then(function () {
         tx_id = client.newTransactionID();
         console.log("Assigning transaction_id: ", tx_id._transaction_id);
         request.txId = tx_id;
-        request.targets =  targets;
+        request.targets = targets;
         return channel.sendTransactionProposal(request);
     }).then(function (results) {
         var proposalResponses = results[0];
@@ -105,7 +105,7 @@ function postInvokeRequest(requestJson) {
             var grpcOpts = {
                 pem: Buffer.from(data).toString(),
                 'ssl-target-name-override': options.server_hostname
-            }
+            };
             eh.setPeerAddr(options.event_url, grpcOpts);
             eh.connect();
 
@@ -171,4 +171,3 @@ function postInvokeRequest(requestJson) {
 }
 
 module.exports = postInvokeRequest;
-module.exports = router;

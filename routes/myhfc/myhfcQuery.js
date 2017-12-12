@@ -8,13 +8,14 @@ var options = require('./config');
 
 var channel = {};
 var client = null;
-var request = null;
+var request = {};
+var str = {};
 
 function getKeyFilesInDir(dir) {
     var files = fs.readdirSync(dir);
     var keyFiles = [];
     files.forEach(function (file_name) {
-        var filePath = path.join(dir, file_name);
+        var filePath = path.join(dir,file_name);
         if (file_name.endsWith('_sk')) {
             keyFiles.push(filePath)
         }
@@ -22,11 +23,12 @@ function getKeyFilesInDir(dir) {
     return keyFiles
 }
 
-function postRequest(requestJson) {
+function postRequest(requestJson, callback) {
     request = requestJson;
     Promise.resolve().then(function () {
         console.log("Load privateKey and signedCert");
         client = new hfc();
+        console.log("--------no find----------------");
         var createUserOpt = {
             username: options.user_id,
             mspid: options.msp_id,
@@ -58,13 +60,13 @@ function postRequest(requestJson) {
     }).then(function () {
         console.log("Make query");
         var transaction_id = client.newTransactionID();
-        //console.log("Assigning transaction_id: ", transaction_id._transaction_id);
+        console.log("Assigning transaction_id: ", transaction_id._transaction_id);
         //构造查询request参数
-        // var request = {
+        // request = {
         //     chaincodeId: options.chaincode_id,
         //     txId: transaction_id,
         //     fcn: 'queryID',
-        //     args: ['1111111']
+        //     args: ['110105199409026676']
         // };
         request.txid = transaction_id;
         return channel.queryByChaincode(request);
@@ -78,13 +80,18 @@ function postRequest(requestJson) {
         if (query_responses[0] instanceof Error) {
             console.error("error from query = ", query_responses[0]);
         }
-        console.log("Response is ", query_responses[0].toString());//打印返回的结果
+        console.log("Response from blockchain is ", query_responses[0].toString());//打印返回的结果
+        str = JSON.parse(query_responses[0].toString());
+    }).then(function (value) {
+        if (callback && typeof(callback) === "function") {
+            callback(str);
+        }
     }).catch(function (err) {
         console.error("Caught Error", err);
     });
-    return  query_responses[0].toString();
+
 }
 
 
 module.exports = postRequest;
-module.exports = router;
+// module.exports = router;
