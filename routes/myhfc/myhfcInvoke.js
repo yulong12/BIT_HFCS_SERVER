@@ -3,16 +3,9 @@
 var hfc = require('fabric-client');
 var path = require('path');
 var util = require('util');
-var sdkUtils = require('fabric-client/lib/utils')
+var sdkUtils = require('fabric-client/lib/utils');
 var fs = require('fs');
 var options = require('./config');
-
-var channel = {};
-var client = null;
-var targets = [];
-var tx_id = null;
-var request = null;
-var str;
 
 function getKeyFilesInDir(dir) {
 //该函数用于找到keystore目录下的私钥文件的路径
@@ -28,7 +21,13 @@ function getKeyFilesInDir(dir) {
 }
 
 function postInvokeRequest(requestJson,callback) {
-    request = requestJson;
+    var channel = {};
+    var client = null;
+    var targets = [];
+    var tx_id = null;
+    var str;
+
+    var fcn_request = requestJson;
     Promise.resolve().then(function () {
         console.log("Load privateKey and signedCert");
         client = new hfc();
@@ -70,9 +69,9 @@ function postInvokeRequest(requestJson,callback) {
     }).then(function () {
         tx_id = client.newTransactionID();
         console.log("Assigning transaction_id: ", tx_id._transaction_id);
-        request.txId = tx_id;
-        request.targets = targets;
-        return channel.sendTransactionProposal(request);
+        fcn_request.txId = tx_id;
+        fcn_request.targets = targets;
+        return channel.sendTransactionProposal(fcn_request);
     }).then(function (results) {
         var proposalResponses = results[0];
         var proposal = results[1];
@@ -90,8 +89,6 @@ function postInvokeRequest(requestJson,callback) {
                 'Successfully sent Proposal and received ProposalResponse: Status - %s, message - "%s", metadata - "%s", endorsement signature: %s',
                 proposalResponses[0].response.status, proposalResponses[0].response.message,
                 proposalResponses[0].response.payload, proposalResponses[0].endorsement.signature));
-
-
                 str = (proposalResponses[0].response.payload).toString();
 
             var request = {
@@ -159,15 +156,6 @@ function postInvokeRequest(requestJson,callback) {
             err);
         return 'Failed to send proposal due to error: ' + err.stack ? err.stack :
             err;
-    }).then(function (value) {
-        if (callback && typeof(callback) === "function") {
-            callback(str);
-        }
-    },function (err) {
-        console.error('Failed to send proposal due to error: ' + err.stack ? err.stack :
-            err);
-        return 'Failed to send proposal due to error: ' + err.stack ? err.stack :
-            err;
     }).then(function (response) {
         if (response.status === 'SUCCESS') {
             console.log('Successfully sent transaction to the orderer.');
@@ -181,6 +169,17 @@ function postInvokeRequest(requestJson,callback) {
             .stack : err);
         return 'Failed to send transaction due to error: ' + err.stack ? err.stack :
             err;
+    }).then(function (value) {
+        if (callback && typeof(callback) === "function") {
+            callback(str);
+        }
+    },function (err) {
+        console.error('Failed to send proposal due to error: ' + err.stack ? err.stack :
+            err);
+        return 'Failed to send proposal due to error: ' + err.stack ? err.stack :
+            err;
+    }).catch(function (err) {
+        console.error("Caught Error", err);
     });
 }
 

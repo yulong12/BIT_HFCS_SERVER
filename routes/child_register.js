@@ -32,6 +32,8 @@ router.post('/',function (req, res, next) {
         args: [father_ID, mother_ID, child_sex,child_date,hospital],
         chainId: options.channel_id
     };
+
+    console.log(request);
     var creatBirth = require('./myhfc/myhfcInvoke');
 
     creatBirth(request, function (str) {
