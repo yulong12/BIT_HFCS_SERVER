@@ -83,6 +83,7 @@ function postInvokeRequest(requestJson,callback) {
             console.log('transaction proposal was good');
         } else {
             console.error('transaction proposal was bad');
+            str = "不符合条件";
         }
         if (isProposalGood) {
             console.log(util.format(
