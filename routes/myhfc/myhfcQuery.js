@@ -4,7 +4,7 @@ var hfc = require('fabric-client');
 var path = require('path');
 var sdkUtils = require('fabric-client/lib/utils');
 var fs = require('fs');
-var options = require('./config');
+var options = require('./org1Config');
 
 var channel = {};
 var client = null;

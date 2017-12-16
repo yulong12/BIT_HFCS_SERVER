@@ -13,89 +13,85 @@
 	<link rel="stylesheet" href="bootstrap.min.css">
 	<link rel="stylesheet" href="bootstrap-table.css">
 	<script src="bootstrap-table-zh-CN.js"></script>
-<style type="text/css">
-.form-horizontal{
-	padding-top: 60px;
-}
-
-.form-group{
-	color: black;
-}
-</style>
+	<style type="text/css">
+		.form-horizontal{
+			padding-top: 60px;
+		}
+		.form-group{
+			color: black;
+		}
+	</style>
 </head>
 <body>
 
 
 <form role = "form" class="form-horizontal">
 	<!--<table id="table"></table>-->
-	    <div class="myform"> 
-	        <div class = "form-group">  
-	            <label class="col-lg-4 control-label" for = "name1">男方姓名</label>
-	            <div class="col-lg-3">  
-	                <input type = "text" class = "form-control" id = "name1"    
-	                    placeholder = ""/>
-	            </div>  
-	        </div>
-			<div class = "form-group">
-				<label class="col-lg-4 control-label" for = "age1">男方年龄</label>
-				<div class="col-lg-3">
-					<input type="text" class="form-control" id = "age1"
-						   placeholder = ""/>
-				</div>
+	<div class="myform">
+		<div class = "form-group">
+			<label class="col-lg-4 control-label" for = "name1">男方姓名</label>
+			<div class="col-lg-3">
+				<input type = "text" class = "form-control" id = "name1"
+					   placeholder = ""/>
 			</div>
-	        <div class = "form-group">  
-	            <label class="col-lg-4 control-label" for = "num1" >男方身份证号</label>
-	            <div class="col-lg-3">  
-	                <input type="text" class="form-control" id = "num1"   
-	                        placeholder = ""/>
-	            </div>  
-	        </div> 
-	        <div class = "form-group">  
-	            <label class="col-lg-4 control-label" for = "name2">女方姓名</label>
-	            <div class="col-lg-3">  
-	                <input type="text" class="form-control" id = "name2"   
-	                        placeholder = ""/>
-	            </div>  
-	        </div>
-			<div class = "form-group">
-				<label class="col-lg-4 control-label" for = "age2">女方年龄</label>
-				<div class="col-lg-3">
-					<input type="text" class="form-control" id = "age2"
-						   placeholder = ""/>
-				</div>
+		</div>
+		<div class = "form-group">
+			<label class="col-lg-4 control-label" for = "age1">男方年龄</label>
+			<div class="col-lg-3">
+				<input type="text" class="form-control" id = "age1"
+					   placeholder = ""/>
 			</div>
-			<div class = "form-group">
-	            <label class="col-lg-4 control-label" for = "num2">女方身份证号</label>
-	            <div class="col-lg-3">  
-	                <input type="text" class="form-control" id = "num2"   
-	                        placeholder = ""/>
-	            </div>  
-	        </div>
-			<div class = "form-group">
-				<label class="col-lg-4 control-label" for = "date">结婚年份</label>
-				<div class="col-lg-3">
-					<input type="text" class="form-control" id = "date"
-						   placeholder = ""/>
-				</div>
+		</div>
+		<div class = "form-group">
+			<label class="col-lg-4 control-label" for = "num1" >男方身份证号</label>
+			<div class="col-lg-3">
+				<input type="text" class="form-control" id = "num1"
+					   placeholder = ""/>
 			</div>
+		</div>
+		<div class = "form-group">
+			<label class="col-lg-4 control-label" for = "name2">女方姓名</label>
+			<div class="col-lg-3">
+				<input type="text" class="form-control" id = "name2"
+					   placeholder = ""/>
+			</div>
+		</div>
+		<div class = "form-group">
+			<label class="col-lg-4 control-label" for = "age2">女方年龄</label>
+			<div class="col-lg-3">
+				<input type="text" class="form-control" id = "age2"
+					   placeholder = ""/>
+			</div>
+		</div>
+		<div class = "form-group">
+			<label class="col-lg-4 control-label" for = "num2">女方身份证号</label>
+			<div class="col-lg-3">
+				<input type="text" class="form-control" id = "num2"
+					   placeholder = ""/>
+			</div>
+		</div>
+		<div class = "form-group">
+			<label class="col-lg-4 control-label" for = "date">结婚年份</label>
+			<div class="col-lg-3">
+				<input type="text" class="form-control" id = "date"
+					   placeholder = ""/>
+			</div>
+		</div>
 
-	        <div class="form-group">  
-	            <div class="col-lg-4 col-lg-offset-5">
-	                <button type = "button" class="btn-info btn-lg" id="btn_submit">提交</button>
-	            </div>              
-	        </div>
-	      </div>  
-	 	 </form>  
+		<div class="form-group">
+			<div class="col-lg-4 col-lg-offset-5">
+				<button type = "button" class="btn-info btn-lg" id="btn_submit">提交</button>
+			</div>
+		</div>
+	</div>
+</form>
 </body>
 <script>
     $('#btn_submit').click(function () {
         // language=JQuery-CSS
-
         //get infomation
         var husband_age = $("#age1").val();
         var wife_age = $("#age2").val();
-
-
         var data = {};
         data.husband_id = $("#num1").val();
         data.wife_id = $("#num2").val();
@@ -108,7 +104,6 @@
             success: function (data) {
                 var json = eval("(" + data + ")");
                 alert(json);
-
             }
         });
     })

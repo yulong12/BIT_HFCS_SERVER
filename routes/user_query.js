@@ -16,7 +16,7 @@ router.get('/', function (req, res, next) {
 
 router.post('/', function (req, res, next) {
 
-    var options = require('./myhfc/config');
+    var options = require('./myhfc/org1Config');
     var select_id = req.body.select_id;
 
     var request;

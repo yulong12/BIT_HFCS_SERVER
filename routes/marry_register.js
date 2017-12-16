@@ -1,6 +1,6 @@
 
 var express = require('express');
-var options = require("./myhfc/config");
+var options = require("./myhfc/org2Config");
 var router = express.Router();
 
 /* GET marryregister listing. */

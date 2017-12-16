@@ -5,7 +5,7 @@ var path = require('path');
 var util = require('util');
 var sdkUtils = require('fabric-client/lib/utils');
 var fs = require('fs');
-var options = require('./config');
+var options = require('./org1Config');
 
 function getKeyFilesInDir(dir) {
 //该函数用于找到keystore目录下的私钥文件的路径

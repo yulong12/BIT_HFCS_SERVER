@@ -1,7 +1,7 @@
 'use strict';
 var express = require('express');
 var router = express.Router();
-var options = require("./myhfc/config");
+var options = require("./myhfc/org3Config");
 
 /* GET childregister listing. */
 router.get('/', function(req, res, next) {
