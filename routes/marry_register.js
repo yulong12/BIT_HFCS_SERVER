@@ -33,7 +33,7 @@ router.post('/',function (req, res, next) {
     var marry = require('./myhfc/myhfcInvoke');
 
     marry(request, function (str) {
-        res.send(JSON.stringify(str));
+        res.send(JSON.parse(str));
     });
 
 

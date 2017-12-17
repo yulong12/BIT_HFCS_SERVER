@@ -23,11 +23,10 @@ router.post('/',function(req,res,next){
         args: [parent_id, "1", child_name],
         chainId: options.channel_id
     }
-    console.log("------------set req---------");
     var createHuman =  require('./myhfc/myhfcInvoke');
 
     createHuman(request, function (str) {
-        res.send(JSON.stringify(str));
+        res.send(JSON.parse(str));
     });
 });
 

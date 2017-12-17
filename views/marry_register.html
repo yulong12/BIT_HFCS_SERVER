@@ -102,8 +102,7 @@
             contentType: "application/json",
             data: JSON.stringify(data),
             success: function (data) {
-                var json = eval("(" + data + ")");
-                alert(json);
+                alert(JSON.stringify(data));
             }
         });
     })
