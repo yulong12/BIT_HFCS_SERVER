@@ -35,4 +35,9 @@ function switch_to_police() {
 function switch_to_hospital_query() {
     window.location.href="hospital_query" ;
 }
-
+function switch_to_fingerprinter_register() {
+    window.location.href="fingerprint_register";
+}
+function switch_to_patient_expense() {
+    window.location.href="patient_expense";
+}

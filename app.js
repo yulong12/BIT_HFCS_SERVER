@@ -14,7 +14,7 @@ var user=require('./routes/user');
 var register=require('./routes/register');
 var search=require('./routes/search');
 var child_query=require('./routes/child_query');
-
+var fingerprinter_register=require('./routes/fingerprinter_register');
 
 var hospital=require('./routes/hospital');
 var hospita_query = require('./routes/hospital_query');
@@ -24,7 +24,7 @@ var marry_query=require('./routes/marry_query');
 var marry_register=require('./routes/marry_register');
 var  success=require('./routes/success');
 var user_query=require('./routes/user_query');
-
+var patient_expense=require('./routes/patient_expense');
 var police_office=require('./routes/police_office');
 
 // view engine setup
@@ -55,7 +55,7 @@ app.use('/',user);
 app.use('/register',register);
 app.use('/search',search);
 app.use('/child_query',child_query);
-
+app.use('/fingerprint_register',fingerprinter_register);
 app.use('/child_register',child_register);
 app.use('/civil_Affairs',civil_Affairs);
 app.use('/hospital',hospital);
@@ -64,7 +64,7 @@ app.use('/marry_query',marry_query);
 app.use('/marry_register',marry_register);
 app.use('/success',success);
 app.use('/user_query',user_query);
-
+app.use('/patient_expense',patient_expense);
 app.use('/police_office',police_office);
 
 // catch 404 and forward to error handler
