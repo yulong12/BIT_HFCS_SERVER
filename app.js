@@ -17,6 +17,7 @@ var child_query=require('./routes/child_query');
 
 
 var hospital=require('./routes/hospital');
+var hospita_query = require('./routes/hospital_query');
 var  child_register=require('./routes/child_register');
 var civil_Affairs=require('./routes/civil_affairs');
 var marry_query=require('./routes/marry_query');
@@ -58,6 +59,7 @@ app.use('/child_query',child_query);
 app.use('/child_register',child_register);
 app.use('/civil_Affairs',civil_Affairs);
 app.use('/hospital',hospital);
+app.use('/hospital_query',hospita_query);
 app.use('/marry_query',marry_query);
 app.use('/marry_register',marry_register);
 app.use('/success',success);

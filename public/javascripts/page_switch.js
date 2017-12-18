@@ -32,5 +32,7 @@ function  switch_to_marryregister() {
 function switch_to_police() {
     window.location.href="police_office" ;
 }
-
+function switch_to_hospital_query() {
+    window.location.href="hospital_query" ;
+}
 
