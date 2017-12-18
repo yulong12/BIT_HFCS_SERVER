@@ -81,7 +81,7 @@ function postRequest(requestJson, callback) {
             console.error("error from query = ", query_responses[0]);
         }
         console.log("Response from blockchain is ", query_responses[0].toString());//打印返回的结果
-        str = JSON.parse(query_responses[0].toString());
+        str = query_responses[0].toString();
     }).then(function (value) {
         if (callback && typeof(callback) === "function") {
             callback(str);

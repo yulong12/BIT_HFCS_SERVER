@@ -30,7 +30,7 @@ router.post('/', function (req, res, next) {
 
 
     myhfcQuery(request, function (str) {
-        res.send(JSON.stringify(str));
+        res.send(JSON.parse(str));
     });
 
 

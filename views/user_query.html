@@ -75,9 +75,7 @@
                 contentType: "application/json",
                 data: JSON.stringify(data),
                 success: function (data) {
-                    //var json = eval("(" + data + ")")
-                    alert(data);
-
+                    alert(JSON.stringify(data));
                 }
             });
         }
