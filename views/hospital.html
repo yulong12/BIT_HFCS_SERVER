@@ -15,98 +15,110 @@
         top:140px;
         padding-left: 15%;
     }
-    #color1{
-        color: #000000;
-        font-weight: bold;
-        /*padding-left: 70px;*/
-        text-align: center;
-    }
-    #color2 a{
-      max-width: 250px;
-      color: #000000;
-      background-color:#FFFFFF;
-      font-weight: bold;
-      text-align: center;
-      padding: 20px;
-      margin-left: 15px;
-    }
-    #aa
-    {
-        position:absolute;
-        left:0px;
-        top:0px;
-        z-index:-1;
-    }
 
+    .container{
+        float: left;
+        margin-top: 100px;
+        margin-left:60px;
+        width: 70%;
+        height: auto;
+    }
+    #mynav{
+        margin-top: 70px;
+        float: left;
+    }
     </style>
 </head>
-    <body>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-header">
+            <!-- 自适应隐藏导航展开按钮 -->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- 导航条LOGO -->
+            <a class="navbar-brand" href="#" style="color:#FFFFFF">医院信息系统</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-      <nav class="navbar navbar-default"  role="navigation">
-        <h1 id="color1">医院信息系统</h1>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">首页</a></li>
+                <li ><a a href="#">医院简介</a></li>
+                <li ><a a href="#">就诊指南</a></li>
+                <li><a href="#">专家介绍</a></li>
+                <li><a href="#">专科介绍</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">更多服务<span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">患者电子病历查询入口</a></li>
 
-        <ul class="nav nav-tabs " style="padding-left: 190px;background-color: #000000;font-size: 15px;width: 100%;">
-          <li class="" onclick="switch_to_hospital()"><a >首页</a></li>
-          <li ><a>医院简介</a></li>
-          <li ><a>就诊指南</a></li>
-          <li ><a>医保服务</a></li>
-
-          <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                    更多服务 <span class="caret"></span>
-            </a>
-
-            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1" style="background-color: #FFD306 ">
-                <li role="presentation">
-                    <a role="menuitem" tabindex="-1" href="#">患者电子病历查询入口</a>
-                </li>
-                <li role="presentation">
-                    <a role="menuitem" tabindex="-1" href="#">患者报销查询入口</a>
+                    </ul>
                 </li>
             </ul>
-          </li>
-          <li style="float: right;"><form class="navbar-form navbar-right" role="search">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="请输入要查找的信息">
-                </div>
-                <button type="submit" class="btn btn-default">搜索</button>
-            </form>
-          </li>
-        </ul>
+        </div>
+    </div>
 
-    </nav>
-    <div id="color2" class="col-md-6 col-sm-3 col-lg-4">
-        <ul class="nav nav-vertical">
-            <li onclick="switch_to_userQuery()"><a  class="list-group-item"><span class="glyphicon glyphicon-th-list"></span>
-                个人信息查询   &nbsp;&nbsp; &raquo;    </a></li>
-            <li onclick="switch_to_childregister()"><a  class="list-group-item"><span class="glyphicon glyphicon-home"></span>
-                新生儿信息登记   &nbsp;&nbsp; &raquo;    </a></li>
+    <!-- 左侧边栏 -->
+    <div class="col-lg-2 col-sm-2 col-xs-6" id="mynav">
+        <ul class="nav nav-pills nav-stacked">
 
-            <li><a href="#" class="list-group-item"><span class="glyphicon glyphicon-th"></span>&nbsp;&nbsp;专科介绍&nbsp;&nbsp; &raquo;</a></li>
-            <li><a href="#" class="list-group-item"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;专家介绍&nbsp;&nbsp; &raquo;</a></li>
-            <li><a href="#" class="list-group-item"><span class="glyphicon glyphicon-th-large"></span>&nbsp;&nbsp;成功案例&nbsp;&nbsp;&raquo;</a></li>
+            <li class="active"><a href="#"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;&nbsp;首页</a></li>
+            <li class="nav-divider"></li>
+            <li><a href="#lead"><span class="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp;&nbsp;导航</a></li>
+            <li class="nav-divider"></li>
+            <li onclick="switch_to_userQuery()"><a href="#"><span class="glyphicon glyphicon-tags"></span>&nbsp;&nbsp;审核父母信息</a></li>
+            <li class="nav-divider"></li>
+            <li onclick="switch_to_childregister()"><a href="#"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;新生儿信息登记  </a></li>
+
+            <li class="nav-divider"></li>
+            <li><a href="#" ><span class="glyphicon glyphicon-th"></span>&nbsp;&nbsp;患者费用报销结算&nbsp;&nbsp;</a></li>
+            <li class="nav-divider"></li>
+            <li><a href="#" ><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;新生儿指纹采集&nbsp;&nbsp; </a></li>
+            <li class="nav-divider"></li>
+            <li><a href="#" ><span class="glyphicon glyphicon-th-large"></span>&nbsp;&nbsp;成功案例&nbsp;&nbsp;</a></li>
         </ul>
     </div>
 
-    <div id="myCarousel" class="carousel slide ">
-      <!-- 轮播（Carousel）指标 -->
-      <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
+    <div class="container">
+        <div class="panel panel-primary">
+            <div class="panel-heading">操作导航</div>
+            <div class="panel-body">
 
-      </ol>
-      <!-- 轮播（Carousel）项目 -->
-      <div class="carousel-inner">
-        <div class="item active">
-          <img src="images\17.jpg" alt="First slide" width="100%">
-        </div>
-        <div class="item">
-          <img src="images\26.jpg" alt="Second slide" width="100%">
-        </div>
+                <h3 class="title">1.新生儿信息登记须知</h3>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;只需提供父母双方中任何一人的身份证信息便在此系统中进行新生儿信息登记</p>
+                <h3 class="title">2.患者费用报销须知</h3>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;需要患者提供自己的社保卡或者刷指纹进行报销结算</p>
+                <h3 class="title">3.新生儿指纹录入</h3>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;新生儿出生便可由医务人员采集指纹信息录入医院系统</p>
+                <h3 class="title">4.审核查看出生证明申请资格</h3>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;只需提供夫妻双方中任何一人的身份证信息便可在系统中让工作人员查询到个人户口信息，审核是否符合生育标准</p>
 
-      </div>
+            </div>
+            <div class="panel-footer"></div>
+        </div>
     </div>
+    <!--<div id="myCarousel" class="carousel slide ">-->
+      <!--&lt;!&ndash; 轮播（Carousel）指标 &ndash;&gt;-->
+      <!--<ol class="carousel-indicators">-->
+        <!--<li data-target="#myCarousel" data-slide-to="0" class="active"></li>-->
+        <!--<li data-target="#myCarousel" data-slide-to="1"></li>-->
 
-    </body>
+      <!--</ol>-->
+      <!--&lt;!&ndash; 轮播（Carousel）项目 &ndash;&gt;-->
+      <!--<div class="carousel-inner">-->
+        <!--<div class="item active">-->
+          <!--<img src="images\17.jpg" alt="First slide" width="100%">-->
+        <!--</div>-->
+        <!--<div class="item">-->
+          <!--<img src="images\26.jpg" alt="Second slide" width="100%">-->
+        <!--</div>-->
+
+      <!--</div>-->
+    <!--</div>-->
+
+</body>
 
 </html>

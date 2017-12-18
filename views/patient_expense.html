@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>患者费用结算</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
+    <script src="javascripts/jquery-1.11.1.js"></script>
+    <script src="javascripts/bootstrap.min.js"></script>
+    <!--<script src="javascripts/page_switch.js"></script>-->
+
+    <style type="text/css">
+
+        .navbar-form {
+            padding-top: 90px;
+        }
+
+        #mypanel {
+            padding-left: 400px;
+            padding-top: 200px;
+            padding-right: 400px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="col-lg-7">
+    <form class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="输入指纹或刷社保卡" id="select">
+        </div>
+        <button type="button" class="btn btn-default" id="select_btn">查询</button>
+    </form>
+
+</div>
+<!-- 返回患者医药和费用信息 -->
+
+<div id="mypanel">
+    <div class="panel panel-primary">
+
+        <div class="panel-body">
+            <ul>
+                <li>疾病名称：</li><br/>
+                <li>药品名称：</li><br/>
+                <li>支付总金额：</li>
+
+            </ul>
+        </div>
+        <div><table id="table"></table></div>
+
+        <div class="panel-footer" style="text-align: center;">病例及费用信息</div>
+    </div>
+</div>
+
+</body>
+
+
+
+</html>

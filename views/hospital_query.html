@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>父母信息审核</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
+    <script src="javascripts/jquery-1.11.1.js"></script>
+    <script src="javascripts/bootstrap.min.js"></script>
+    <!--<script src="javascripts/page_switch.js"></script>-->
+
+    <style type="text/css">
+
+        .navbar-form {
+            padding-top: 90px;
+        }
+
+        #mypanel {
+            padding-left: 400px;
+            padding-top: 200px;
+            padding-right: 400px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="col-lg-7">
+    <form class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="要查找人的身份证号" id="select">
+        </div>
+        <button type="button" class="btn btn-default" id="select_btn">查询</button>
+    </form>
+
+</div>
+<!-- 返回用户自己户口信息 -->
+
+<div id="mypanel">
+    <div class="panel panel-primary">
+
+        <div class="panel-body">
+            <ul>
+                <li>姓名:</li>
+                <li>身份证号码：</li>
+                <li>性别：</li>
+                <li>婚姻状态：</li>
+                <li>配偶身份证号码：</li>
+                <li>子女个数：</li>
+            </ul>
+        </div>
+        <div><table id="table"></table></div>
+
+        <div class="panel-footer" style="text-align: center;">户口信息</div>
+    </div>
+</div>
+
+</body>
+
+
+
+</html>
