@@ -39,22 +39,17 @@
 
         <div class="panel-body">
             <ul>
-                <li>用户姓名:张三</li>
-                <li>用户身份证号码：1234567</li>
-                <li>用户性别：男</li>
-                <li>父亲身份证号码：1234567</li>
-                <li>母亲身份证号码：1234567</li>
-                <li>配偶姓名：李四</li>
-                <li>配偶身份证号码：1234567</li>
-                <li>孩子ID：6666</li>
-                <li>新生儿ID：7777</li>
-                <li>新生儿密码：99999</li>
-
+                <li id="r_name">姓名:</li>
+                <li id="r_id">身份证号码:</li>
+                <li id="r_sex">性别:</li>
+                <li id="r_fname">父亲姓名：</li>
+                <li id="r_mname">母亲姓名：</li>
+                <li id="r_sname">配偶姓名：</li>
             </ul>
         </div>
         <div><table id="table"></table></div>
 
-        <div class="panel-footer" style="text-align: center;">户口信息</div>
+        <div class="panel-footer" style="text-align: center;">个人信息</div>
     </div>
 </div>
 
@@ -75,7 +70,17 @@
                 contentType: "application/json",
                 data: JSON.stringify(data),
                 success: function (data) {
-                    alert(JSON.stringify(data));
+                    $("#r_name").append(data.姓名);
+                    $("#r_id").append(data.身份证号);
+                    $("#r_sex").append(data.性别);
+                    $("#r_fname").append(data.父亲姓名);
+                    $("#r_mname").append(data.母亲姓名);
+                    if(data.配偶姓名 === ""){
+                        $("#r_sname").append("未婚");
+                    }else{
+                        $("#r_sname").append(data.配偶姓名);
+                    }
+
                 }
             });
         }
