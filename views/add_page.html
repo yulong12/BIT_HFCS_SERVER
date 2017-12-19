@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新增户口页</title>
+    <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
+    <script src="javascripts/jquery-1.11.1.js"></script>
+    <script src="javascripts/bootstrap.min.js"></script>
+    <style type="text/css">
+
+        .navbar-form {
+            padding-top: 90px;
+        }
+
+        #mypanel {
+            padding-left: 350px;
+            padding-top: 170px;
+            padding-right: 400px;
+        }
+    </style>
+</head>
+<body>
+<div class="col-lg-7">
+    <form class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="输入父亲身份证号" id="select">
+        </div>
+        <button type="button" class="btn btn-default" id="select_btn">查询</button>
+    </form>
+
+</div>
+<!-- 返回用户自己户口信息 -->
+
+<div id="mypanel">
+    <div class="panel panel-primary">
+
+        <div class="panel-body">
+            <ul>
+                <li id="r_name">姓名:</li>
+                <li id="r_id">身份证号码:</li>
+                <li id="r_sex">性别:</li>
+                <li >地址:</li>
+                <li >手机号:</li>
+                <li>新生儿姓名：</li>
+                <li >新生儿编号:</li>
+
+            </ul>
+        </div>
+        <div><table id="table"></table></div>
+
+        <div class="panel-footer" style="text-align: center;">个人信息</div>
+    </div>
+</div>
+<form role = "form" class="form-horizontal">
+    <!--<table id="table"></table>-->
+    <div class="myform">
+        <div class = "form-group">
+            <label class="col-lg-5 control-label" for = "num">新生儿身份证号</label>
+            <div class="col-lg-3">
+                <input type = "text" class = "form-control" id = "num"
+                       placeholder = ""/>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-4 col-lg-offset-5">
+                <button type = "button" class="btn-info btn-lg" id="btn_submit">提交</button>
+            </div>
+        </div>
+    </div>
+</form>
+</body>
+</html>
