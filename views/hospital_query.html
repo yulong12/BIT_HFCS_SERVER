@@ -39,12 +39,13 @@
 
         <div class="panel-body">
             <ul>
-                <li>姓名:</li>
-                <li>身份证号码：</li>
-                <li>性别：</li>
-                <li>婚姻状态：</li>
-                <li>配偶身份证号码：</li>
-                <li>子女个数：</li>
+                <li id="r_name">姓名:</li>
+                <li id="r_id">身份证号码：</li>
+                <li id="r_state">婚姻状态：</li>
+                <li id="r_sname">配偶姓名:</li>
+                <li id="r_sid">配偶身份证号码：</li>
+                <li id="r_snum">子女个数：</li>
+                <li id="r_s">是否符合生育标准：</li>
             </ul>
         </div>
         <div><table id="table"></table></div>
@@ -54,7 +55,44 @@
 </div>
 
 </body>
+<script>
+    $("#select_btn").click(function () {
+        // language=JQuery-CSS
+        var data = {};
+        data.select_id = $("#select").val();
+        if (data.select_id === "") {
+            alert("请输入身份证号码");
+        } else {
+            $.ajax({
+                url: '/user_query',
+                type: "POST",
+                timeout : 10000,
+                contentType: "application/json",
+                data: JSON.stringify(data),
+                success: function (data) {
+                    $("#r_name").append(data.姓名);
+                    $("#r_id").append(data.身份证号);
+                    if(data.配偶姓名 === ""){
+                        $("#r_state").append("未婚");
+                        $("#r_sname").append("无");
+                    }else{
+                        $("#r_state").append("已婚");
+                        $("#r_sname").append(data.配偶姓名);
+                        $("#r_sid").append(data.配偶身份证号);
+                        if(data.子女身份证号[0] < 2){
+                            $("#r_snum").append(data.子女身份证号[0]);
+                            $("#r_s").append("符合");
+                        }else{
+                            $("#r_snum").append(data.子女身份证号[0]);
+                            $("#r_s").append("不符合");
+                        }
+                    }
 
+                }
+            });
+        }
+    });
+</script>
 
 
 </html>
