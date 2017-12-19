@@ -16,6 +16,8 @@ var search=require('./routes/search');
 var child_query=require('./routes/child_query');
 var fingerprinter_register=require('./routes/fingerprinter_register');
 
+var civil_query=require('./routes/civil_query');
+var divorce_register=require('./routes/divorce_register');
 var hospital=require('./routes/hospital');
 var hospita_query = require('./routes/hospital_query');
 var  child_register=require('./routes/child_register');
@@ -66,6 +68,8 @@ app.use('/success',success);
 app.use('/user_query',user_query);
 app.use('/patient_expense',patient_expense);
 app.use('/police_office',police_office);
+app.use('/civil_query',civil_query);
+app.use('/divorce_register',divorce_register);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

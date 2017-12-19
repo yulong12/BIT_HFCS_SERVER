@@ -41,3 +41,9 @@ function switch_to_fingerprinter_register() {
 function switch_to_patient_expense() {
     window.location.href="patient_expense";
 }
+function switch_to_civil_query() {
+    window.location.href="civil_query";
+}
+function switch_to_divorce_register() {
+    window.location.href="divorce_register";
+}
