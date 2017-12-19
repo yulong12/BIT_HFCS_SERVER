@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
+    <script src="javascripts/jquery-1.11.1.min.js"></script>
+    <script src="javascripts/bootstrap.min.js"></script>
+    <style type="text/css">
+
+        .myform{
+            margin-top:20px;
+            margin-left: 400px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<!-- 提交身份证信息 -->
+<div class="panel panel-primary">
+    <div class="panel-heading">居民信息维护</div>
+    <div class="panel-body">
+        <form role = "form" class="form-horizontal">
+            <div class="myform">
+                <div class = "form-group">
+                    <label class="col-lg-2 control-label" for = "name">选择修改项</label>
+                    <div class="col-lg-3">
+                        <select class="form-control">
+                            <option class="active">请选择</option>
+                            <option>地址</option>
+                            <option>联系方式</option>
+                            <option>联系方式</option>
+                        </select>
+                    </div>
+                </div>
+                <div class = "form-group">
+                    <label class="col-lg-2 control-label" for = "name">输入新信息</label>
+                    <div class="col-lg-3">
+                        <input type = "text" class = "form-control" id = "name"/>
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-right: 300px;">
+                    <div class="col-lg-2 col-lg-offset-2">
+                        <button type = "button" class="btn-info btn-lg" id="send">修改</button>
+                    </div>
+                    <div class="col-lg-2 col-lg-offset-2">
+                        <button type = "submit" class="btn-info btn-lg" id="back" onclick="javascript:history.back(-1);">返回</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="panel-footer"></div>
+</div>
+
+</body>
+</html>

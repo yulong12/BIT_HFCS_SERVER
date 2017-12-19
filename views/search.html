@@ -19,19 +19,19 @@
 </head>
 <body>
 <div class="panel panel-primary">
-    <div class="panel-heading">用户户口信息查询</div>
+    <div class="panel-heading">居民个人信息查询</div>
     <div class="panel-body">
         <form role = "form" class="form-horizontal"> 
             <div class="myform"> 
 
                  <div class ="form-group">  
-                    <label class="col-lg-2 control-label" for = "num">身份证号码</label>  
-                    <div class="col-lg-2">  
+                    <label class="col-lg-2 control-label" for = "num">身份证号码</label>
+                    <div class="col-lg-3">
                         <input type="text" class="form-control" id = "num"   
                                 placeholder = "输入身份证号码"></input>  
                     </div>  
                 </div>  
-                <div class="form-group" style="margin-left: 100px;">
+                <div class="form-group" style="margin-left: 140px;">
                     <div class="col-lg-2">
                     <!-- 写死了，需要根据最后后台结果再改 -->
                         <button type = "submit" class="btn-info btn-lg" id="mybutton">查询</button>
@@ -49,7 +49,7 @@
 <!-- 返回用户自己户口信息 -->
 <div id="mypanel">
     <div class="panel panel-primary">
-        <div class="panel-heading">用户户口信息表</div>
+        <div class="panel-heading">用户信息表</div>
         <div class="panel-body">
             <ul>
                 <li>用户姓名:张三</li>
@@ -57,38 +57,18 @@
                 <li>用户性别：男</li>
                 <li>父亲身份证号码：1234567</li>
                 <li>母亲身份证号码：1234567</li>
+                <li>结婚状态</li>
                 <li>配偶姓名：李四</li>
                 <li>配偶身份证号码：1234567</li>
+                <li>社保信息</li>
                 <li>孩子ID：6666</li>
+                <li>孩子出生证编号：</li>
                 <li>新生儿ID：7777</li>
-                <li>新生儿密码：99999</li>
+                <li>新生儿出生证编号：</li>
+
 
             </ul>
         </div>
-        <!--<table class="table table-border">-->
-            <!--<tr>-->
-                <!--<th>部门</th>-->
-                <!--<th>日期</th>-->
-                <!--<th>信息</th>-->
-
-            <!--</tr>-->
-            <!--<tr>-->
-                <!--<td>用户姓名</td>-->
-                <!--<td>张三</td>-->
-                <!--<td>用户身份证号码</td>-->
-                <!--<td>1234567</td>-->
-                <!--<td>用户性别</td>-->
-                <!--<td>男</td>-->
-            <!--</tr>-->
-            <!--<tr>-->
-                <!--<td>配偶姓名</td>-->
-                <!--<td>李四</td>-->
-                <!--<td>配偶身份证号码</td>-->
-                <!--<td>1234567</td>-->
-                <!--<td>婚姻</td>-->
-                <!--<td>男</td>-->
-            <!--</tr>-->
-        <!--</table>-->
         <div class="panel-footer" style="text-align: center;">户口信息</div>
     </div>
 </div>
