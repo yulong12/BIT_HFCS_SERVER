@@ -141,7 +141,13 @@
             data.mother_ID = $("#mother_ID").val();
             data.father_ID = $("#father_ID").val();
             data.hospital = $("#hospital_name").val();
-
+			data.mother_name=$("#mother_name").val();
+			data.mother_age=$("#mother_age").val();
+			data.father_name=$("#father_name").val();
+			data.father_age=$("#father_age").val();
+			data.child_name=$("#name").val();
+			data.weight=$("#weight").val();
+			data.health=$("#health").val();
             $.ajax({
                 url: 'child_register',
                 type: "POST",
