@@ -47,3 +47,24 @@ function switch_to_civil_query() {
 function switch_to_divorce_register() {
     window.location.href="divorce_register";
 }
+function switch_to_search() {
+    window.location.href="search";
+}
+function switch_to_divorce_application() {
+    window.location.href="divorce_application";
+}
+function switch_to_information_modification() {
+    window.location.href="information_modification";
+}
+function switch_to_marry_application() {
+    window.location.href="marry_application";
+}
+function switch_to_register() {
+    window.location.href="register";
+}
+function switch_to_idcard_application() {
+    window.location.href="idcard_application";
+}
+function switch_to_securitycard_application() {
+    window.location.href="securitycard_application";
+}

@@ -29,6 +29,12 @@ var user_query=require('./routes/user_query');
 var patient_expense=require('./routes/patient_expense');
 var police_office=require('./routes/police_office');
 
+var divorce_application=require('./routes/divorce_application');
+var idcard_application=require('./routes/idcard_application');
+var information_modification=require('./routes/information_modification');
+var marry_application=require('./routes/marry_application');
+var securityidcard_application=require('./routes/securityidcard_application');
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 //app.set('view engine', 'ejs');
@@ -70,6 +76,14 @@ app.use('/patient_expense',patient_expense);
 app.use('/police_office',police_office);
 app.use('/civil_query',civil_query);
 app.use('/divorce_register',divorce_register);
+
+app.use('/divorce_application',divorce_application);
+app.use('/idcard_application',idcard_application);
+
+app.use('/information_modification',information_modification);
+
+app.use('/marry_application',marry_application);
+app.use('/securitycard_application',securityidcard_application);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
