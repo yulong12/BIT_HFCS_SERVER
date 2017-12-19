@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
+    <script src="javascripts/jquery-1.11.1.min.js"></script>
+    <script src="javascripts/bootstrap.min.js"></script>
+    <style type="text/css">
+
+        .myform{
+            margin-top:20px;
+            margin-left: 400px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<!-- 提交身份证信息 -->
+<div class="panel panel-primary">
+    <div class="panel-heading">新生儿社保卡申请</div>
+    <div class="panel-body">
+        <form role = "form" class="form-horizontal">
+            <div class="myform">
+                <div class = "form-group">
+                    <label class="col-lg-2 control-label" for = "babyname">新生儿姓名</label>
+                    <div class="col-lg-3">
+                        <input type = "text" class = "form-control" id = "babyname"
+                               placeholder = "输入姓名"/>
+                    </div>
+                </div>
+                <div class = "form-group">
+                    <label class="col-lg-2 control-label" for = "fanum">新生儿身份证号码</label>
+                    <div class="col-lg-3">
+                        <input type="text" class="form-control" id = "fanum"
+                               placeholder = "输入身份证号码"/>
+                    </div>
+                </div>
+                <div class = "form-group">
+                    <label class="col-lg-2 control-label" for = "moname">新生儿户口本</label>
+                    <div class="col-lg-3">
+                        <input type="text" class="form-control" id = "moname"
+                               placeholder = "输入姓名"/>
+                    </div>
+                </div>
+                <div class = "form-group">
+                    <label class="col-lg-2 control-label" for = "monum">母亲身份证号码</label>
+                    <div class="col-lg-3">
+                        <input type="text" class="form-control" id = "monum"
+                               placeholder = "输入母亲身份证号码"/>
+                    </div>
+                </div>
+                <div class = "form-group">
+                    <label class="col-lg-2 control-label" for = "monum">上传新生儿照片</label>
+                    <div class="col-lg-3">
+                        <input type="file" id = "babyphoto"/>
+                    </div>
+                </div>
+                <div class = "form-group">
+                    <label class="col-lg-2 control-label" for = "babyfingerprint">输入指纹</label>
+                    <div class="col-lg-3">
+                        <input type="file" id = "babyfingerprint"/>
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-right: 300px;">
+                    <div class="col-lg-2 col-lg-offset-2">
+                        <button type = "button" class="btn-info btn-lg" id="send">申请</button>
+                    </div>
+                    <div class="col-lg-2 col-lg-offset-2">
+                        <button type = "submit" class="btn-info btn-lg" id="back" onclick="javascript:history.back(-1);">返回</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="panel-footer"></div>
+</div>
+</body>
+</html>
