@@ -33,7 +33,7 @@ var divorce_application=require('./routes/divorce_application');
 var idcard_application=require('./routes/idcard_application');
 var information_modification=require('./routes/information_modification');
 var marry_application=require('./routes/marry_application');
-var securityidcard_application=require('./routes/securityidcard_application');
+var securityCard_application=require('./routes/securityidCard_application');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -83,7 +83,7 @@ app.use('/idcard_application',idcard_application);
 app.use('/information_modification',information_modification);
 
 app.use('/marry_application',marry_application);
-app.use('/securitycard_application',securityidcard_application);
+app.use('/securityCard_application',securityCard_application);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
     if (req.session.user){
         var user=req.session.user;
         var name=user.name;
-        res.render('securityidcard_application');
+        res.render('securityCard_application');
     }else {
         res.send('还未登录，请先登录下试试');
     }
