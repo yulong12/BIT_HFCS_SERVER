@@ -69,4 +69,9 @@ router.get('/', function(req, res, next) {
 //     res.render('marry_application');
 //
 // });
+
+router.post('/', function(req, res, next) {
+    console.log(req.body.marry_photo);
+});
+
 module.exports = router;
