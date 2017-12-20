@@ -75,7 +75,7 @@
     $("#send").click(
         function (){
 			var data = {};
-            data.parent_id = $("#num").val();
+            data.parent_id = $("#faname").val();
             console.log(typeof(data.parent_id));
             data.child_name = $("#kname").val();
             $.ajax({

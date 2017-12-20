@@ -75,5 +75,20 @@
 </div>
 
 </body>
+<script>
+        $("#send").click(function () {
+            var data={};
+            data.men_id=$("#mannum").val();
+            data.women_id=$("#womannum").val();
+                $.ajax({
+                    url:'divorce_application',
+                    type:"POST",
+                    contentType:"application/json",
+                    data:JSON.stringify(data),
+                    success:function (data) {
 
+                    }
+                });
+        });
+</script>
 </html>

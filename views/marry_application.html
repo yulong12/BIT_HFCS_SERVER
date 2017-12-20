@@ -48,7 +48,7 @@
 
                 <div class="form-group" style="margin-right: 300px;">
                     <div class="col-lg-2 col-lg-offset-2">
-                        <input type = "button" class="btn-info btn-lg" id="send" value="申请"></input>
+                        <input type = "button" class="btn-info btn-lg" id="send" value="申请">
                     </div>
                     <div class="col-lg-2 col-lg-offset-2">
                         <button type = "button" class="btn-info btn-lg" id="back" onclick="javascript:history.back(-1);">返回</button>
@@ -60,7 +60,7 @@
                           var data={};
                           data.men_id=$("#mannum").val();
                           data.women_id=$("#womannum").val();
-                          data.marry_date=$("#time").val();
+
 
                           var reader = new FileReader();
                           reader.readAsDataURL($("#marryphoto").get(0).files[0]);
