@@ -19,14 +19,14 @@ router.post('/',function(req,res,next){
     console.log(typeof(parent_id));
     var request = {
         chaincodeId: options.chaincode_id,
-        fcn: 'createHuman',
+        fcn: 'createCheck',
         args: [parent_id, "1", child_name],
         chainId: options.channel_id
     }
     var createHuman =  require('./myhfc/myhfcInvoke');
 
     createHuman(request, function (str) {
-        res.send(JSON.parse(str));
+        console.log(str);
     });
 });
 
