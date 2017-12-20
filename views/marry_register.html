@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>婚姻登记</title>
+	<title>结婚登记</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="stylesheets/bootstrap.min.css">
 	<script src="javascripts/jquery-1.11.1.min.js"></script>
@@ -20,79 +20,146 @@
 		.form-group{
 			color: black;
 		}
+		#mypanel{
+			/*padding-top: 2px;*/
+		}
+		#mypanel1{
+			padding-top: 30px;
+		}
 	</style>
 </head>
 <body>
-
-
 <form role = "form" class="form-horizontal">
 	<!--<table id="table"></table>-->
-	<div class="myform">
-		<div class = "form-group">
-			<label class="col-lg-4 control-label" for = "name1">男方姓名</label>
-			<div class="col-lg-3">
-				<input type = "text" class = "form-control" id = "name1"
-					   placeholder = ""/>
-			</div>
-		</div>
-		<div class = "form-group">
-			<label class="col-lg-4 control-label" for = "age1">男方年龄</label>
-			<div class="col-lg-3">
-				<input type="text" class="form-control" id = "age1"
-					   placeholder = ""/>
-			</div>
-		</div>
-		<div class = "form-group">
-			<label class="col-lg-4 control-label" for = "num1" >男方身份证号</label>
-			<div class="col-lg-3">
-				<input type="text" class="form-control" id = "num1"
-					   placeholder = ""/>
-			</div>
-		</div>
-		<div class = "form-group">
-			<label class="col-lg-4 control-label" for = "name2">女方姓名</label>
-			<div class="col-lg-3">
-				<input type="text" class="form-control" id = "name2"
-					   placeholder = ""/>
-			</div>
-		</div>
-		<div class = "form-group">
-			<label class="col-lg-4 control-label" for = "age2">女方年龄</label>
-			<div class="col-lg-3">
-				<input type="text" class="form-control" id = "age2"
-					   placeholder = ""/>
-			</div>
-		</div>
-		<div class = "form-group">
-			<label class="col-lg-4 control-label" for = "num2">女方身份证号</label>
-			<div class="col-lg-3">
-				<input type="text" class="form-control" id = "num2"
-					   placeholder = ""/>
-			</div>
-		</div>
-		<div class = "form-group">
-			<label class="col-lg-4 control-label" for = "state">婚姻状态</label>
-			<div class="col-lg-3">
-				<input type="text" class="form-control" id = "state"
-					   placeholder = ""/>
-			</div>
+	<!--<div class="myform">-->
+		<!--<div class = "form-group">-->
+			<!--<label class="col-lg-4 control-label" for = "name1">男方姓名</label>-->
+			<!--<div class="col-lg-3">-->
+				<!--<input type = "text" class = "form-control" id = "name1"-->
+					   <!--placeholder = ""/>-->
+			<!--</div>-->
+		<!--</div>-->
+		<!--<div class = "form-group">-->
+			<!--<label class="col-lg-4 control-label" for = "age1">男方年龄</label>-->
+			<!--<div class="col-lg-3">-->
+				<!--<input type="text" class="form-control" id = "age1"-->
+					   <!--placeholder = ""/>-->
+			<!--</div>-->
+		<!--</div>-->
+		<!--&lt;!&ndash;<div class = "form-group">&ndash;&gt;-->
+			<!--<label class="col-lg-4 control-label" for = "num1" >男方身份证号</label>-->
+			<!--<div class="col-lg-3">-->
+				<!--<input type="text" class="form-control" id = "num1"-->
+					   <!--placeholder = ""/>-->
+			<!--</div>-->
+		<!--</div>-->
+		<!--<div class = "form-group">-->
+			<!--<label class="col-lg-4 control-label" for = "name2">女方姓名</label>-->
+			<!--<div class="col-lg-3">-->
+				<!--<input type="text" class="form-control" id = "name2"-->
+					   <!--placeholder = ""/>-->
+			<!--</div>-->
+		<!--</div>-->
+		<!--<div class = "form-group">-->
+			<!--<label class="col-lg-4 control-label" for = "age2">女方年龄</label>-->
+			<!--<div class="col-lg-3">-->
+				<!--<input type="text" class="form-control" id = "age2"-->
+					   <!--placeholder = ""/>-->
+			<!--</div>-->
+		<!--</div>-->
+		<!--<div class = "form-group">-->
+			<!--<label class="col-lg-4 control-label" for = "num2">女方身份证号</label>-->
+			<!--<div class="col-lg-3">-->
+				<!--<input type="text" class="form-control" id = "num2"-->
+					   <!--placeholder = ""/>-->
+			<!--</div>-->
+		<!--</div>-->
+		<!--<div class = "form-group">-->
+			<!--<label class="col-lg-4 control-label" for = "state">婚姻状态</label>-->
+			<!--<div class="col-lg-3">-->
+				<!--<input type="text" class="form-control" id = "state"-->
+					   <!--placeholder = ""/>-->
+			<!--</div>-->
+		<!--</div>-->
+
+		<!--<div class = "form-group">-->
+			<!--<label class="col-lg-4 control-label" for = "date">结婚年份</label>-->
+			<!--<div class="col-lg-3">-->
+				<!--<input type="text" class="form-control" id = "date"-->
+					   <!--placeholder = ""/>-->
+			<!--</div>-->
+		<!--</div>-->
+
+		<!--<div class="form-group">-->
+			<!--<div class="col-lg-4 col-lg-offset-5">-->
+				<!--<button type = "button" class="btn-info btn-lg" id="btn_submit">提交</button>-->
+			<!--</div>-->
+		<!--</div>-->
+	<!--</div>-->
+<!--</form>-->
+<!-- 返回用户自己户口信息 -->
+
+
+<div id="mypanel">
+	<div class="panel panel-primary">
+		<div class="panel-heading">男方</div>
+		<div class="panel-body">
+			<ul>
+				<li id="r_name">男方姓名:</li>
+				<li id="r_id">男方身份证号码：</li>
+				<li id="r_state">男方婚姻状态：</li>
+				<li>男方出生日期：</li>
+			</ul>
 		</div>
 
-		<div class = "form-group">
-			<label class="col-lg-4 control-label" for = "date">结婚年份</label>
-			<div class="col-lg-3">
-				<input type="text" class="form-control" id = "date"
-					   placeholder = ""/>
-			</div>
-		</div>
+		<div><table id="table"></table></div>
 
-		<div class="form-group">
-			<div class="col-lg-4 col-lg-offset-5">
-				<button type = "button" class="btn-info btn-lg" id="btn_submit">提交</button>
-			</div>
-		</div>
+		<div class="panel-footer" style="text-align: center;">个人信息</div>
+	    </div>
 	</div>
-</form>
+</div>
+<div id="mypanel1">
+	<div class="panel panel-primary">
+		<div class="panel-heading">女方</div>
+		<div class="panel-body">
+			<ul>
+				<li id="r_name1">女方姓名:</li>
+				<li id="r_id1">女方身份证号码：</li>
+				<li id="r_state1">女方婚姻状态：</li>
+				<li>女方出生日期：</li>
+			</ul>
+		</div>
+
+		<div><table id="table1"></table></div>
+
+		<div class="panel-footer" style="text-align: center;">个人信息</div>
+	    </div>
+	</div>
+</div>
+		<form role = "form" class="form-horizontal">
+			<!--<table id="table"></table>-->
+			<div class="myform">
+				<div class = "form-group">
+					<label class="col-lg-4 control-label" for = "date">结婚年份</label>
+					<div class="col-lg-3">
+						<input type = "text" class = "form-control" id = "date"
+							   placeholder = ""/>
+					</div>
+				</div>
+
+			</div>
+			<div class="form-group">
+				<div class="col-lg-4 col-lg-offset-5">
+					<button type = "button" class="btn-info btn-lg" id="btn_submit">接受提交</button>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-lg-4 col-lg-offset-5">
+					<button type = "button" class="btn-info btn-lg" id="btn_submit1">拒绝登记</button>
+				</div>
+			</div>
+		</form>
+
 </body>
 <script>
     $('#btn_submit').click(function () {
