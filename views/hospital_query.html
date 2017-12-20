@@ -13,37 +13,52 @@
         .navbar-form {
             padding-top: 14px;
         }
-
-        #mypanel {
-            /*padding-left: 200px;*/
-            padding-top: 90px;
-            /*padding-right: 700px;*/
-
+        .form-horizontal{
+            padding-top: 260px;
         }
-        #mypanel1 {
-            /*padding-left: 750px;*/
-            padding-top: 70px;
-            /*padding-right: 100px;*/
-
-
+        #mypanel{
+            margin-top: 60px;
+            padding-left: 60px;
+            width:500px;
+            float:left;
         }
+        #mypanel1{
+            margin-top:60px;
+           margin-left:60px;
+            width:500px;
+            float:left;
+        }
+
     </style>
 </head>
 <body>
 
-<div class="col-lg-7">
-    <form class="navbar-form navbar-right" role="search">
+<!--<div class="container" >-->
+    <!--<form class="navbar-form " role="search">-->
+        <!--<div class="form-group">-->
+            <!--<input type="text" class="form-control" placeholder="父亲的的身份证号" id="select">-->
+        <!--</div>-->
+        <!--<button type="button" class="btn btn-default btn-info" id="select_btn">查询</button>-->
+    <!--</form>-->
+
+    <!--<form class="navbar-form " role="search" >-->
+        <!--<div class="form-group">-->
+            <!--<input type="text" class="form-control" placeholder="母亲的的身份证号" id="select1">-->
+        <!--</div>-->
+        <!--<button type="button" class="btn btn-default btn-info" id="select_btn1">查询</button>-->
+    <!--</form>-->
+
+<!--</div>-->
+
+<!-- 返回用户自己户口信息 -->
+
+<div id="mypanel">
+    <form class="navbar-form " role="search">
         <div class="form-group">
             <input type="text" class="form-control" placeholder="父亲的的身份证号" id="select">
         </div>
         <button type="button" class="btn btn-default btn-info" id="select_btn">查询</button>
     </form>
-
-</div>
-
-<!-- 返回用户自己户口信息 -->
-
-<div id="mypanel">
     <div class="panel panel-primary">
         <div class="panel-heading">男方</div>
         <div class="panel-body">
@@ -57,41 +72,30 @@
                 <li id="r_s">是否符合生育标准：</li>
             </ul>
         </div>
-        </div>
-        <!--<div><table id="table"></table></div>-->
-
-        <!--<div class="panel-footer" style="text-align: center;">个人信息</div>-->
 
     </div>
 </div>
-
-<div class="col-lg-7">
-    <form class="navbar-form navbar-right" role="search">
+<div id="mypanel1">
+    <form class="navbar-form " role="search" >
         <div class="form-group">
             <input type="text" class="form-control" placeholder="母亲的的身份证号" id="select1">
         </div>
         <button type="button" class="btn btn-default btn-info" id="select_btn1">查询</button>
     </form>
-
-</div>
-<div id="mypanel1">
     <div class="panel panel-primary">
         <div class="panel-heading">女方</div>
-        <div class="panel-body">
-            <ul>
-                <li id="r_name1">姓名:</li>
-                <li id="r_id1">身份证号码：</li>
-                <li id="r_state1">婚姻状态：</li>
-                <li id="r_sname1">配偶姓名:</li>
-                <li id="r_sid1">配偶身份证号码：</li>
-                <li id="r_snum1">子女个数：</li>
-                <li id="r_s1">是否符合生育标准：</li>
-            </ul>
-        </div>
-        </div>
-        <!--<div><table id="table1"></table></div>-->
+            <div class="panel-body">
+                <ul>
+                    <li id="r_name1">姓名:</li>
+                    <li id="r_id1">身份证号码：</li>
+                    <li id="r_state1">婚姻状态：</li>
+                    <li id="r_sname1">配偶姓名:</li>
+                    <li id="r_sid1">配偶身份证号码：</li>
+                    <li id="r_snum1">子女个数：</li>
+                    <li id="r_s1">是否符合生育标准：</li>
+                </ul>
+            </div>
 
-        <!--<div class="panel-footer" style="text-align: center;">个人信息</div>-->
     </div>
 </div>
 <form role = "form" class="form-horizontal">

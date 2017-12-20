@@ -15,88 +15,39 @@
 	<script src="bootstrap-table-zh-CN.js"></script>
 	<style type="text/css">
 		.form-horizontal{
-			padding-top: 60px;
+			padding-top: 260px;
 		}
 		.form-group{
 			color: black;
 		}
 		#mypanel{
-			/*padding-top: 2px;*/
+			padding-top: 30px;
+			padding-left: 60px;
+			width:500px;
+			float:left;
+		}
+		#mypanel2{
+			padding-top: 30px;
+			padding-left: 60px;
+			width:350px;
+			float:left;
 		}
 		#mypanel1{
 			padding-top: 30px;
+			padding-left:180px;
+			width:600px;
+			float:left;
+		}
+		#mypanel3{
+			padding-top: 30px;
+			padding-left: 60px;
+			width:350px;
+			float:left;
 		}
 	</style>
 </head>
 <body>
-<form role = "form" class="form-horizontal">
-	<!--<table id="table"></table>-->
-	<!--<div class="myform">-->
-		<!--<div class = "form-group">-->
-			<!--<label class="col-lg-4 control-label" for = "name1">男方姓名</label>-->
-			<!--<div class="col-lg-3">-->
-				<!--<input type = "text" class = "form-control" id = "name1"-->
-					   <!--placeholder = ""/>-->
-			<!--</div>-->
-		<!--</div>-->
-		<!--<div class = "form-group">-->
-			<!--<label class="col-lg-4 control-label" for = "age1">男方年龄</label>-->
-			<!--<div class="col-lg-3">-->
-				<!--<input type="text" class="form-control" id = "age1"-->
-					   <!--placeholder = ""/>-->
-			<!--</div>-->
-		<!--</div>-->
-		<!--&lt;!&ndash;<div class = "form-group">&ndash;&gt;-->
-			<!--<label class="col-lg-4 control-label" for = "num1" >男方身份证号</label>-->
-			<!--<div class="col-lg-3">-->
-				<!--<input type="text" class="form-control" id = "num1"-->
-					   <!--placeholder = ""/>-->
-			<!--</div>-->
-		<!--</div>-->
-		<!--<div class = "form-group">-->
-			<!--<label class="col-lg-4 control-label" for = "name2">女方姓名</label>-->
-			<!--<div class="col-lg-3">-->
-				<!--<input type="text" class="form-control" id = "name2"-->
-					   <!--placeholder = ""/>-->
-			<!--</div>-->
-		<!--</div>-->
-		<!--<div class = "form-group">-->
-			<!--<label class="col-lg-4 control-label" for = "age2">女方年龄</label>-->
-			<!--<div class="col-lg-3">-->
-				<!--<input type="text" class="form-control" id = "age2"-->
-					   <!--placeholder = ""/>-->
-			<!--</div>-->
-		<!--</div>-->
-		<!--<div class = "form-group">-->
-			<!--<label class="col-lg-4 control-label" for = "num2">女方身份证号</label>-->
-			<!--<div class="col-lg-3">-->
-				<!--<input type="text" class="form-control" id = "num2"-->
-					   <!--placeholder = ""/>-->
-			<!--</div>-->
-		<!--</div>-->
-		<!--<div class = "form-group">-->
-			<!--<label class="col-lg-4 control-label" for = "state">婚姻状态</label>-->
-			<!--<div class="col-lg-3">-->
-				<!--<input type="text" class="form-control" id = "state"-->
-					   <!--placeholder = ""/>-->
-			<!--</div>-->
-		<!--</div>-->
 
-		<!--<div class = "form-group">-->
-			<!--<label class="col-lg-4 control-label" for = "date">结婚年份</label>-->
-			<!--<div class="col-lg-3">-->
-				<!--<input type="text" class="form-control" id = "date"-->
-					   <!--placeholder = ""/>-->
-			<!--</div>-->
-		<!--</div>-->
-
-		<!--<div class="form-group">-->
-			<!--<div class="col-lg-4 col-lg-offset-5">-->
-				<!--<button type = "button" class="btn-info btn-lg" id="btn_submit">提交</button>-->
-			<!--</div>-->
-		<!--</div>-->
-	<!--</div>-->
-<!--</form>-->
 <!-- 返回用户自己户口信息 -->
 
 
@@ -105,10 +56,10 @@
 		<div class="panel-heading">男方</div>
 		<div class="panel-body">
 			<ul>
-				<li id="r_name">男方姓名:</li>
-				<li id="r_id">男方身份证号码：</li>
-				<li id="r_state">男方婚姻状态：</li>
-				<li>男方出生日期：</li>
+				<li id="r_name">男方姓名:&nbsp;<span class="glyphicon glyphicon-ok"></span></li>
+				<li id="r_id">男方身份证号码：&nbsp;<span class="glyphicon glyphicon-ok"></span></li>
+				<li id="r_state">男方婚姻状态：&nbsp;<span class="glyphicon glyphicon-ok"></span></li>
+				<li>男方出生日期：&nbsp;<span class="glyphicon glyphicon-ok"></span></li>
 			</ul>
 		</div>
 
@@ -123,10 +74,10 @@
 		<div class="panel-heading">女方</div>
 		<div class="panel-body">
 			<ul>
-				<li id="r_name1">女方姓名:</li>
-				<li id="r_id1">女方身份证号码：</li>
-				<li id="r_state1">女方婚姻状态：</li>
-				<li>女方出生日期：</li>
+				<li id="r_name1">女方姓名:&nbsp;<span class="glyphicon glyphicon-ok"></span></li>
+				<li id="r_id1">女方身份证号码：&nbsp;<span class="glyphicon glyphicon-ok"></span></li>
+				<li id="r_state1">女方婚姻状态：&nbsp;<span class="glyphicon glyphicon-ok"></span></li>
+				<li>女方出生日期：&nbsp;<span class="glyphicon glyphicon-ok"></span></li>
 			</ul>
 		</div>
 
@@ -136,6 +87,35 @@
 	    </div>
 	</div>
 </div>
+
+<form role = "form" class="form-horizontal">
+	<div id="mypanel2">
+		<div class="panel panel-primary">
+			<div class="panel-heading">男方</div>
+			<div class="panel-body">
+				<img src="images/boy.jpg" style="width:250px;height: 300px;" >
+			</div>
+		</div>
+	</div>
+
+	<div id="mypanel3">
+		<div class="panel panel-primary">
+			<div class="panel-heading">结婚照</div>
+			<div class="panel-body">
+				<img src="images/girl.jpg" style="width:250px;height: 300px;" >
+			</div>
+		</div>
+	</div>
+
+	<div id="mypanel3">
+		<div class="panel panel-primary">
+			<div class="panel-heading">女方</div>
+			<div class="panel-body">
+				<img src="images/girl.jpg" style="width:250px;height: 300px;" >
+			</div>
+		</div>
+	</div>
+</form>
 		<form role = "form" class="form-horizontal">
 			<!--<table id="table"></table>-->
 			<div class="myform">

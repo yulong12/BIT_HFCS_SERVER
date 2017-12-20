@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var fs=require('fs');
-var multer=require('multer');
+// var multer=require('multer');
 /* GET divorce_application listing. */
 router.get('/', function(req, res, next) {
     // res.render('marry_query');

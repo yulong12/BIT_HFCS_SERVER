@@ -16,21 +16,13 @@
 
         #mypanel {
             padding-left: 400px;
-            padding-top: 200px;
+            padding-top: 100px;
             padding-right: 400px;
         }
     </style>
 </head>
 <body>
-<div class="col-lg-7">
-    <form class="navbar-form navbar-right" role="search">
-        <div class="form-group">
-            <input type="text" class="form-control" placeholder="要查找人的身份证号" id="select">
-        </div>
-        <button type="button" class="btn btn-default" id="select_btn">查询</button>
-    </form>
 
-</div>
 <!-- 返回用户个人信息 -->
 <!--<table class="table table-striped">-->
     <!--<caption>个人信息</caption>-->
@@ -54,20 +46,32 @@
 <!--</table>-->
 <div id="mypanel">
     <div class="panel panel-primary">
-
+        <div class="panel-heading">社保信息</div>
         <div class="panel-body">
             <ul>
-                <li id="r_name">姓名:</li>
-                <li id="r_id">身份证号码:</li>
-                <li id="r_sex">性别:</li>
-                <li >年龄:</li>
+                <li id="r_name">姓名:张三&nbsp;<span class="glyphicon glyphicon-ok"></span></li>
+                <li id="r_id">身份证号码:110105199409026686&nbsp;<span class="glyphicon glyphicon-ok"></li>
+                <li id="r_sex">性别:男&nbsp;<span class="glyphicon glyphicon-ok"></li>
+                <li >年龄:1&nbsp;<span class="glyphicon glyphicon-ok"></li>
 
             </ul>
         </div>
-        <div><table id="table"></table></div>
+        </div>
+        <!--<div><table id="table"></table></div>-->
 
-        <div class="panel-footer" style="text-align: center;">个人信息</div>
+        <!--<div class="panel-footer" style="text-align: center;">个人信息</div>-->
     </div>
 </div>
+<form role = "form" class="form-horizontal">
+    <div class="form-group">
+        <div class="col-lg-4 col-lg-offset-5">
+            <button  type = "button" class="btn-info btn-lg" id="btn_submit1">接受登记</button>
+            <button  type = "button" class="btn-info btn-lg" id="btn_submit2">拒绝登记</button>
+        </div>
+
+    </div>
+</form>
+
+
 </body>
 </html>
