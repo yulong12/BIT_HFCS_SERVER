@@ -84,3 +84,12 @@ function switch_to_social_query() {
 function switch_to_social_register() {
     window.location.href="social_register";
 }
+function switch_to_print_birthcard() {
+    window.location.href="print_birthcard";
+}
+function switch_to_print_hukou() {
+    window.location.href="print_hukou";
+}
+function switch_to_print_idcard() {
+    window.location.href="print_idcard";
+}

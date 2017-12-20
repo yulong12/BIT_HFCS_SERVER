@@ -41,6 +41,10 @@ var securityCard_application=require('./routes/securityidCard_application');
 var social_query=require('./routes/social_query');
 var social_register=require('./routes/social_register');
 
+var print_birthcard=require('./routes/print_birthcard');
+var print_hukou=require('./routes/print_hukou');
+var print_idcard=require('./routes/print_idcard');
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 //app.set('view engine', 'ejs');
@@ -95,6 +99,10 @@ app.use('/modify_page',modify_page);
 
 app.use('/social_query',social_query);
 app.use('/social_register',social_register);
+
+app.use('/print_birthcard',print_birthcard);
+app.use('/print_hukou',print_hukou);
+app.use('/print_idcard',print_idcard);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
