@@ -22,7 +22,7 @@
 <div class="panel panel-primary">
     <div class="panel-heading">居民结婚申请</div>
     <div class="panel-body">
-        <form role = "form" class="form-horizontal">
+        <form role = "form" class="form-horizontal" method="post" enctype="multipart/form-data" >
             <div class="myform">
                 <div class = "form-group">
                     <label class="col-lg-2 control-label" for = "mannum">男方身份证号码</label>
@@ -48,19 +48,39 @@
                 <div class = "form-group">
                     <label class="col-lg-2 control-label" for = "marryphoto">上传结婚照片</label>
                     <div class="col-lg-3">
-                        <input type="file" id = "marryphoto"
-                               placeholder = "请上传照片"/>
+                        <input type="file" id = "marryphoto" name="marry_img"
+                               placeholder = "请上传照片" />
                     </div>
                 </div>
 
                 <div class="form-group" style="margin-right: 300px;">
                     <div class="col-lg-2 col-lg-offset-2">
-                        <button type = "button" class="btn-info btn-lg" id="send">申请</button>
+                        <input type = "submit" class="btn-info btn-lg" id="send">申请</input>
                     </div>
                     <div class="col-lg-2 col-lg-offset-2">
                         <button type = "submit" class="btn-info btn-lg" id="back" onclick="javascript:history.back(-1);">返回</button>
                     </div>
                 </div>
+                <script>
+                    $(document).ready(function () {
+                        $("#send").click(function () {
+                            var data={};
+                            data.men_id=$("#mannum").val();
+                            data.women_id=$("#womannum").val();
+                            data.marry_date=$("#time").val();
+                                console.log("----------------------"+data.women_id);
+                            $.ajax({
+                                url:'marry_application',
+                                type:"POST",
+                                contentType:"application/json",
+                                data:JSON.stringify(data),
+                                success:function (data) {
+
+                                }
+                            });
+                        });
+                    });
+                </script>
             </div>
         </form>
     </div>
