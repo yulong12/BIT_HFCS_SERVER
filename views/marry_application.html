@@ -57,21 +57,26 @@
                 <script>
                     $(document).ready(function () {
                         $("#send").click(function () {
-                            var data={};
-                            data.men_id=$("#mannum").val();
-                            data.women_id=$("#womannum").val();
-                            data.marry_date=$("#time").val();
-                                console.log("----------------------"+data.women_id);
+                          var data={};
+                          data.men_id=$("#mannum").val();
+                          data.women_id=$("#womannum").val();
+                          data.marry_date=$("#time").val();
+
+                          var reader = new FileReader();
+                          reader.readAsDataURL($("#marryphoto").get(0).files[0]);
+                          reader.onload = function(){
+                            data.marry_photo=this.result;
+                            //console.log(this.result);
                             $.ajax({
-                                url:'marry_application',
-                                type:"POST",
-                                contentType:"application/json",
-                               data:JSON.stringify(data),
+                              url:'marry_application',
+                              type:"POST",
+                              contentType:"application/json",
+                              data:JSON.stringify(data),
+                              success:function (data) {
 
-                                success:function (data) {
-
-                                }
+                              }
                             });
+                          };
                         });
                     });
                 </script>
