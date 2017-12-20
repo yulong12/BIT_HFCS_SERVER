@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var fs=require('fs');
-var multer=require('multer');
+
 var mysql=require("../db/MYSQLconnection");
 
 /* GET marryquery listing. */
