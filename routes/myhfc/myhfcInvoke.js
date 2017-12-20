@@ -90,7 +90,7 @@ function postInvokeRequest(requestJson,callback) {
                 'Successfully sent Proposal and received ProposalResponse: Status - %s, message - "%s", metadata - "%s", endorsement signature: %s',
                 proposalResponses[0].response.status, proposalResponses[0].response.message,
                 proposalResponses[0].response.payload, proposalResponses[0].endorsement.signature));
-                str = (proposalResponses[0].response.payload).toString();
+                str = JSON.parse(proposalResponses[0].response.payload.toString());
 
             var request = {
                 proposalResponses: proposalResponses,
