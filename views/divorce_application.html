@@ -8,8 +8,8 @@
     <script src="javascripts/bootstrap.min.js"></script>
     <style type="text/css">
 
-        .myform{
-            margin-top:20px;
+        .myform {
+            margin-top: 20px;
             margin-left: 400px;
         }
 
@@ -21,51 +21,53 @@
 <div class="panel panel-primary">
     <div class="panel-heading">居民离婚申请</div>
     <div class="panel-body">
-        <form role = "form" class="form-horizontal" method="post" enctype="multipart/form-data">
+        <form role="form" class="form-horizontal" method="post" enctype="multipart/form-data">
             <div class="myform">
-                <div class = "form-group">
-                    <label class="col-lg-2 control-label" for = "mannum">男方身份证号码</label>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" for="mannum">男方身份证号码</label>
                     <div class="col-lg-3">
-                        <input type="text" class="form-control" id = "mannum"
-                               placeholder = "输入男方身份证号码"/>
+                        <input type="text" class="form-control" id="mannum"
+                               placeholder="输入男方身份证号码"/>
                     </div>
                 </div>
-                <div class = "form-group">
-                    <label class="col-lg-2 control-label" for = "womannum">女方身份证号码</label>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" for="womannum">女方身份证号码</label>
                     <div class="col-lg-3">
-                        <input type="text" class="form-control" id = "womannum"
-                               placeholder = "输入女方身份证号码"/>
+                        <input type="text" class="form-control" id="womannum"
+                               placeholder="输入女方身份证号码"/>
                     </div>
                 </div>
 
-                <div class = "form-group">
-                    <label class="col-lg-2 control-label" for = "manphoto">上传男方照片</label>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" for="manphoto">上传男方照片</label>
                     <div class="col-lg-3">
-                        <input type="file" id = "manphoto"
-                               placeholder = "请上传照片" name="men_img"/>
+                        <input type="file" id="manphoto"
+                               placeholder="请上传照片" name="men_img"/>
                     </div>
                 </div>
-                <div class = "form-group">
-                    <label class="col-lg-2 control-label" for = "manphoto">上传女方照片</label>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" for="manphoto">上传女方照片</label>
                     <div class="col-lg-3">
-                        <input type="file" id = "womanphoto"
-                               placeholder = "请上传照片" name="women_img"/>
+                        <input type="file" id="womanphoto"
+                               placeholder="请上传照片" name="women_img"/>
                     </div>
                 </div>
-                <div class = "form-group">
-                    <label class="col-lg-2 control-label" for = "marryphoto" >上传离婚协议书</label>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" for="marryphoto">上传离婚协议书</label>
                     <div class="col-lg-3">
-                        <input type="file" id = "marryphoto"
-                               placeholder = "请上传文件" name="divorce_book"/>
+                        <input type="file" id="marryphoto"
+                               placeholder="请上传文件" name="divorce_book"/>
                     </div>
                 </div>
 
                 <div class="form-group" style="margin-right: 300px;">
                     <div class="col-lg-2 col-lg-offset-2">
-                        <button type = "submit" class="btn-info btn-lg" id="send">申请</button>
+                        <button type="submit" class="btn-info btn-lg" id="send">申请</button>
                     </div>
                     <div class="col-lg-2 col-lg-offset-2">
-                        <button type = "submit" class="btn-info btn-lg" id="back" onclick="javascript:history.back(-1);">返回</button>
+                        <button type="submit" class="btn-info btn-lg" id="back" onclick="javascript:history.back(-1);">
+                            返回
+                        </button>
                     </div>
                 </div>
             </div>
@@ -76,19 +78,38 @@
 
 </body>
 <script>
+    $(document).ready(function () {
         $("#send").click(function () {
-            var data={};
-            data.men_id=$("#mannum").val();
-            data.women_id=$("#womannum").val();
-                $.ajax({
-                    url:'divorce_application',
-                    type:"POST",
-                    contentType:"application/json",
-                    data:JSON.stringify(data),
-                    success:function (data) {
+            var data = {};
+            data.men_id = $("#mannum").val();
+            data.women_id = $("#womannum").val();
+            var reader = new FileReader();
+            var reader1=new FileReader();
+            var reader2=new FileReader();
+            reader.readAsDataURL($("#manphoto").get(0).files[0]);
+            reader1.readAsDataURL($("#womanphoto").get(0).files[0]);
+            reader2.readAsDataURL($("#marryphoto").get(0).files[0]);
+            reader.onload = function () {
+                data.man_photo = this.result;
+             reader1.onload=function () {
+                 data.woman_photo=this.result;
+                 reader2.onload=function () {
+                    data.marry_book=this.result;
+                     console.log("=============" + this.result);
+                     $.ajax({
+                         url: 'divorce_application',
+                         type: "POST",
+                         contentType: "application/json",
+                         data: JSON.stringify(data),
+                         success: function (data) {
 
-                    }
-                });
+                         }
+                     });
+
+                 }
+             }
+            }
         });
+    });
 </script>
 </html>
