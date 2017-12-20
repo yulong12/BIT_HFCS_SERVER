@@ -20,53 +20,59 @@
     </style>
 </head>
 <body>
-<div class="col-lg-7">
-    <form class="navbar-form navbar-right" role="search">
-        <div class="form-group">
-            <input type="text" class="form-control" placeholder="输入父亲身份证号" id="select">
-        </div>
-        <button type="button" class="btn btn-default" id="select_btn">查询</button>
-    </form>
+<!--<div class="col-lg-7">-->
+    <!--<form class="navbar-form navbar-right" role="search">-->
+        <!--<div class="form-group">-->
+            <!--<input type="text" class="form-control" placeholder="输入父亲身份证号" id="select">-->
+        <!--</div>-->
+        <!--<button type="button" class="btn btn-default" id="select_btn">查询</button>-->
+    <!--</form>-->
 
-</div>
+<!--</div>-->
 <!-- 返回用户自己户口信息 -->
 
 <div id="mypanel">
     <div class="panel panel-primary">
-
+        <div class="panel-heading">审核结果</div>
         <div class="panel-body">
             <ul>
-                <li id="r_name">姓名:</li>
-                <li id="r_id">身份证号码:</li>
-                <li id="r_sex">性别:</li>
-                <li >地址:</li>
-                <li >手机号:</li>
-                <li>新生儿姓名：</li>
-                <li >新生儿编号:</li>
+                <li>审查编号：</li>
+                <li>父亲姓名:<span class="glyphicon glyphicon-ok"></span></li>
+                <li>父亲身份证号码:<span class="glyphicon glyphicon-ok"></span></li>
+                <li>母亲姓名:<span class="glyphicon glyphicon-ok"></span></li>
+                <li>母亲身份证号码：<span class="glyphicon glyphicon-ok"></span></li>
+                <li>父母结婚证书编号：<span class="glyphicon glyphicon-ok"></span></li>
+                <li >出生证书编号：<span class="glyphicon glyphicon-ok"></span></li>
+                <li>出生日期：<span class="glyphicon glyphicon-ok"></span></li>
+                <li>性别：<span class="glyphicon glyphicon-ok"></span></li>
+                <li>接生机构：<span class="glyphicon glyphicon-ok"></span></li>
 
             </ul>
         </div>
         <div><table id="table"></table></div>
 
-        <div class="panel-footer" style="text-align: center;">个人信息</div>
+        <div class="panel-footer" style="text-align: center;">新生儿信息</div>
     </div>
 </div>
 <form role = "form" class="form-horizontal">
     <!--<table id="table"></table>-->
-    <div class="myform">
-        <div class = "form-group">
-            <label class="col-lg-5 control-label" for = "num">新生儿身份证号</label>
-            <div class="col-lg-3">
-                <input type = "text" class = "form-control" id = "num"
-                       placeholder = ""/>
-            </div>
-        </div>
+    <!--<div class="myform">-->
+        <!--<div class = "form-group">-->
+            <!--<label class="col-lg-5 control-label" for = "num">新生儿身份证号</label>-->
+            <!--<div class="col-lg-3">-->
+                <!--<input type = "text" class = "form-control" id = "num"-->
+                       <!--placeholder = ""/>-->
+            <!--</div>-->
+        <!--</div>-->
         <div class="form-group">
-            <div class="col-lg-4 col-lg-offset-5">
-                <button type = "button" class="btn-info btn-lg" id="btn_submit">提交</button>
+            <div class="col-lg-4">
+                <button type = "button" class="btn-info btn-lg" id="btn_submit">拒绝</button>
+            </div>
+            <div class="col-lg-4">
+                <button type = "button" class="btn-info btn-lg" id="btn_submit">接受</button>
             </div>
         </div>
-    </div>
+    <!--</div>-->
 </form>
 </body>
 </html>
