@@ -18,7 +18,6 @@
     "serve-favicon": "~2.4.5",
     "fabric-ca-client": "^1.0.2",
     "fabric-client": "^1.0.2",
-    "grpc": "^1.6.0",
-    "multer": "^1.3.0"
+    "grpc": "^1.6.0"
   }
 }
