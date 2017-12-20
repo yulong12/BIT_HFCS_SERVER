@@ -15,6 +15,8 @@ var register=require('./routes/register');
 var search=require('./routes/search');
 var child_query=require('./routes/child_query');
 var fingerprinter_register=require('./routes/fingerprinter_register');
+var add_page=require('./routes/add_page');
+var modify_page=require('./routes/modify_page');
 
 var civil_query=require('./routes/civil_query');
 var divorce_register=require('./routes/divorce_register');
@@ -28,12 +30,16 @@ var  success=require('./routes/success');
 var user_query=require('./routes/user_query');
 var patient_expense=require('./routes/patient_expense');
 var police_office=require('./routes/police_office');
+var social_securityAdministration=require('./routes/social_securityAdministration');
 
 var divorce_application=require('./routes/divorce_application');
 var idcard_application=require('./routes/idcard_application');
 var information_modification=require('./routes/information_modification');
 var marry_application=require('./routes/marry_application');
 var securityCard_application=require('./routes/securityidCard_application');
+
+var social_query=require('./routes/social_query');
+var social_register=require('./routes/social_register');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -81,9 +87,14 @@ app.use('/divorce_application',divorce_application);
 app.use('/idcard_application',idcard_application);
 
 app.use('/information_modification',information_modification);
-
+app.use('/social_securityAdministration',social_securityAdministration);
 app.use('/marry_application',marry_application);
 app.use('/securityCard_application',securityCard_application);
+app.use('/add_page',add_page);
+app.use('/modify_page',modify_page);
+
+app.use('/social_query',social_query);
+app.use('/social_register',social_register);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

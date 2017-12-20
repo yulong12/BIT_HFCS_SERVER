@@ -68,3 +68,19 @@ function switch_to_idcard_application() {
 function switch_to_securitycard_application() {
     window.location.href="securitycard_application";
 }
+function switch_to_add_page() {
+    window.location.href="add_page";
+
+}
+function switch_to_modify_page() {
+    window.location.href="modify_page"
+}
+function switch_to_social_securityAdministration() {
+    window.location.href="social_securityAdministration";
+}
+function switch_to_social_query() {
+    window.location.href="social_query";
+}
+function switch_to_social_register() {
+    window.location.href="social_register";
+}

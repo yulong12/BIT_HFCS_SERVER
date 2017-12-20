@@ -55,10 +55,10 @@
 
                 <div class="form-group" style="margin-right: 300px;">
                     <div class="col-lg-2 col-lg-offset-2">
-                        <input type = "submit" class="btn-info btn-lg" id="send">申请</input>
+                        <input type = "button" class="btn-info btn-lg" id="send">申请</input>
                     </div>
                     <div class="col-lg-2 col-lg-offset-2">
-                        <button type = "submit" class="btn-info btn-lg" id="back" onclick="javascript:history.back(-1);">返回</button>
+                        <button type = "button" class="btn-info btn-lg" id="back" onclick="javascript:history.back(-1);">返回</button>
                     </div>
                 </div>
                 <script>
@@ -73,7 +73,8 @@
                                 url:'marry_application',
                                 type:"POST",
                                 contentType:"application/json",
-                                data:JSON.stringify(data),
+                               data:JSON.stringify(data),
+
                                 success:function (data) {
 
                                 }
