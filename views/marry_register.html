@@ -50,9 +50,9 @@
 		<div class="panel-heading">男方</div>
 		<div class="panel-body">
 			<ul>
-				<li id="r_name">男方姓名:&nbsp;<span class="glyphicon glyphicon-ok"></span></li>
-				<li id="r_id">男方身份证号码：&nbsp;<span class="glyphicon glyphicon-ok"></span></li>
-				<li id="r_state">男方婚姻状态：&nbsp;<span class="glyphicon glyphicon-ok"></span></li>
+				<li id="r_name">男方姓名：<%= human_detail.husband_name %>&nbsp;<span class="glyphicon glyphicon-ok"></span></li>
+				<li id="r_id">男方身份证号码：<%= human_detail.husband_id %>&nbsp;<span class="glyphicon glyphicon-ok"></span></li>
+				<li id="r_state">男方婚姻状态：<%= human_detail.husband_state %>&nbsp;<span class="glyphicon glyphicon-ok"></span></li>
 
 			</ul>
 		</div>
@@ -68,9 +68,9 @@
 		<div class="panel-heading">女方</div>
 		<div class="panel-body">
 			<ul>
-				<li id="r_name1">女方姓名:&nbsp;<span class="glyphicon glyphicon-ok"></span></li>
-				<li id="r_id1">女方身份证号码：&nbsp;<span class="glyphicon glyphicon-ok"></span></li>
-				<li id="r_state1">女方婚姻状态：&nbsp;<span class="glyphicon glyphicon-ok"></span></li>
+				<li id="r_name1">女方姓名：<%= human_detail.wife_name %>&nbsp;<span class="glyphicon glyphicon-ok"></span></li>
+				<li id="r_id1">女方身份证号码：<%= human_detail.wife_id %>&nbsp;<span class="glyphicon glyphicon-ok"></span></li>
+				<li id="r_state1">女方婚姻状态：<%= human_detail.wife_state %>&nbsp;<span class="glyphicon glyphicon-ok"></span></li>
 
 			</ul>
 		</div>
@@ -87,7 +87,7 @@
 		<div class="panel panel-primary">
 			<div class="panel-heading">男方</div>
 			<div class="panel-body">
-				<img src="images/boy.jpg" style="width:250px;height: 300px;" >
+				<img src="data:image/png;base64,<%= human_detail.husband_photo %>" style="width:250px;" >
 			</div>
 		</div>
 	</div>
@@ -96,7 +96,7 @@
 		<div class="panel panel-primary">
 			<div class="panel-heading">结婚照</div>
 			<div class="panel-body">
-				<img src="images/girl.jpg" style="width:250px;height: 300px;" >
+				<img src="data:image/png;base64,<%= human_detail.marry_photo %>" style="width:250px;" >
 			</div>
 		</div>
 	</div>
@@ -105,7 +105,7 @@
 		<div class="panel panel-primary">
 			<div class="panel-heading">女方</div>
 			<div class="panel-body">
-				<img src="images/girl.jpg" style="width:250px;height: 300px;" >
+				<img src="data:image/png;base64,<%= human_detail.wife_photo %>" style="width:250px;" >
 			</div>
 		</div>
 	</div>
@@ -117,7 +117,7 @@
 					<label class="col-lg-4 control-label" for = "date">结婚年份</label>
 					<div class="col-lg-3">
 						<input type = "text" class = "form-control" id = "date"
-							   placeholder = ""/>
+							   placeholder = "yyyymmdd"/>
 					</div>
 				</div>
 
@@ -129,7 +129,7 @@
 			</div>
 			<div class="form-group">
 				<div class="col-lg-4 col-lg-offset-5">
-					<button type = "button" class="btn-info btn-lg" id="btn_submit1">拒绝登记</button>
+					<button type = "button" class="btn-info btn-lg" id="btn_deny">拒绝登记</button>
 				</div>
 			</div>
 		</form>
@@ -137,13 +137,9 @@
 </body>
 <script>
     $('#btn_submit').click(function () {
-        // language=JQuery-CSS
-        //get infomation
-        var husband_age = $("#age1").val();
-        var wife_age = $("#age2").val();
         var data = {};
-        data.husband_id = $("#num1").val();
-        data.wife_id = $("#num2").val();
+        data.regist_num = "<%= regist_num %>";
+        data.flag = "1";
         data.date = $("#date").val();
         $.ajax({
             url: 'marry_register',
@@ -151,9 +147,25 @@
             contentType: "application/json",
             data: JSON.stringify(data),
             success: function (data) {
-                alert(JSON.stringify(data));
+                alert("审批完成");
             }
         });
+    })
+
+    $('#btn_deny').click(function () {
+      var data = {};
+      data.regist_num = "<%= regist_num %>";
+      data.flag = "0";
+      data.date = $("#date").val();
+      $.ajax({
+        url: 'marry_register',
+        type: "POST",
+        contentType: "application/json",
+        data: JSON.stringify(data),
+        success: function (data) {
+          alert("审批完成");
+        }
+      });
     })
 </script>
 </html>
