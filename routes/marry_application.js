@@ -61,7 +61,7 @@ router.post('/', function (req, res, next) {
 
     });
 
-  })
+  });
   res.render('marry_application');
 });
 
