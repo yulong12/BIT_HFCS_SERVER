@@ -16,14 +16,17 @@
 
         #mypanel {
             padding-left: 400px;
-            padding-top: 100px;
+            padding-top: 50px;
             padding-right: 400px;
+        }
+        #aa{
+            padding-left: 560px;
         }
     </style>
 </head>
 <body>
 
-<!-- 返回用户个人信息 -->
+
 <!--<table class="table table-striped">-->
     <!--<caption>个人信息</caption>-->
     <!--<thead>-->
@@ -44,27 +47,36 @@
 
     <!--</tbody>-->
 <!--</table>-->
+
+
+<!-- 返回用户个人信息 -->
 <div id="mypanel">
     <div class="panel panel-primary">
         <div class="panel-heading">社保信息</div>
         <div class="panel-body">
             <ul>
-                <li id="r_name">姓名:张三&nbsp;<span class="glyphicon glyphicon-ok"></span></li>
-                <li id="r_id">身份证号码:110105199409026686&nbsp;<span class="glyphicon glyphicon-ok"></li>
-                <li id="r_sex">性别:男&nbsp;<span class="glyphicon glyphicon-ok"></li>
-                <li >年龄:1&nbsp;<span class="glyphicon glyphicon-ok"></li>
-
+                <li >照片：<img src="images/boy.jpg" style="width:90px;"></li>
+                <li id="r_name">姓名:张三</li>
+                <li id="r_id">身份证号码:110105199409026686</li>
+                <li id="r_sex">性别:男</li>
+                <li >指纹：<img src="images/fingerprint.png" style="width:90px;"></li>
             </ul>
         </div>
         </div>
 
     </div>
 </div>
+<!--信息比对-->
+<div id="aa">
+    <p>照片是否一致：&nbsp;<span class="glyphicon glyphicon-ok"></span></p>
+    <p>指纹是否一致：&nbsp;<span class="glyphicon glyphicon-ok"></span></p>
+
+</div>
 <form role = "form" class="form-horizontal">
     <div class="form-group">
         <div class="col-lg-4 col-lg-offset-5">
-            <button  type = "button" class="btn-info btn-lg" id="btn_submit1">接受登记</button>
-            <button  type = "button" class="btn-info btn-lg" id="btn_submit2">拒绝登记</button>
+            <button  type = "button" class="btn-info " id="btn_submit1">接受登记</button>
+            <button  type = "button" class="btn-info " id="btn_submit2">拒绝登记</button>
         </div>
 
     </div>
@@ -72,9 +84,7 @@
 
 </body>
 <script type="text/javascript">
-    $("#btn_submit1").click(function () {
-        window.location.href = "social_register";
-    });
+
     $("#btn_submit2").click(function () {
         window.location.href = "social_securityAdministration";
     });
