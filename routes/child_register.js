@@ -61,7 +61,7 @@ router.post('/', function (req, res, next) {
   var creatBirth = require('./myhfc/myhfcInvoke');
 
   creatBirth(request, function (str) {
-    res.send(JSON.parse(str));
+    res.send(str);
   });
 
 
