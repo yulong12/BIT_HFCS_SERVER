@@ -33,7 +33,11 @@ router.post('/',function (req, res, next) {
     var pic_img_1=hash2.update(pic_img);
     var pic_hashcode=hash2.digest('hex');
 
-var insert="insert into security_card(id,new_photo,new_hashcode,print_photo,print_hashcode,if_managed,if_look)values()"
+ var insert="insert into security_card(id,new_photo,new_hashcode,print_photo,print_hashcode,if_managed,if_look)values('"+id_num+"','"+pic_img+"','"+pic_hashcode+"','"+print_img+"','"+print_hashcode+"',0,0);";
+  mysql.executeQuery(insert,function (status, result) {
+
+})
+    console.log("==========insert========"+insert);
     res.render('securityCard_application');
 });
 module.exports = router;

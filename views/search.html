@@ -10,14 +10,11 @@
 
   <style type="text/css">
     .myform {
-      margin-top: 20px;
+      margin-top: 100px;
       margin-left: 400px;
     }
     #mypanel {
       display: none;
-      width: 500px;
-      margin-left: auto;
-      margin-right: auto;
     }
   </style>
 
@@ -49,34 +46,10 @@
       </div>
     </form>
   </div>
-  <div id="mypanel">
-    <div class="panel panel-primary">
-      <!--<div class="panel-heading">用户信息表</div>-->
-      <div class="panel-body">
-        <ul>
-          <li>用户姓名:张三</li>
-          <li>用户身份证号码：1234567</li>
-          <li>用户性别：男</li>
-          <li>父亲身份证号码：1234567</li>
-          <li>母亲身份证号码：1234567</li>
-          <li>结婚状态</li>
-          <li>配偶姓名：李四</li>
-          <li>配偶身份证号码：1234567</li>
-          <li>社保信息</li>
-          <li>孩子ID：6666</li>
-          <li>孩子出生证编号：</li>
-          <li>新生儿ID：7777</li>
-          <li>新生儿出生证编号：</li>
-        </ul>
-      </div>
-      <!--<div class="panel-footer" style="text-align: center;"></div>-->
-    </div>
-  </div>
   <div class="panel-footer"></div>
 </div>
 
 <!-- 返回用户自己户口信息 -->
-<<<<<<< HEAD
 <div id="mypanel">
   <div class="panel panel-primary">
     <div class="panel-heading">用户信息表</div>
@@ -102,64 +75,58 @@
     <div class="panel-footer" style="text-align: center;">户口信息</div>
   </div>
 </div>
-=======
-
->>>>>>> dad59d6f828c9c68202ec8e85da26e2e23075e99
 
 <script type="text/javascript">
-  $("#mybutton").click(function (event) {
-    var pnel = document.getElementById("mypanel");
-    pnel.style.display = "block";
-    event.preventDefault();
-    var data={};
-    data.num=$("#num").val();
-      $.ajax({
-          url: '/search',
-          type: "POST",
-          timeout : 10000,
-          contentType: "application/json",
-          data: JSON.stringify(data),
-          success: function (str) {
-              var shen_fen_id= str.身份证号;
-              var sex=   str.性别;
-              var name= str.姓名;
-              var date=str.出生日期;
-              var father_name=str.父亲姓名;
-              var father_id=str.父亲身份证号;
-              var mother_name=str.母亲姓名;
-              var mother_id=str.母亲身份证号;
-              var marry_state=str.婚姻状态;
-              var spouse_name=str.配偶姓名;
-              var spouse_id=  str.配偶身份证号;
-              var marry_cert= str.结婚证书;
-              var child_ids=str.子女身份证号;
-              var child_names=str.子女姓名;
-              var new_chids=str.子女出生证明;
-              $("#name").text('姓名:'+name);
-              $("#shen_fen_id").text('身份证号: '+shen_fen_id);
-              $("#sex").text('性别: '+sex);
-              $("#date").text('出生日期: '+date);
-              $("#father_name").text('父亲姓名: '+father_name);
-              $("#father_id").text('父亲身份证号: '+father_id);
-              $("#mother_name").text('母亲姓名: '+mother_name);
-              $("#mother_id").text('母亲身份证号: '+mother_id);
-              $("#marry_state").text('婚姻状态: '+marry_state);
-              $("#spouse_name").text('配偶姓名: '+spouse_name);
-              $("#spouse_id").text('配偶身份证号: '+spouse_id);
-              $("#marry_cert").text('结婚证书: '+marry_cert);
-              $("#child_ids").text('子女身份证号: '+child_ids);
-              $("#child_names").text('母亲身份证号: '+child_names);
-              $("#new_chids").text('子女出生证明: '+new_chids);
-
-
-          console.log("=========shen_fen_id=========");
-          }
-      });
-  });
-  $("#back").click(function () {
-    window.location.href = "user";
-  });
-
+    $("#mybutton").click(function (event) {
+        var pnel = document.getElementById("mypanel");
+        pnel.style.display = "block";
+        event.preventDefault();
+        var data={};
+        data.num=$("#num").val();
+        $.ajax({
+            url: '/search',
+            type: "POST",
+            timeout : 10000,
+            contentType: "application/json",
+            data: JSON.stringify(data),
+            success: function (str) {
+                var shen_fen_id= str.身份证号;
+                var sex=   str.性别;
+                var name= str.姓名;
+                var date=str.出生日期;
+                var father_name=str.父亲姓名;
+                var father_id=str.父亲身份证号;
+                var mother_name=str.母亲姓名;
+                var mother_id=str.母亲身份证号;
+                var marry_state=str.婚姻状态;
+                var spouse_name=str.配偶姓名;
+                var spouse_id=  str.配偶身份证号;
+                var marry_cert= str.结婚证书;
+                var child_ids=str.子女身份证号;
+                var child_names=str.子女姓名;
+                var new_chids=str.子女出生证明;
+                $("#name").text('姓名:'+name);
+                $("#shen_fen_id").text('身份证号: '+shen_fen_id);
+                $("#sex").text('性别: '+sex);
+                $("#date").text('出生日期: '+date);
+                $("#father_name").text('父亲姓名: '+father_name);
+                $("#father_id").text('父亲身份证号: '+father_id);
+                $("#mother_name").text('母亲姓名: '+mother_name);
+                $("#mother_id").text('母亲身份证号: '+mother_id);
+                $("#marry_state").text('婚姻状态: '+marry_state);
+                $("#spouse_name").text('配偶姓名: '+spouse_name);
+                $("#spouse_id").text('配偶身份证号: '+spouse_id);
+                $("#marry_cert").text('结婚证书: '+marry_cert);
+                $("#child_ids").text('子女身份证号: '+child_ids);
+                $("#child_names").text('母亲身份证号: '+child_names);
+                $("#new_chids").text('子女出生证明: '+new_chids);
+                console.log("=========shen_fen_id=========");
+            }
+        });
+    });
+    $("#back").click(function () {
+        window.location.href = "user";
+    });
 </script>
 
 </body>

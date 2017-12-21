@@ -23,7 +23,7 @@ router.post('/',function (req, res, next) {
     var hash1=crypto.createHash('md5');
    var hash= hash1.update(base64Data);
    var hashcode=hash.digest('hex');
-   var query="insert into human(id,photo,hashcode,if_managed,if_look)values('"+id_Num+"','"+base64Data+"','"+hashcode+"',0,0"+");";
+   var query="insert into human(id,photo,hashcode,if_managed,if_look)values('"+id_Num+"','"+base64Data+"','"+hashcode+"',1,1"+");";
    console.log("===========query========="+query);
 
     mysql.executeQuery(query,function (status, result) {

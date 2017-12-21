@@ -22,16 +22,16 @@
     <form role="form" class="form-horizontal" method="post" enctype="multipart/form-data">
       <div class="myform">
         <div class="form-group">
-          <label class="col-lg-2 control-label" for="fanum">新生儿身份证号码</label>
+          <label class="col-lg-2 control-label" for="fanum1">新生儿身份证号码</label>
           <div class="col-lg-3">
-            <input type="text" class="form-control" id="fanum"
+            <input type="text" class="form-control" id="fanum1"
                    placeholder="输入新生儿身份证号码"/>
           </div>
         </div>
         <div class="form-group">
-          <label class="col-lg-2 control-label" for="babyphoto">上传新生儿照片</label>
+          <label class="col-lg-2 control-label" for="babyphoto1">上传新生儿照片</label>
           <div class="col-lg-3">
-            <input type="file" id="babyphoto"/>
+            <input type="file" id="babyphoto1"/>
           </div>
         </div>
         <!--<div class="form-group">-->
@@ -41,18 +41,18 @@
           <!--</div>-->
         <!--</div>-->
         <div class="form-group">
-          <label class="col-lg-2 control-label" for="print">上传指纹</label>
+          <label class="col-lg-2 control-label" for="print1">上传指纹</label>
           <div class="col-lg-3">
-            <input type="file" id="print"/>
+            <input type="file" id="print1"/>
           </div>
         </div>
 
         <div class="form-group" style="margin-right: 300px;">
           <div class="col-lg-2 col-lg-offset-2">
-            <button type="button" class="btn-info btn-lg" id="send">申请</button>
+            <button type="button" class="btn-info btn-lg" id="send1">申请</button>
           </div>
           <div class="col-lg-2 col-lg-offset-2">
-            <button type="button" class="btn-info btn-lg" id="back">返回</button>
+            <button type="button" class="btn-info btn-lg" id="back1">返回</button>
           </div>
         </div>
       </div>
@@ -63,17 +63,18 @@
 </body>
 
 <script type="text/javascript">
-  $("#back").click(function () {
+  $("#back1").click(function () {
     window.location.href = "user";
   });
+  $(document).ready(function () {
 
-  $("#send").click(function () {
+  $("#send1").click(function () {
       var data={};
-      data.id_num=$("#fanum").val();
+      data.id_num=$("#fanum1").val();
       var reader = new FileReader();
       var reader1=new FileReader();
-      reader.readAsDataURL($("#babyphoto").get(0).files[0]);
-      reader1.readAsDataURL($("#print").get(0).files[0]);
+      reader.readAsDataURL($("#babyphoto1").get(0).files[0]);
+      reader1.readAsDataURL($("#print1").get(0).files[0]);
       reader.onload = function () {
           data.pic = this.result;
       reader1.onload=function () {
@@ -91,6 +92,7 @@
       }
 
       };
+  });
   });
 </script>
 

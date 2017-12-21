@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var options = require("./myhfc/org1Config");
 var mysql = require("../db/MYSQLconnection");
 
 /* GET hospital listing. */
@@ -44,7 +45,6 @@ router.get('/', function (req, res, next) {
 
 //post
 router.post('/', function (req, res, next) {
-
   var createHuman = require('./myhfc/myhfcInvoke');
   var request = {
     chaincodeId: options.chaincode_id,
