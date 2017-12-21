@@ -13,25 +13,64 @@
         .navbar-form {
             padding-top: 90px;
         }
-
+        .navbar-form1 {
+            padding-top: 190px;
+        }
         #mypanel {
+            padding-left: 400px;
+            padding-top: 70px;
+            padding-right: 400px;
+            display: none;
+        }
+        #mypanel2{
             padding-left: 400px;
             padding-top: 200px;
             padding-right: 400px;
+            display: none;
+        }
+        #mybutton{
+            display:none;
+            margin-top: -100px;
+        }
+        #btn_submit2{
+            display:none;
         }
     </style>
 </head>
 <body>
 
+
 <div class="col-lg-7">
     <form class="navbar-form navbar-right" role="search">
-        <!--<div class="form-group">-->
-            <!--<input type="text" class="form-control" placeholder="输入指纹或刷社保卡" id="select">-->
-        <!--</div>-->
-        <button type="button" class="btn btn-default" id="select_btn">输入指纹或刷社保卡</button>
+
+        <button type="button" class="btn btn-info " id="mybutton1">输入指纹或刷社保卡</button>
+
     </form>
 
 </div>
+<!-- 返回患者指纹和社保卡号信息 -->
+<div id="mypanel2">
+    <div class="panel panel-primary">
+        <div class="panel-heading">指纹和社保卡号</div>
+        <div class="panel-body">
+            <ul>
+                <li >照片：<img src="images/boy.jpg" style="width:90px;"></li>
+                <li>社会保障卡号：62758919</li>
+
+            </ul>
+        </div>
+        <div><table id="table1"></table></div>
+
+    </div>
+</div>
+
+<div class="col-lg-6">
+    <form class="navbar-form navbar-right" role="search">
+        <button type="button" class="btn btn-info" id="mybutton">结算</button>
+    </form>
+
+</div>
+
 <!-- 返回患者医药和费用信息 -->
 
 <div id="mypanel">
@@ -50,11 +89,13 @@
 
     </div>
 </div>
+
+
 <form role = "form" class="form-horizontal">
     <div class="form-group">
-        <div class="col-lg-4 col-lg-offset-6">
+        <div class="col-lg-4 col-lg-offset-5">
 
-            <button type = "button" class="btn-info btn-lg" id="btn_submit2">返回</button>
+            <button type = "button" class="btn-info btn" id="btn_submit2">返回</button>
         </div>
 
     </div>
@@ -62,6 +103,20 @@
 </body>
 <script type="text/javascript">
 
+    $("#mybutton").click(function (event) {
+        var pnel = document.getElementById("mypanel");
+        pnel.style.display = "block";
+        var pne2 = document.getElementById("btn_submit2");
+        pne2.style.display = "block";
+        event.preventDefault();
+    });
+    $("#mybutton1").click(function (event) {
+        var pnel = document.getElementById("mypanel2");
+        pnel.style.display = "block";
+        var pne2 = document.getElementById("mybutton");
+        pne2.style.display = "block";
+        event.preventDefault();
+    });
     $("#btn_submit2").click(function () {
         window.location.href = "hospital";
     });
