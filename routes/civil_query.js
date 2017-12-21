@@ -12,4 +12,24 @@ router.get('/', function (req, res, next) {
   }
 });
 
+router.post('/', function (req, res, next) {
+
+    var options = require('./myhfc/org1Config');
+    var select_id = req.body.select_id;
+
+    var request;
+    request = {
+        chaincodeId: options.chaincode_id,
+        fcn: 'queryID',
+        args: [select_id]
+    };
+
+    var myhfcQuery = require('./myhfc/myhfcQuery');
+    myhfcQuery(request, function (str) {
+        res.send(JSON.parse(str));
+    });
+
+
+});
+
 module.exports = router;

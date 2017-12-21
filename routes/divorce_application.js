@@ -41,7 +41,7 @@ router.post('/', function (req, res, next) {
     var wife_id = str.妻子身份证号;
     var marry_cert = str.结婚证书编号;
     var check0 = str.判断结果;
-    var check = check0[0] + check0[1] + check0[2] + check0[3] + check0[4]
+    var check = check0[0] + check0[1] + check0[2] + check0[3] + check0[4];
 
     var man_photo1 = req.body.man_photo;
     var man_photo = man_photo1.replace(/^data:image\/\w+;base64,/, "");

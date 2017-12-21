@@ -32,26 +32,6 @@
     </style>
 </head>
 <body>
-
-<!--<div class="container" >-->
-    <!--<form class="navbar-form " role="search">-->
-        <!--<div class="form-group">-->
-            <!--<input type="text" class="form-control" placeholder="父亲的的身份证号" id="select">-->
-        <!--</div>-->
-        <!--<button type="button" class="btn btn-default btn-info" id="select_btn">查询</button>-->
-    <!--</form>-->
-
-    <!--<form class="navbar-form " role="search" >-->
-        <!--<div class="form-group">-->
-            <!--<input type="text" class="form-control" placeholder="母亲的的身份证号" id="select1">-->
-        <!--</div>-->
-        <!--<button type="button" class="btn btn-default btn-info" id="select_btn1">查询</button>-->
-    <!--</form>-->
-
-<!--</div>-->
-
-<!-- 返回用户自己户口信息 -->
-
 <div id="mypanel">
     <form class="navbar-form " role="search">
         <div class="form-group">
@@ -123,21 +103,61 @@
                 contentType: "application/json",
                 data: JSON.stringify(data),
                 success: function (data) {
-                    $("#r_name").append(data.姓名);
-                    $("#r_id").append(data.身份证号);
+                    $("#r_name").text('姓名:'+data.姓名);
+                    $("#r_id").text('身份证号码：'+data.身份证号);
                     if(data.配偶姓名 === ""){
-                        $("#r_state").append("未婚");
-                        $("#r_sname").append("无");
+                        $("#r_state").text('婚姻状态：'+"未婚");
+                        $("#r_sname").text('配偶姓名：'+"无");
+                        $("#r_snum").text('子女个数：'+data.子女身份证号[0]);
+                        $("#r_s").text('是否符合生育标准：'+"符合");
                     }else{
-                        $("#r_state").append("已婚");
-                        $("#r_sname").append(data.配偶姓名);
-                        $("#r_sid").append(data.配偶身份证号);
+                        $("#r_state").text('婚姻状态：'+"已婚");
+                        $("#r_sname").text('配偶姓名：'+data.配偶姓名);
+                        $("#r_sid").text('配偶身份证号：'+data.配偶身份证号);
                         if(data.子女身份证号[0] < 2){
-                            $("#r_snum").append(data.子女身份证号[0]);
-                            $("#r_s").append("符合");
+                            $("#r_snum").text('子女个数：'+data.子女身份证号[0]);
+                            $("#r_s").text('是否符合生育标准：'+"符合");
                         }else{
-                            $("#r_snum").append(data.子女身份证号[0]);
-                            $("#r_s").append("不符合");
+                            $("#r_snum").text('子女个数：'+data.子女身份证号[0]);
+                            $("#r_s").text('是否符合生育标准：'+"不符合");
+                        }
+                    }
+
+                }
+            });
+        }
+    });
+    $("#select_btn1").click(function () {
+        // language=JQuery-CSS
+        var data = {};
+        data.select_id = $("#select1").val();
+        if (data.select_id === "") {
+            alert("请输入身份证号码");
+        } else {
+            $.ajax({
+                url: '/user_query',
+                type: "POST",
+                timeout : 10000,
+                contentType: "application/json",
+                data: JSON.stringify(data),
+                success: function (data) {
+                    $("#r_name1").text('姓名:'+data.姓名);
+                    $("#r_id1").text('身份证号码：'+data.身份证号);
+                    if(data.配偶姓名 === ""){
+                        $("#r_state1").text('婚姻状态：'+"未婚");
+                        $("#r_sname1").text('配偶姓名：'+"无");
+                        $("#r_snum1").text('子女个数：'+data.子女身份证号[0]);
+                        $("#r_s1").text('是否符合生育标准：'+"符合");
+                    }else{
+                        $("#r_state1").text('婚姻状态：'+"已婚");
+                        $("#r_sname1").text('配偶姓名：'+data.配偶姓名);
+                        $("#r_sid1").text('配偶身份证号：'+data.配偶身份证号);
+                        if(data.子女身份证号[0] < 2){
+                            $("#r_snum1").text('子女个数：'+data.子女身份证号[0]);
+                            $("#r_s1").text('是否符合生育标准：'+"符合");
+                        }else{
+                            $("#r_snum1").text('子女个数：'+data.子女身份证号[0]);
+                            $("#r_s1").text('是否符合生育标准：'+"不符合");
                         }
                     }
 
