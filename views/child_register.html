@@ -105,23 +105,19 @@
 	 	 </form>
 </body>
 <script>
-        $("#btn_submit").click(function () {
+        $("#btn_submit1").click(function () {
 
             //get infomation
-
             var data = {};
             data.child_sex = $("#sex").val();
             data.child_date = $("#date").val();
-            data.mother_ID = $("#mother_ID").val();
-            data.father_ID = $("#father_ID").val();
+            data.mother_ID = $("#id2").val();
+            data.father_ID = $("#id1").val();
             data.hospital = $("#hospital_name").val();
-			data.mother_name=$("#mother_name").val();
-			data.mother_age=$("#mother_age").val();
-			data.father_name=$("#father_name").val();
-			data.father_age=$("#father_age").val();
 			data.child_name=$("#name").val();
 			data.weight=$("#weight").val();
 			data.health=$("#health").val();
+            data.place=$("#place").val();
             $.ajax({
                 url: 'child_register',
                 type: "POST",
@@ -132,13 +128,13 @@
                 }
             });
         });
+        $("#btn_submit2").click(function () {
+            window.location.href = "hospital";
+        });
 </script>
-<script type="text/javascript">
-    $("#btn_submit1").click(function () {
-        window.location.href = "new_birthcard";
-    });
-    $("#btn_submit2").click(function () {
-        window.location.href = "hospital";
-    });
-</script>
+<!--<script type="text/javascript">-->
+    <!--$("#btn_submit1").click(function () {-->
+        <!--window.location.href = "new_birthcard";-->
+    <!--});-->
+
 </html>
