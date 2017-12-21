@@ -19,7 +19,7 @@
 <div class="panel panel-primary">
   <div class="panel-heading">新生儿社保卡申请</div>
   <div class="panel-body">
-    <form role="form" class="form-horizontal">
+    <form role="form" class="form-horizontal" method="post" enctype="multipart/form-data">
       <div class="myform">
         <div class="form-group">
           <label class="col-lg-2 control-label" for="fanum">新生儿身份证号码</label>
@@ -65,6 +65,32 @@
 <script type="text/javascript">
   $("#back").click(function () {
     window.location.href = "user";
+  });
+
+  $("#send").click(function () {
+      var data={};
+      data.id_num=$("#fanum").val();
+      var reader = new FileReader();
+      var reader1=new FileReader();
+      reader.readAsDataURL($("#babyphoto").get(0).files[0]);
+      reader1.readAsDataURL($("#print").get(0).files[0]);
+      reader.onload = function () {
+          data.pic = this.result;
+      reader1.onload=function () {
+          data.print=this.result;
+          $.ajax({
+              url: 'idcard_application',
+              type: "POST",
+              contentType: "application/json",
+              data: JSON.stringify(data),
+              success: function (data) {
+
+
+              }
+          });
+      }
+
+      };
   });
 </script>
 
