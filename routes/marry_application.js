@@ -2,8 +2,7 @@ var express = require('express');
 var options = require("./myhfc/org2Config");
 var router = express.Router();
 var fs = require('fs');
-const crypto = require('crypto');
-const hash1 = crypto.createHash('md5');
+
 
 var mysql = require("../db/MYSQLconnection");
 
@@ -35,6 +34,8 @@ router.post('/', function (req, res, next) {
   var marry = require('./myhfc/myhfcInvoke');
 
   marry(request, function (str) {
+    const crypto = require('crypto');
+    const hash1 = crypto.createHash('md5');
     console.log(typeof (str));
     console.log("-----from-------")
     console.log("_________str____---" + str);
