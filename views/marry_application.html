@@ -1,91 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-    <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
-    <script src="javascripts/jquery-1.11.1.min.js"></script>
-    <script src="javascripts/bootstrap.min.js"></script>
-    <style type="text/css">
+  <meta charset="UTF-8">
+  <title>居民结婚申请</title>
+  <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
+  <script src="javascripts/jquery-1.11.1.min.js"></script>
+  <script src="javascripts/bootstrap.min.js"></script>
+  <style type="text/css">
 
-        .myform{
-            margin-top:20px;
-            margin-left: 400px;
-        }
+    .myform {
+      margin-top: 20px;
+      margin-left: 400px;
+    }
 
 
-    </style>
+  </style>
 </head>
 <body>
 
 <!-- 提交身份证信息 -->
 <div class="panel panel-primary">
-    <div class="panel-heading">居民结婚申请</div>
-    <div class="panel-body">
-        <form role = "form" class="form-horizontal" method="post" enctype="multipart/form-data" >
-            <div class="myform">
-                <div class = "form-group">
-                    <label class="col-lg-2 control-label" for = "mannum">男方身份证号码</label>
-                    <div class="col-lg-3">
-                        <input type="text" class="form-control" id = "mannum"
-                               placeholder = "输入男方身份证号码"/>
-                    </div>
-                </div>
-                <div class = "form-group">
-                    <label class="col-lg-2 control-label" for = "womannum">女方身份证号码</label>
-                    <div class="col-lg-3">
-                        <input type="text" class="form-control" id = "womannum"
-                               placeholder = "输入女方身份证号码"/>
-                    </div>
-                </div>
-                <div class = "form-group">
-                    <label class="col-lg-2 control-label" for = "marryphoto">上传结婚照片</label>
-                    <div class="col-lg-3">
-                        <input type="file" id = "marryphoto" name="marry_img"
-                               placeholder = "请上传照片" />
-                    </div>
-                </div>
+  <div class="panel-heading">居民结婚申请</div>
+  <div class="panel-body">
+    <form role="form" class="form-horizontal" method="post" enctype="multipart/form-data">
+      <div class="myform">
+        <div class="form-group">
+          <label class="col-lg-2 control-label" for="mannum">男方身份证号码</label>
+          <div class="col-lg-3">
+            <input type="text" class="form-control" id="mannum"
+                   placeholder="输入男方身份证号码"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-lg-2 control-label" for="womannum">女方身份证号码</label>
+          <div class="col-lg-3">
+            <input type="text" class="form-control" id="womannum"
+                   placeholder="输入女方身份证号码"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-lg-2 control-label" for="marryphoto">上传结婚照片</label>
+          <div class="col-lg-3">
+            <input type="file" id="marryphoto" name="marry_img"
+                   placeholder="请上传照片"/>
+          </div>
+        </div>
 
-                <div class="form-group" style="margin-right: 300px;">
-                    <div class="col-lg-2 col-lg-offset-2">
-                        <input type = "button" class="btn-info btn-lg" id="send" value="申请">
-                    </div>
-                    <div class="col-lg-2 col-lg-offset-2">
-                        <button type = "button" class="btn-info btn-lg" id="back" onclick="javascript:history.back(-1);">返回</button>
-                    </div>
-                </div>
-                <script>
-                    $(document).ready(function () {
-                        $("#send").click(function () {
-                          var data={};
-                          data.men_id=$("#mannum").val();
-                          data.women_id=$("#womannum").val();
+        <div class="form-group" style="margin-right: 300px;">
+          <div class="col-lg-2 col-lg-offset-2">
+            <button type="button" class="btn-info btn-lg" id="send">申请</button>
+          </div>
+          <div class="col-lg-2 col-lg-offset-2">
+            <button type="button" class="btn-info btn-lg" id="back">返回</button>
+          </div>
+        </div>
+        <script>
+          $(document).ready(function () {
+            $("#send").click(function () {
+              var data = {};
+              data.men_id = $("#mannum").val();
+              data.women_id = $("#womannum").val();
 
 
-                          var reader = new FileReader();
-                          reader.readAsDataURL($("#marryphoto").get(0).files[0]);
-                          reader.onload = function(){
-                            data.marry_photo=this.result;
-                            // console.log("--------marry_photo-----"+this.result);
-                            $.ajax({
-                              url:'marry_application',
-                              type:"POST",
-                              contentType:"application/json",
-                              data:JSON.stringify(data),
-                              success:function (data) {
+              var reader = new FileReader();
+              reader.readAsDataURL($("#marryphoto").get(0).files[0]);
+              reader.onload = function () {
+                data.marry_photo = this.result;
+                // console.log("--------marry_photo-----"+this.result);
+                $.ajax({
+                  url: 'marry_application',
+                  type: "POST",
+                  contentType: "application/json",
+                  data: JSON.stringify(data),
+                  success: function (data) {
 
-                              }
-                            });
-                          };
-                        });
-                    });
-                </script>
-            </div>
-        </form>
-    </div>
-    <div class="panel-footer"></div>
+                  }
+                });
+              };
+            });
+          });
+        </script>
+      </div>
+    </form>
+  </div>
+  <div class="panel-footer"></div>
 </div>
-
 </body>
+
+<script type="text/javascript">
+  $("#back").click(function () {
+    window.location.href = "user";
+  });
+</script>
 
 </html>

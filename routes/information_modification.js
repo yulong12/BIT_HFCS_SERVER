@@ -3,7 +3,6 @@ var router = express.Router();
 
 /* GET marryquery listing. */
 router.get('/', function(req, res, next) {
-
     if (req.session.user){
         var user=req.session.user;
         var name=user.name;

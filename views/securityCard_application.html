@@ -1,61 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-    <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
-    <script src="javascripts/jquery-1.11.1.min.js"></script>
-    <script src="javascripts/bootstrap.min.js"></script>
-    <style type="text/css">
-
-        .myform{
-            margin-top:20px;
-            margin-left: 400px;
-        }
-
-
-    </style>
+  <meta charset="UTF-8">
+  <title>新生儿社保卡申请</title>
+  <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
+  <script src="javascripts/jquery-1.11.1.min.js"></script>
+  <script src="javascripts/bootstrap.min.js"></script>
+  <style type="text/css">
+    .myform {
+      margin-top: 20px;
+      margin-left: 400px;
+    }
+  </style>
 </head>
 <body>
 
 <!-- 提交身份证信息 -->
 <div class="panel panel-primary">
-    <div class="panel-heading">新生儿社保卡申请</div>
-    <div class="panel-body">
-        <form role = "form" class="form-horizontal">
-            <div class="myform">
-                <div class = "form-group">
-                    <label class="col-lg-2 control-label" for = "fanum">新生儿身份证号码</label>
-                    <div class="col-lg-3">
-                        <input type="text" class="form-control" id = "fanum"
-                               placeholder = "输入新生儿身份证号码"/>
-                    </div>
-                </div>
-                <div class = "form-group">
-                    <label class="col-lg-2 control-label" for = "babyphoto">上传新生儿照片</label>
-                    <div class="col-lg-3">
-                        <input type="file" id = "babyphoto"/>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-lg-2 control-label" for = "print" style="margin-top: 60px;">上传指纹</label>
-                    <div class="col-lg-2">
-                        <img src="images/fingerprint.png" class="img-circle" id="print" style="width: 100%;">
-                    </div>
-                </div>
+  <div class="panel-heading">新生儿社保卡申请</div>
+  <div class="panel-body">
+    <form role="form" class="form-horizontal">
+      <div class="myform">
+        <div class="form-group">
+          <label class="col-lg-2 control-label" for="fanum">新生儿身份证号码</label>
+          <div class="col-lg-3">
+            <input type="text" class="form-control" id="fanum"
+                   placeholder="输入新生儿身份证号码"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-lg-2 control-label" for="babyphoto">上传新生儿照片</label>
+          <div class="col-lg-3">
+            <input type="file" id="babyphoto"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-lg-2 control-label" for="print" style="margin-top: 60px;">上传指纹</label>
+          <div class="col-lg-2">
+            <img src="images/fingerprint.png" class="img-circle" id="print" style="width: 100%;">
+          </div>
+        </div>
 
-                <div class="form-group" style="margin-right: 300px;">
-                    <div class="col-lg-2 col-lg-offset-2">
-                        <button type = "button" class="btn-info btn-lg" id="send">申请</button>
-                    </div>
-                    <div class="col-lg-2 col-lg-offset-2">
-                        <button type = "submit" class="btn-info btn-lg" id="back" onclick="javascript:history.back(-1);">返回</button>
-                    </div>
-                </div>
-            </div>
-        </form>
-    </div>
-    <div class="panel-footer"></div>
+        <div class="form-group" style="margin-right: 300px;">
+          <div class="col-lg-2 col-lg-offset-2">
+            <button type="button" class="btn-info btn-lg" id="send">申请</button>
+          </div>
+          <div class="col-lg-2 col-lg-offset-2">
+            <button type="button" class="btn-info btn-lg" id="back">返回</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="panel-footer"></div>
 </div>
 </body>
+
+<script type="text/javascript">
+  $("#back").click(function () {
+    window.location.href = "user";
+  });
+</script>
+
 </html>

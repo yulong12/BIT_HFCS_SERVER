@@ -36,7 +36,7 @@ var divorce_application=require('./routes/divorce_application');
 var idcard_application=require('./routes/idcard_application');
 var information_modification=require('./routes/information_modification');
 var marry_application=require('./routes/marry_application');
-var securityCard_application=require('./routes/securityidCard_application');
+var securityCard_application=require('./routes/securityCard_application');
 
 var social_query=require('./routes/social_query');
 var social_register=require('./routes/social_register');

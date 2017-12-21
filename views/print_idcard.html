@@ -1,66 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-    <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
-    <script src="javascripts/jquery-1.11.1.min.js"></script>
-    <script src="javascripts/bootstrap.min.js"></script>
-
-
+  <meta charset="UTF-8">
+  <title>打印新生儿身份证</title>
+  <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
+  <script src="javascripts/jquery-1.11.1.min.js"></script>
+  <script src="javascripts/bootstrap.min.js"></script>
 </head>
 <body>
 
 <!-- 提交身份证信息 -->
 <div class="container" style="width: 600px;margin-top: 50px;border:1px solid black;">
-    <table>
-        <tr>
-            <td class="col-lg-4"><h4 style="margin-top: 40px;">姓名</h4></td>
-            <td class="col-lg-2"></td>
-            <td>
-                <div class="container" style="width: 200px;height: 100px;border: 1px solid black;margin-top: 10px; margin-right: -200px;" >
-                    <form>
+  <table>
+    <tr>
+      <td class="col-lg-4"><h4 style="margin-top: 40px;">姓名</h4></td>
+      <td class="col-lg-2"></td>
+      <td>
+        <div class="container"
+             style="width: 200px;height: 100px;border: 1px solid black;margin-top: 10px; margin-right: -200px;">
+          <form>
 
-                    </form>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td class="col-lg-4"><h4>性别</h4></td>
-            <td class="col-lg-2"><h4>民族</h4></td>
-            <td class="col-lg-2"><h4>汉</h4></td>
-        </tr>
-        <tr>
-            <td class="col-lg-4"><h4>出生</h4></td>
-            <td class="col-lg-2"><h4>年</h4></td>
-            <td class="col-lg-2"><h4>月</h4></td>
-            <td class="col-lg-2"><h4>日</h4></td>
+          </form>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="col-lg-4"><h4>性别</h4></td>
+      <td class="col-lg-2"><h4>民族</h4></td>
+      <td class="col-lg-2"><h4>汉</h4></td>
+    </tr>
+    <tr>
+      <td class="col-lg-4"><h4>出生</h4></td>
+      <td class="col-lg-2"><h4>年</h4></td>
+      <td class="col-lg-2"><h4>月</h4></td>
+      <td class="col-lg-2"><h4>日</h4></td>
 
 
-        </tr>
-        <tr>
-            <td class="col-lg-4"><h4>住址</h4></td>
-            <td class="col-lg-2"></td>
-        </tr>
-        <tr>
-            <td class="col-lg-4"><h4>公民身份证号码</h4></td>
-            <td class="col-lg-2"></td>
-        </tr>
-    </table>
+    </tr>
+    <tr>
+      <td class="col-lg-4"><h4>住址</h4></td>
+      <td class="col-lg-2"></td>
+    </tr>
+    <tr>
+      <td class="col-lg-4"><h4>公民身份证号码</h4></td>
+      <td class="col-lg-2"></td>
+    </tr>
+  </table>
 
 </div>
-
-
-
 
 </div>
 <div class="form-group" style="margin-top: 50px;margin-left: 220px;">
-    <div class="col-lg-2 col-lg-offset-2">
-        <button type = "button" class="btn-info btn-lg" id="send">打印</button>
-    </div>
-    <div class="col-lg-2 col-lg-offset-2">
-        <button type = "submit" class="btn-info btn-lg" id="back" onclick="javascript:history.back(-1);">返回</button>
-    </div>
+  <div class="col-lg-2 col-lg-offset-2">
+    <button type="button" class="btn-info btn-lg" id="send">打印</button>
+  </div>
+  <div class="col-lg-2 col-lg-offset-2">
+    <button type="button" class="btn-info btn-lg" id="back">返回</button>
+  </div>
 </div>
 </body>
+
+<script type="text/javascript">
+  $("#back").click(function () {
+    window.location.href = "user";
+  });
+</script>
+
 </html>
