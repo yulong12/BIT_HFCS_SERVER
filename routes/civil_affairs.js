@@ -5,8 +5,6 @@ var mysql = require("../db/MYSQLconnection");
 /* GET civilaffairs listing. */
 router.get('/', function (req, res, next) {
   if (req.session.user) {
-    var user = req.session.user;
-    var name = user.name;
     var query0 = "select check_id from marry_check where if_managed = 0";
     var query1 = "select check_id from marry_check where if_managed = 1";
     var unfinished_list = [];
@@ -28,7 +26,6 @@ router.get('/', function (req, res, next) {
       });
 
     });
-
 
   } else {
     res.render('need_login');

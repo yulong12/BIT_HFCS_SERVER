@@ -1,85 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>新增户口页</title>
-    <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
-    <script src="javascripts/jquery-1.11.1.js"></script>
-    <script src="javascripts/bootstrap.min.js"></script>
-    <style type="text/css">
+  <meta charset="UTF-8">
+  <title>新增户口页</title>
+  <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
+  <script src="javascripts/jquery-1.11.1.js"></script>
+  <script src="javascripts/bootstrap.min.js"></script>
+  <style type="text/css">
 
-        .navbar-form {
-            padding-top: 90px;
-        }
+    .navbar-form {
+      padding-top: 90px;
+    }
 
-        #mypanel {
-            padding-left: 350px;
-            padding-top: 120px;
-            padding-right: 400px;
-        }
-        #aa{
-            padding-left: 560px;
-        }
-    </style>
+    #mypanel {
+      padding-left: 350px;
+      padding-top: 120px;
+      padding-right: 400px;
+    }
+
+    #aa {
+      padding-left: 560px;
+    }
+  </style>
 </head>
 <body>
-<!--<div class="col-lg-7">-->
-    <!--<form class="navbar-form navbar-right" role="search">-->
-        <!--<div class="form-group">-->
-            <!--<input type="text" class="form-control" placeholder="输入父亲身份证号" id="select">-->
-        <!--</div>-->
-        <!--<button type="button" class="btn btn-default" id="select_btn">查询</button>-->
-    <!--</form>-->
-
-<!--</div>-->
-<!-- 返回用户自己户口信息 -->
 
 <div id="mypanel">
-    <div class="panel panel-primary">
-        <div class="panel-heading">审核结果</div>
-        <div class="panel-body">
-            <ul>
+  <div class="panel panel-primary">
+    <div class="panel-heading">审核结果</div>
+    <div class="panel-body">
+      <ul>
 
-                <li>审查编号：</li>
-                <li>父亲姓名:</li>
-                <li>父亲身份证号码:</li>
-                <li>母亲姓名:</li>
-                <li>母亲身份证号码：</li>
-                <li>父母结婚证书编号:</li>
-                <li >出生证书编号：</li>
-                <li>出生日期：</li>
-                <li>性别：</li>
-                <li>接生机构：</li>
+        <li>审查编号: <%= residence_detail.check_id %></li>
+        <li>新生儿姓名: <%= residence_detail.name %></li>
+        <li>父亲姓名: <%= residence_detail.father_name %></li>
+        <li>父亲身份证号码: <%= residence_detail.father_id %></li>
+        <li>母亲姓名: <%= residence_detail.mother_name %></li>
+        <li>母亲身份证号码: <%= residence_detail.mother_id %></li>
+        <li>父母结婚证书编号: <%= residence_detail.marry_cert %></li>
+        <li>新生儿出生证书编号: <%= residence_detail.birth_id %></li>
+        <li>新生儿出生日期: <%= residence_detail.birth_date %></li>
+        <li>新生儿性别: <%= residence_detail.sex %></li>
+        <li>接生机构: <%= residence_detail.hospital_id %></li>
 
-
-            </ul>
-        </div>
-
+      </ul>
     </div>
+
+  </div>
 </div>
 <div id="aa">
-    <p>是否具有结婚证书：&nbsp;<span class="glyphicon glyphicon-ok"></span></p>
-    <p>是否开具出生证明：&nbsp;<span class="glyphicon glyphicon-ok"></span></p>
-    <p>出生时间是否在有效范围内：&nbsp;<span class="glyphicon glyphicon-ok"></span></p>
+  <p>是否具有结婚证书：&nbsp;<span id="judgeA" class="glyphicon glyphicon-ok"></span></p>
+  <p>是否开具出生证明：&nbsp;<span id="judgeB" class="glyphicon glyphicon-ok"></span></p>
+  <p>出生时间是否在有效范围内：&nbsp;<span id="judgeC" class="glyphicon glyphicon-ok"></span></p>
 </div>
 
 
-<form role = "form" class="form-horizontal">
-    <div class="form-group">
-        <div class="col-lg-4 col-lg-offset-5">
-            <button  type = "button" class="btn-info" id="btn_submit1">接受</button>
-            <button  type = "button" class="btn-info" id="btn_submit2">拒绝</button>
+<form role="form" class="form-horizontal">
 
-        </div>
+  <div class="form-group">
+    <div class="col-lg-4 col-lg-offset-5">
+      <button type="button" class="btn-info" id="btn_accept">接受</button>
+      <button type="button" class="btn-info" id="btn_deny">拒绝</button>
 
     </div>
+
+  </div>
 </form>
 
 </body>
+
 <script type="text/javascript">
 
-    $("#btn_submit2").click(function () {
-        window.location.href = "police_office";
+  $(document).ready(function () {
+    var checkflag = "<%= residence_detail.checkflag %>";
+    if (checkflag.charAt(4) === "1") {
+      $("#judgeA").attr("class", "glyphicon glyphicon-ok");
+    }
+    else {
+      $("#judgeA").attr("class", "glyphicon glyphicon-remove");
+    }
+
+    if (checkflag.charAt(5) === "1") {
+      $("#judgeB").attr("class", "glyphicon glyphicon-ok");
+    }
+    else {
+      $("#judgeB").attr("class", "glyphicon glyphicon-remove");
+    }
+
+    if (checkflag.charAt(6) === "1") {
+      $("#judgeC").attr("class", "glyphicon glyphicon-ok");
+    }
+    else {
+      $("#judgeC").attr("class", "glyphicon glyphicon-remove");
+    }
+
+  });
+
+  $('#btn_submit').click(function () {
+    var data = {};
+    data.regist_num = "<%= regist_num %>";
+    data.flag = "1";
+    $.ajax({
+      url: 'add_page',
+      type: "POST",
+      contentType: "application/json",
+      data: JSON.stringify(data),
+      success: function (data) {
+        alert("审批完成");
+      }
     });
+  });
+
+  $("#btn_deny").click(function () {
+    window.location.href = "police_office";
+  });
 </script>
 </html>
