@@ -16,7 +16,7 @@
 
         #mypanel {
             padding-left: 400px;
-            padding-top: 200px;
+            padding-top: 150px;
             padding-right: 400px;
         }
     </style>
@@ -57,12 +57,17 @@
             </ul>
         </div>
         </div>
-        <!--<div><table id="table"></table></div>-->
 
-        <!--<div class="panel-footer" style="text-align: center;">个人信息</div>-->
     </div>
 </div>
+<form role = "form" class="form-horizontal">
+    <div class="form-group">
+        <div class="col-lg-4 col-lg-offset-5">
 
+            <button type = "button" class="btn-info btn-lg" id="btn_submit2">返回</button>
+        </div>
+    </div>
+</form>
 </body>
 
 <script>
@@ -96,5 +101,10 @@
         }
     });
 </script>
+<script type="text/javascript">
 
+    $("#btn_submit2").click(function () {
+        window.location.href = "police_office";
+    });
+</script>
 </html>
