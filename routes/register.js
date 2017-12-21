@@ -26,6 +26,17 @@ router.post('/', function (req, res, next) {
   var createHuman = require('./myhfc/myhfcInvoke');
 
   createHuman(request, function (str) {
+        str.审查编号;
+        str.父亲姓名;
+        str.父亲身份证号;
+        str.母亲姓名;
+      str.母亲身份证号;
+      str.父母结婚证书编号;
+      str.出生证书编号;
+      str.出生日期;
+      str.性别;
+      str.接生机构;
+      str.判断结果;
     console.log(str);
   });
 });

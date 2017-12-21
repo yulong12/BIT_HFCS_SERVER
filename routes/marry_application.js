@@ -25,13 +25,6 @@ router.post('/', function (req, res, next) {
   var men_id = req.body.men_id;
   var women_id = req.body.women_id;
 
-  // var photo=req.body.marry_photo;
-  //  var base64Data = photo.replace(/^data:image\/\w+;base64,/, "");
-  // var hash=hash.update(base64Data);
-  //  var hashcode=hash.digest('hex');
-  // console.log("-----------hash--"+men_id);
-
-
   var request = {
     chaincodeId: options.chaincode_id,
     fcn: 'marryCheck',
@@ -60,7 +53,8 @@ router.post('/', function (req, res, next) {
     var hashcode = hash.digest('hex');
     console.log("---------------------------hash--" + hashcode);
     console.log("------------base64Data-----" + base64Data);
-    var query = "insert into marry_check(check_id,husband_name,husband_id, husband_state,wife_name,wife_id,wife_state,checkflag,photo,hashcode)values('" + checkID + "','" + Husband_Name + "','" + Husband_ID + "','" + HusbandState + "','" + Wife_Name + "','" + Wife_ID + "','" + WifeState + "','" + check + "','" + base64Data + "','" + hashcode + "');";
+    //if_managed =1代表已处理，if_look=1代表已查看
+    var query = "insert into marry_check(check_id,husband_name,husband_id, husband_state,wife_name,wife_id,wife_state,checkflag,photo,hashcode,if_managed ,if_look )values('" + checkID + "','" + Husband_Name + "','" + Husband_ID + "','" + HusbandState + "','" + Wife_Name + "','" + Wife_ID + "','" + WifeState + "','" + check + "','" + base64Data + "','" + hashcode + "',"+"0,"+"0"+");";
 
     console.log("check----" + query);
     mysql.executeQuery(query, function (status, result) {
