@@ -8,7 +8,7 @@
   <script src="javascripts/bootstrap.min.js"></script>
   <style type="text/css">
     .myform {
-      margin-top: 20px;
+      margin-top: 80px;
       margin-left: 400px;
     }
   </style>
@@ -29,19 +29,34 @@
           </div>
         </div>
         <div class="form-group">
+          <label class="col-lg-2 control-label" for="babyaddress">新生儿住址</label>
+          <div class="col-lg-3">
+            <input type="text" class="form-control" id="babyaddress"
+                   placeholder="新生儿住址"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-lg-2 control-label" for="babynation">民族</label>
+          <div class="col-lg-3">
+            <input type="text" class="form-control" id="babynation"
+                   placeholder="新生儿民族"/>
+          </div>
+        </div>
+
+        <div class="form-group">
           <label class="col-lg-2 control-label" for="babyphoto">上传新生儿照片</label>
           <div class="col-lg-3">
             <input type="file" id="babyphoto"/>
           </div>
         </div>
         <div class="form-group">
-          <label class="col-lg-2 control-label" for="print" style="margin-top: 60px;">上传指纹</label>
-          <div class="col-lg-2">
-            <img src="images/fingerprint.png" class="img-circle" id="print" style="width: 100%;">
+          <label class="col-lg-2 control-label" for="print">上传指纹</label>
+          <div class="col-lg-3">
+            <input type="file" id="print"/>
           </div>
         </div>
 
-        <div class="form-group" style="margin-right: 300px;">
+        <div class="form-group" style="margin-right:300px;">
           <div class="col-lg-2 col-lg-offset-2">
             <button type="button" class="btn-info btn-lg" id="send">申请</button>
           </div>
