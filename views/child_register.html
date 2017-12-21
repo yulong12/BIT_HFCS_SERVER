@@ -88,8 +88,9 @@
 	            </div>
 	        </div>
 	        <div class="form-group">
-	            <div class="col-lg-4 col-lg-offset-6">
-	                <button type = "button" class="btn-info btn-lg" id="btn_submit">提交</button>
+	            <div class="col-lg-4 col-lg-offset-5">
+	                <button type = "button" class="btn-info btn-lg" id="btn_submit1">提交</button>
+					<button type = "button" class="btn-info btn-lg" id="btn_submit2">返回</button>
 	            </div>
 
 	        </div>
@@ -124,5 +125,11 @@
                 }
             });
         });
+</script>
+<script type="text/javascript">
+
+    $("#btn_submit2").click(function () {
+        window.location.href = "hospital";
+    });
 </script>
 </html>
