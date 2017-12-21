@@ -10,11 +10,14 @@
 
   <style type="text/css">
     .myform {
-      margin-top: 100px;
+      margin-top: 20px;
       margin-left: 400px;
     }
     #mypanel {
       display: none;
+      width: 500px;
+      margin-left: auto;
+      margin-right: auto;
     }
   </style>
 
@@ -46,10 +49,34 @@
       </div>
     </form>
   </div>
+  <div id="mypanel">
+    <div class="panel panel-primary">
+      <!--<div class="panel-heading">用户信息表</div>-->
+      <div class="panel-body">
+        <ul>
+          <li>用户姓名:张三</li>
+          <li>用户身份证号码：1234567</li>
+          <li>用户性别：男</li>
+          <li>父亲身份证号码：1234567</li>
+          <li>母亲身份证号码：1234567</li>
+          <li>结婚状态</li>
+          <li>配偶姓名：李四</li>
+          <li>配偶身份证号码：1234567</li>
+          <li>社保信息</li>
+          <li>孩子ID：6666</li>
+          <li>孩子出生证编号：</li>
+          <li>新生儿ID：7777</li>
+          <li>新生儿出生证编号：</li>
+        </ul>
+      </div>
+      <!--<div class="panel-footer" style="text-align: center;"></div>-->
+    </div>
+  </div>
   <div class="panel-footer"></div>
 </div>
 
 <!-- 返回用户自己户口信息 -->
+<<<<<<< HEAD
 <div id="mypanel">
   <div class="panel panel-primary">
     <div class="panel-heading">用户信息表</div>
@@ -75,6 +102,9 @@
     <div class="panel-footer" style="text-align: center;">户口信息</div>
   </div>
 </div>
+=======
+
+>>>>>>> dad59d6f828c9c68202ec8e85da26e2e23075e99
 
 <script type="text/javascript">
   $("#mybutton").click(function (event) {

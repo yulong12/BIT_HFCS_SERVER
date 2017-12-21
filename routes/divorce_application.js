@@ -2,11 +2,6 @@ var express = require('express');
 var router = express.Router();
 var fs = require('fs');
 var options = require("./myhfc/org2Config");
-const crypto = require('crypto');
-const hash1 = crypto.createHash('md5');
-const hash2 = crypto.createHash('md5');
-const hash3 = crypto.createHash('md5');
-var mysql = require("../db/MYSQLconnection");
 
 /* GET divorce_application listing. */
 router.get('/', function (req, res, next) {
@@ -33,6 +28,11 @@ router.post('/', function (req, res, next) {
     var marry = require('./myhfc/myhfcInvoke');
 
     marry(request, function (str) {
+        const crypto = require('crypto');
+        const hash1 = crypto.createHash('md5');
+        const hash2 = crypto.createHash('md5');
+        const hash3 = crypto.createHash('md5');
+        var mysql = require("../db/MYSQLconnection");
         console.log(str);
         var check_id = str.审查编号;
         var husband_name = str.丈夫姓名;

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>登记社保卡信息</title>
+    <title>社保信息查询</title>
     <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
     <script src="javascripts/jquery-1.11.1.js"></script>
     <script src="javascripts/bootstrap.min.js"></script>
@@ -13,32 +13,67 @@
         .form-group{
             color: black;
         }
+        #mypanel {
+            padding-left: 400px;
+            padding-top: 50px;
+            padding-right: 400px;
+        }
+        .navbar-form{
+            padding-top: 10px;
+        }
     </style>
 </head>
 <body>
+<div class="col-lg-7">
+    <form class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="身份证号" id="select">
+        </div>
+        <button type="button" class="btn btn-default btn-info" id="select_btn">查询</button>
+    </form>
+
+</div>
+
 <form role = "form" class="form-horizontal">
     <!--<table id="table"></table>-->
 
+    <div id="mypanel">
+        <div class="panel panel-primary">
+            <div class="panel-heading">社保信息</div>
+            <div class="panel-body">
+                <ul>
+                    <li >照片：<img src="images/girl.jpg" style="width:90px;"></li>
+                    <li id="r_name">姓名:张三&nbsp;</li>
+                    <li id="r_id">社会保障号码:110105199409026686&nbsp;</li>
+                    <li >社会保障卡号：62758919&nbsp;</li>
+                    <li >发卡日期：2017年3月10日&nbsp;</li>
+                    <li >医疗保险类别：农村合作医疗&nbsp;</li>
 
-
-        <div class = "form-group">
-            <label class="col-lg-4 control-label" for = "state">医疗保险类别</label>
-            <div class="col-lg-3">
-                <input type="text" class="form-control" id = "state"
-                       placeholder = ""/>
+                </ul>
             </div>
         </div>
-        <div class = "form-group">
-            <label class="col-lg-4 control-label" for = "state1">报销比例</label>
-            <div class="col-lg-3">
-                <input type="text" class="form-control" id = "state1"
-                       placeholder = ""/>
-            </div>
-        </div>
+
+    </div>
+
+
+        <!--<div class = "form-group">-->
+            <!--<label class="col-lg-4 control-label" for = "state">医疗保险类别</label>-->
+            <!--<div class="col-lg-3">-->
+                <!--<input type="text" class="form-control" id = "state"-->
+                       <!--placeholder = ""/>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class = "form-group">-->
+            <!--<label class="col-lg-4 control-label" for = "state1">报销比例</label>-->
+            <!--<div class="col-lg-3">-->
+                <!--<input type="text" class="form-control" id = "state1"-->
+                       <!--placeholder = ""/>-->
+            <!--</div>-->
+        <!--</div>-->
         <div class="form-group">
-            <div class="col-lg-4 col-lg-offset-4">
-                <button type = "button" class="btn-info btn-lg" id="btn_submit">提交</button>
-                <button type = "button" class="btn-info btn-lg" id="btn_submit2">返回</button>
+            <div class="col-lg-4 col-lg-offset-5">
+
+                <button type = "button" class="btn-info btn-md" id="btn_submit2">返回</button>
             </div>
         </div>
     </div>

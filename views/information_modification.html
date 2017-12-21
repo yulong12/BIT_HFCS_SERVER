@@ -25,40 +25,43 @@
     <form role="form" class="form-horizontal">
       <div class="myform">
         <div class="form-group">
-          <label class="col-lg-2 control-label" for="name">选择修改项</label>
+          <label class="col-lg-2 control-label">原地址</label>
+          <!--<div class="col-lg-3">-->
+            <!--<input type="text" class="form-control" id="name"/>-->
+          <!--</div>-->
+        </div>
+
+        <div class="form-group">
+          <label class="col-lg-2 control-label" for="newaddress">修改地址</label>
           <div class="col-lg-3">
-            <select class="form-control">
-              <option class="active">请选择</option>
-              <option>地址</option>
-              <option>联系方式</option>
-            </select>
+            <input type="text" class="form-control" id="newaddress"/>
           </div>
         </div>
         <div class="form-group">
-          <label class="col-lg-2 control-label" for="name">原信息</label>
+          <label class="col-lg-2 control-label">原电话号码</label>
           <!--<div class="col-lg-3">-->
-          <!--<input type = "text" class = "form-control" id = "name"/>-->
+            <!--<input type="text" class="form-control" id="name"/>-->
           <!--</div>-->
         </div>
         <div class="form-group">
-          <label class="col-lg-2 control-label" for="name">输入新信息</label>
+          <label class="col-lg-2 control-label" for="newnum">修改电话号码</label>
           <div class="col-lg-3">
-            <input type="text" class="form-control" id="name"/>
+            <input type="text" class="form-control" id="newnum"/>
           </div>
         </div>
         <div class="form-group">
-          <label class="col-lg-2 control-label" for="name">修改理由</label>
+          <label class="col-lg-2 control-label" for="reason">修改理由</label>
           <div class="col-lg-3">
-            <input type="text" class="form-control" id="name"/>
+            <input type="text" class="form-control" id="reason"/>
           </div>
         </div>
 
-        <div class="form-group" style="margin-right: 300px;">
+        <div class="form-group" style="margin-right: 200px;">
           <div class="col-lg-2 col-lg-offset-2">
-            <button type="button" class="btn-info btn-lg" id="send">修改</button>
+            <button type="button" class="btn-info btn" id="send">提交</button>
           </div>
           <div class="col-lg-2 col-lg-offset-2">
-            <button type="button" class="btn-info btn-lg" id="back">返回</button>
+            <button type="button" class="btn-info btn" id="back">返回</button>
           </div>
         </div>
       </div>
