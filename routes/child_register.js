@@ -36,7 +36,7 @@ router.post('/', function (req, res, next) {
   var request = {
     chaincodeId: options.chaincode_id,
     fcn: 'createBirth',
-    args: [father_ID, mother_ID, child_sex, child_date, hospital,child_place,child_weight,child_health],
+    args: [father_ID, mother_ID, child_sex, child_date, hospital,child_place,child_weight,child_health,req.body.child_name],
     chainId: options.channel_id
   };
 
