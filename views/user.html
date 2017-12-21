@@ -3,38 +3,38 @@
 
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+  <title>便民服务系统</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
-    <!-- MetisMenu CSS -->
+  <!-- Bootstrap Core CSS -->
+  <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
+  <!-- MetisMenu CSS -->
 
-    <!-- Custom CSS -->
-    <link href="stylesheets/sb-admin-2.css" rel="stylesheet">
-    <!-- Custom Fonts -->
-    <link href="stylesheets/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <!-- Custom CSS -->
+  <link href="stylesheets/sb-admin-2.css" rel="stylesheet">
+  <!-- Custom Fonts -->
+  <link href="stylesheets/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 
-    <!-- jQuery -->
-    <script src="javascripts/jquery-1.11.1.min.js"></script>
-    <!-- Bootstrap Core JavaScript -->
-    <script src="javascripts/bootstrap.min.js"></script>
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="javascripts/metisMenu.min.js"></script>
-    <!-- Custom Theme JavaScript -->
-    <script src="javascripts/sb-admin-2.js"></script>
+  <!-- jQuery -->
+  <script src="javascripts/jquery-1.11.1.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script src="javascripts/bootstrap.min.js"></script>
+  <!-- Metis Menu Plugin JavaScript -->
+  <script src="javascripts/metisMenu.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script src="javascripts/sb-admin-2.js"></script>
 
-    <script type="text/javascript">
-        window.onload=function () {
-        setInterval("show_time.innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay());",1000);
-        };
-    </script>
+  <script type="text/javascript">
+    window.onload = function () {
+      setInterval("show_time.innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay());", 1000);
+    };
+  </script>
 
 </head>
 
@@ -42,453 +42,455 @@
 
 <div id="wrapper">
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="margin-bottom: 0">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="index.html" style="color: white;">便民服务系统</a>
+  <!-- Navigation -->
+  <nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="margin-bottom: 0">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html" style="color: white;">便民服务系统</a>
 
-            <ul class="nav navbar-top-links navbar-right">
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
-                    </a>
-                </li>
-                <!-- /.dropdown -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-tasks fa-fw"></i> <i class="fa fa-caret-down"></i>
-                    </a>
-                </li>
-                <!-- /.dropdown -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-alerts">
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-comment fa-fw"></i> New Comment
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-twitter fa-fw"></i> 3 New Followers
-                                    <span class="pull-right text-muted small">12 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-envelope fa-fw"></i> Message Sent
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-tasks fa-fw"></i> New Task
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-upload fa-fw"></i> Server Rebooted
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a class="text-center" href="#">
-                                <strong>See All Alerts</strong>
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-alerts -->
-                </li>
-                <!-- /.dropdown -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-user -->
-                </li>
-                <!-- /.dropdown -->
-            </ul>
+      <ul class="nav navbar-top-links navbar-right">
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
+          </a>
+        </li>
+        <!-- /.dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            <i class="fa fa-tasks fa-fw"></i> <i class="fa fa-caret-down"></i>
+          </a>
+        </li>
+        <!-- /.dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            <i class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-alerts">
+            <li>
+              <a href="#">
+                <div>
+                  <i class="fa fa-comment fa-fw"></i> New Comment
+                  <span class="pull-right text-muted small">4 minutes ago</span>
+                </div>
+              </a>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <a href="#">
+                <div>
+                  <i class="fa fa-twitter fa-fw"></i> 3 New Followers
+                  <span class="pull-right text-muted small">12 minutes ago</span>
+                </div>
+              </a>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <a href="#">
+                <div>
+                  <i class="fa fa-envelope fa-fw"></i> Message Sent
+                  <span class="pull-right text-muted small">4 minutes ago</span>
+                </div>
+              </a>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <a href="#">
+                <div>
+                  <i class="fa fa-tasks fa-fw"></i> New Task
+                  <span class="pull-right text-muted small">4 minutes ago</span>
+                </div>
+              </a>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <a href="#">
+                <div>
+                  <i class="fa fa-upload fa-fw"></i> Server Rebooted
+                  <span class="pull-right text-muted small">4 minutes ago</span>
+                </div>
+              </a>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <a class="text-center" href="#">
+                <strong>See All Alerts</strong>
+                <i class="fa fa-angle-right"></i>
+              </a>
+            </li>
+          </ul>
+          <!-- /.dropdown-alerts -->
+        </li>
+        <!-- /.dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-user">
+            <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+            </li>
+            <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+            </li>
+            <li class="divider"></li>
+            <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+            </li>
+          </ul>
+          <!-- /.dropdown-user -->
+        </li>
+        <!-- /.dropdown -->
+      </ul>
 
-        </div>
-        <!-- /.navbar-header -->
-        <div id="show_time" style="color: white;margin-top: 15px;margin-right: 15px;" class="pull-right"></div>
+    </div>
+    <!-- /.navbar-header -->
+    <div id="show_time" style="color: white;margin-top: 15px;margin-right: 15px;" class="pull-right"></div>
 
-        <!-- /.navbar-top-links -->
+    <!-- /.navbar-top-links -->
 
-        <div class="navbar-default sidebar" role="navigation">
-            <div class="sidebar-nav navbar-collapse">
-                <ul class="nav" id="side-menu">
-                    <li class="sidebar-search">
-                        <div class="input-group custom-search-form">
-                            <input type="text" class="form-control" placeholder="Search...">
-                            <span class="input-group-btn">
+    <div class="navbar-default sidebar" role="navigation">
+      <div class="sidebar-nav navbar-collapse">
+        <ul class="nav" id="side-menu">
+          <li class="sidebar-search">
+            <div class="input-group custom-search-form">
+              <input type="text" class="form-control" placeholder="Search...">
+              <span class="input-group-btn">
                                 <button class="btn btn-default" type="button">
                                     <i class="fa fa-search"></i>
                                 </button>
                             </span>
-                        </div>
-                        <!-- /input-group -->
-                    </li>
-                    <li>
-                        <a href="index.html"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;&nbsp;首页</a>
-                    </li>
-                    <li>
-                        <a href="#"><span class="glyphicon glyphicon-th-list"></span>&nbsp;&nbsp;&nbsp;服务<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="flot.html">在线服务</a>
-                            </li>
-                            <li>
-                                <a href="morris.html">联系方式</a>
-                            </li>
-                        </ul>
-                        <!-- /.nav-second-level -->
-                    </li>
-                    <li>
-                        <a href="tables.html"><span class="glyphicon glyphicon-tags"></span>&nbsp;&nbsp;&nbsp;已办事项</a>
-                    </li>
-                    <li>
-                        <a href="forms.html"><span class="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp;&nbsp;信息</a>
-                    </li>
-                    <li>
-                        <a href="#"><span class="glyphicon glyphicon-thumbs-up"></span>&nbsp;&nbsp;&nbsp;合作单位<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="#">民政局</a>
-                            </li>
-                            <li>
-                                <a href="#">公安局</a>
-                            </li>
-                            <li>
-                                <a href="#">社保局</a>
+            </div>
+            <!-- /input-group -->
+          </li>
+          <li>
+            <a href="index.html"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;&nbsp;首页</a>
+          </li>
+          <li>
+            <a href="#"><span class="glyphicon glyphicon-th-list"></span>&nbsp;&nbsp;&nbsp;服务<span
+              class="fa arrow"></span></a>
+            <ul class="nav nav-second-level">
+              <li>
+                <a href="flot.html">在线服务</a>
+              </li>
+              <li>
+                <a href="morris.html">联系方式</a>
+              </li>
+            </ul>
+            <!-- /.nav-second-level -->
+          </li>
+          <li>
+            <a href="tables.html"><span class="glyphicon glyphicon-tags"></span>&nbsp;&nbsp;&nbsp;已办事项</a>
+          </li>
+          <li>
+            <a href="forms.html"><span class="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp;&nbsp;信息</a>
+          </li>
+          <li>
+            <a href="#"><span class="glyphicon glyphicon-thumbs-up"></span>&nbsp;&nbsp;&nbsp;合作单位<span
+              class="fa arrow"></span></a>
+            <ul class="nav nav-second-level">
+              <li>
+                <a href="#">民政局</a>
+              </li>
+              <li>
+                <a href="#">公安局</a>
+              </li>
+              <li>
+                <a href="#">社保局</a>
 
-                            </li>
-                            <li>
-                                <a href="#">医院</a>
-                            </li>
-                        </ul>
-                    <li>
-                        <a href="#"><i class="fa fa-files-o fa-fw"></i>&nbsp;&nbsp;&nbsp;新闻<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="blank.html">最新资讯</a>
-                            </li>
-                            <li>
-                                <a href="login.html">精华片段</a>
-                            </li>
-                        </ul>
-                        <!-- /.nav-second-level -->
-                    </li>
+              </li>
+              <li>
+                <a href="#">医院</a>
+              </li>
+            </ul>
+          <li>
+            <a href="#"><i class="fa fa-files-o fa-fw"></i>&nbsp;&nbsp;&nbsp;新闻<span class="fa arrow"></span></a>
+            <ul class="nav nav-second-level">
+              <li>
+                <a href="blank.html">最新资讯</a>
+              </li>
+              <li>
+                <a href="login.html">精华片段</a>
+              </li>
+            </ul>
+            <!-- /.nav-second-level -->
+          </li>
 
-                </ul>
+        </ul>
 
-            </div>
-            <!-- /.sidebar-collapse -->
+      </div>
+      <!-- /.sidebar-collapse -->
 
-        </div>
-        <!-- /.navbar-static-side -->
-
-    </nav>
-
-    <div id="page-wrapper">
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;个人信息服务</h1>
-            </div>
-            <!-- /.col-lg-12 -->
-        </div>
-        <!-- /.row -->
-        <div class="row">
-            <div class="col-lg-3 col-md-6">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        <div class="row">
-                            <div class="col-xs-3">
-                                <i class="fa fa-cog fa-5x"></i>
-                            </div>
-                            <div class="col-xs-9 text-right">
-                                <div style="margin-top: 25px;">居民个人信息维护</div>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="#">
-                        <div class="panel-footer" onclick="switch_to_information_modification()">
-                            <span class="pull-left">详细</span>
-                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                            <div class="clearfix"></div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="panel panel-green">
-                    <div class="panel-heading">
-                        <div class="row">
-                            <div class="col-xs-3">
-                                <i class="fa fa-tasks fa-5x"></i>
-                            </div>
-                            <div class="col-xs-9 text-right">
-                                <div style="margin-top: 25px;">居民个人信息查询</div>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="#">
-                        <div class="panel-footer" onclick="switch_to_search()">
-                            <span class="pull-left">详细</span>
-                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                            <div class="clearfix"></div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="panel panel-yellow">
-                    <div class="panel-heading">
-                        <div class="row">
-                            <div class="col-xs-3">
-                                <i class="fa fa-venus-double fa-5x"></i>
-                            </div>
-                            <div class="col-xs-9 text-right">
-                                <div style="margin-top: 25px;">居民结婚申请</div>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="#">
-                        <div class="panel-footer" onclick="switch_to_marry_application()">
-                            <span class="pull-left">详细</span>
-                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                            <div class="clearfix"></div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="panel panel-red">
-                    <div class="panel-heading">
-                        <div class="row">
-                            <div class="col-xs-3">
-                                <i class="fa fa-gavel fa-5x"></i>
-                            </div>
-                            <div class="col-xs-9 text-right">
-                                <div style="margin-top: 25px;">居民离婚申请</div>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="#">
-                        <div class="panel-footer" onclick="switch_to_divorce_application()">
-                            <span class="pull-left">详细</span>
-                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                            <div class="clearfix"></div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <!-- /.row -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header"><span class="glyphicon glyphicon-file"></span>&nbsp;&nbsp;新生儿服务</h1>
-            </div>
-            <!-- /.col-lg-12 -->
-        </div>
-        <!-- /.row -->
-        <div class="row">
-            <div class="col-lg-3 col-md-6">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        <div class="row">
-                            <div class="col-xs-3">
-                                <i class="fa fa-files-o fa-5x"></i>
-                            </div>
-                            <div class="col-xs-9 text-right">
-                                <div style="margin-top: 25px;">新生儿户口本申请</div>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="#">
-                        <div class="panel-footer" onclick="switch_to_register()">
-                            <span class="pull-left">详细</span>
-                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                            <div class="clearfix"></div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="panel panel-yellow">
-                    <div class="panel-heading">
-                        <div class="row">
-                            <div class="col-xs-3">
-                                <i class="fa fa-credit-card fa-5x"></i>
-                            </div>
-                            <div class="col-xs-9 text-right">
-                                <div style="margin-top: 25px;">新生儿身份证申请</div>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="#">
-                        <div class="panel-footer" onclick="switch_to_idcard_application()">
-                            <span class="pull-left">详细</span>
-                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                            <div class="clearfix"></div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="panel panel-red">
-                    <div class="panel-heading">
-                        <div class="row">
-                            <div class="col-xs-3">
-                                <i class="fa fa-list-alt fa-5x"></i>
-                            </div>
-                            <div class="col-xs-9 text-right">
-                                <div style="margin-top: 25px;">新生儿社保卡申请</div>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="#">
-                        <div class="panel-footer">
-                            <span class="pull-left" onclick="switch_to_securitycard_application()">详细</span>
-                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                            <div class="clearfix"></div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header"><span class="glyphicon glyphicon-print"></span>&nbsp;&nbsp;申请打印服务</h1>
-            </div>
-            <!-- /.col-lg-12 -->
-        </div>
-        <!-- /.row -->
-        <div class="row">
-            <div class="col-lg-3 col-md-6">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        <div class="row">
-                            <div class="col-xs-3">
-                                <i class="fa fa-credit-card fa-5x"></i>
-                            </div>
-                            <div class="col-xs-9 text-right">
-                                <div style="margin-top: 25px;" >打印新生儿身份证</div>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="#">
-                        <div class="panel-footer">
-                            <span class="pull-left" onclick="switch_to_print_idcard()">详细</span>
-                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                            <div class="clearfix"></div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="panel panel-green">
-                    <div class="panel-heading">
-                        <div class="row">
-                            <div class="col-xs-3">
-                                <i class="fa fa-tasks fa-5x"></i>
-                            </div>
-                            <div class="col-xs-9 text-right">
-                                <div style="margin-top: 25px;">打印新生儿出生证</div>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="#">
-                        <div class="panel-footer">
-                            <span class="pull-left" onclick="switch_to_print_birthcard()">详细</span>
-                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                            <div class="clearfix"></div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="panel panel-yellow">
-                    <div class="panel-heading">
-                        <div class="row">
-                            <div class="col-xs-3">
-                                <i class="fa fa-newspaper-o fa-5x"></i>
-                            </div>
-                            <div class="col-xs-9 text-right">
-                                <div style="margin-top: 25px;">打印新增户口页</div>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="#">
-                        <div class="panel-footer">
-                            <span class="pull-left" onclick="switch_to_print_hukou()">详细</span>
-                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                            <div class="clearfix"></div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="panel panel-red">
-                    <div class="panel-heading">
-                        <div class="row">
-                            <div class="col-xs-3">
-                                <i class="fa fa-film fa-5x"></i>
-                            </div>
-                            <div class="col-xs-9 text-right">
-                                <div style="margin-top: 25px;">打印户口变更页</div>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="#">
-                        <div class="panel-footer">
-                            <span class="pull-left">详细</span>
-                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                            <div class="clearfix"></div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
     </div>
-    <!-- /#page-wrapper -->
+    <!-- /.navbar-static-side -->
+
+  </nav>
+
+  <div id="page-wrapper">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1 class="page-header"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;个人信息服务</h1>
+      </div>
+      <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+    <div class="row">
+      <div class="col-lg-3 col-md-6">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <div class="row">
+              <div class="col-xs-3">
+                <i class="fa fa-cog fa-5x"></i>
+              </div>
+              <div class="col-xs-9 text-right">
+                <div style="margin-top: 25px;">居民个人信息维护</div>
+              </div>
+            </div>
+          </div>
+          <a href="#">
+            <div class="panel-footer" onclick="switch_to_information_modification()">
+              <span class="pull-left">详细</span>
+              <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+              <div class="clearfix"></div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="panel panel-green">
+          <div class="panel-heading">
+            <div class="row">
+              <div class="col-xs-3">
+                <i class="fa fa-tasks fa-5x"></i>
+              </div>
+              <div class="col-xs-9 text-right">
+                <div style="margin-top: 25px;">居民个人信息查询</div>
+              </div>
+            </div>
+          </div>
+          <a href="#">
+            <div class="panel-footer" onclick="switch_to_search()">
+              <span class="pull-left">详细</span>
+              <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+              <div class="clearfix"></div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="panel panel-yellow">
+          <div class="panel-heading">
+            <div class="row">
+              <div class="col-xs-3">
+                <i class="fa fa-venus-double fa-5x"></i>
+              </div>
+              <div class="col-xs-9 text-right">
+                <div style="margin-top: 25px;">居民结婚申请</div>
+              </div>
+            </div>
+          </div>
+          <a href="#">
+            <div class="panel-footer" onclick="switch_to_marry_application()">
+              <span class="pull-left">详细</span>
+              <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+              <div class="clearfix"></div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="panel panel-red">
+          <div class="panel-heading">
+            <div class="row">
+              <div class="col-xs-3">
+                <i class="fa fa-gavel fa-5x"></i>
+              </div>
+              <div class="col-xs-9 text-right">
+                <div style="margin-top: 25px;">居民离婚申请</div>
+              </div>
+            </div>
+          </div>
+          <a href="#">
+            <div class="panel-footer" onclick="switch_to_divorce_application()">
+              <span class="pull-left">详细</span>
+              <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+              <div class="clearfix"></div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <!-- /.row -->
+    <div class="row">
+      <div class="col-lg-12">
+        <h1 class="page-header"><span class="glyphicon glyphicon-file"></span>&nbsp;&nbsp;新生儿服务</h1>
+      </div>
+      <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+    <div class="row">
+      <div class="col-lg-3 col-md-6">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <div class="row">
+              <div class="col-xs-3">
+                <i class="fa fa-files-o fa-5x"></i>
+              </div>
+              <div class="col-xs-9 text-right">
+                <div style="margin-top: 25px;">新生儿户口本申请</div>
+              </div>
+            </div>
+          </div>
+          <a href="#">
+            <div class="panel-footer" onclick="switch_to_register()">
+              <span class="pull-left">详细</span>
+              <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+              <div class="clearfix"></div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="panel panel-yellow">
+          <div class="panel-heading">
+            <div class="row">
+              <div class="col-xs-3">
+                <i class="fa fa-credit-card fa-5x"></i>
+              </div>
+              <div class="col-xs-9 text-right">
+                <div style="margin-top: 25px;">新生儿身份证申请</div>
+              </div>
+            </div>
+          </div>
+          <a href="#">
+            <div class="panel-footer" onclick="switch_to_idcard_application()">
+              <span class="pull-left">详细</span>
+              <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+              <div class="clearfix"></div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="panel panel-red">
+          <div class="panel-heading">
+            <div class="row">
+              <div class="col-xs-3">
+                <i class="fa fa-list-alt fa-5x"></i>
+              </div>
+              <div class="col-xs-9 text-right">
+                <div style="margin-top: 25px;">新生儿社保卡申请</div>
+              </div>
+            </div>
+          </div>
+          <a href="#">
+            <div class="panel-footer">
+              <span class="pull-left" onclick="switch_to_securitycard_application()">详细</span>
+              <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+              <div class="clearfix"></div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <h1 class="page-header"><span class="glyphicon glyphicon-print"></span>&nbsp;&nbsp;申请打印服务</h1>
+      </div>
+      <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+    <div class="row">
+      <div class="col-lg-3 col-md-6">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <div class="row">
+              <div class="col-xs-3">
+                <i class="fa fa-credit-card fa-5x"></i>
+              </div>
+              <div class="col-xs-9 text-right">
+                <div style="margin-top: 25px;">打印新生儿身份证</div>
+              </div>
+            </div>
+          </div>
+          <a href="#">
+            <div class="panel-footer">
+              <span class="pull-left" onclick="switch_to_print_idcard()">详细</span>
+              <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+              <div class="clearfix"></div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="panel panel-green">
+          <div class="panel-heading">
+            <div class="row">
+              <div class="col-xs-3">
+                <i class="fa fa-tasks fa-5x"></i>
+              </div>
+              <div class="col-xs-9 text-right">
+                <div style="margin-top: 25px;">打印新生儿出生证</div>
+              </div>
+            </div>
+          </div>
+          <a href="#">
+            <div class="panel-footer">
+              <span class="pull-left" onclick="switch_to_print_birthcard()">详细</span>
+              <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+              <div class="clearfix"></div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="panel panel-yellow">
+          <div class="panel-heading">
+            <div class="row">
+              <div class="col-xs-3">
+                <i class="fa fa-newspaper-o fa-5x"></i>
+              </div>
+              <div class="col-xs-9 text-right">
+                <div style="margin-top: 25px;">打印新增户口页</div>
+              </div>
+            </div>
+          </div>
+          <a href="#">
+            <div class="panel-footer">
+              <span class="pull-left" onclick="switch_to_print_hukou()">详细</span>
+              <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+              <div class="clearfix"></div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="panel panel-red">
+          <div class="panel-heading">
+            <div class="row">
+              <div class="col-xs-3">
+                <i class="fa fa-film fa-5x"></i>
+              </div>
+              <div class="col-xs-9 text-right">
+                <div style="margin-top: 25px;">打印户口变更页</div>
+              </div>
+            </div>
+          </div>
+          <a href="#">
+            <div class="panel-footer">
+              <span class="pull-left">详细</span>
+              <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+              <div class="clearfix"></div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /#page-wrapper -->
 
 
 </div>
