@@ -140,12 +140,11 @@
             <span class="fa arrow"></span>
           </a>
           <ul class="nav nav-second-level">
+            <% unfinished_list.forEach(function (regist_num) { %>
             <li>
-              <a href="lalala.html">结婚申请C</a>
+              <a href="marry_register?regist_num=<%= regist_num %>">第<%= regist_num %>号申请</a>
             </li>
-            <li>
-              <a href="lalala.html">结婚申请D</a>
-            </li>
+            <% }) %>
           </ul>
         </li>
         <li>
@@ -154,12 +153,11 @@
             <span class="fa arrow"></span>
           </a>
           <ul class="nav nav-second-level">
+            <% finished_list.forEach(function (regist_num) { %>
             <li>
-              <a href="lalala.html">结婚申请A</a>
+              <a href="#" >第<%= regist_num %>号申请</a>
             </li>
-            <li>
-              <a href="lalala.html">结婚申请B</a>
-            </li>
+            <% }) %>
           </ul>
         </li>
         <li>
@@ -169,6 +167,6 @@
     </div>
   </div>
 </div>
-
 </body>
+
 </html>

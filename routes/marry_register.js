@@ -1,13 +1,15 @@
 var express = require('express');
 var options = require("./myhfc/org2Config");
 var router = express.Router();
+var mysql = require("../db/MYSQLconnection");
 
 /* GET marryregister listing. */
 router.get('/', function (req, res, next) {
-  // res.render('marry_register');
   if (req.session.user) {
-    var user = req.session.user;
-    var name = user.name;
+    if (req.query.regist_num) {
+      console.log(req.query.regist_num);
+      res.render('marry_register');
+    }
     res.render('marry_register');
   } else {
     res.render('need_login');
@@ -17,24 +19,16 @@ router.get('/', function (req, res, next) {
 
 //post
 router.post('/', function (req, res, next) {
-
-  var husband_id = req.body.husband_id;
-  var wife_id = req.body.wife_id;
-  var date = req.body.date;
-
+  var marry = require('./myhfc/myhfcInvoke');
   var request = {
     chaincodeId: options.chaincode_id,
     fcn: 'marry',
-    args: [husband_id, wife_id, date],
+    args: [regist_num, "1", date],
     chainId: options.channel_id
   };
-
-  var marry = require('./myhfc/myhfcInvoke');
-
   marry(request, function (str) {
     res.send(JSON.parse(str));
   });
-
 
 });
 
