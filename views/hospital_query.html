@@ -55,7 +55,7 @@
 <div id="mypanel">
     <form class="navbar-form " role="search">
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="父亲的的身份证号" id="select">
+            <input type="text" class="form-control" placeholder="父亲的身份证号" id="select">
         </div>
         <button type="button" class="btn btn-default btn-info" id="select_btn">查询</button>
     </form>
@@ -78,7 +78,7 @@
 <div id="mypanel1">
     <form class="navbar-form " role="search" >
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="母亲的的身份证号" id="select1">
+            <input type="text" class="form-control" placeholder="母亲的身份证号" id="select1">
         </div>
         <button type="button" class="btn btn-default btn-info" id="select_btn1">查询</button>
     </form>
@@ -146,6 +146,13 @@
         }
     });
 </script>
-
+<script type="text/javascript">
+    $("#btn_submit1").click(function () {
+        window.location.href = "child_register";
+    });
+    $("#btn_submit2").click(function () {
+        window.location.href = "hospital";
+    });
+</script>
 
 </html>

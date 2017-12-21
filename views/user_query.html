@@ -16,7 +16,7 @@
 
         #mypanel {
             padding-left: 400px;
-            padding-top: 200px;
+            padding-top: 150px;
             padding-right: 400px;
         }
     </style>
@@ -57,12 +57,17 @@
             </ul>
         </div>
         </div>
-        <!--<div><table id="table"></table></div>-->
 
-        <!--<div class="panel-footer" style="text-align: center;">个人信息</div>-->
     </div>
 </div>
+<form role = "form" class="form-horizontal">
+    <div class="form-group">
+        <div class="col-lg-4 col-lg-offset-5">
 
+            <button type = "button" class="btn-info btn-lg" id="btn_submit2">返回</button>
+        </div>
+    </div>
+</form>
 </body>
 
 <script>
@@ -80,15 +85,15 @@
                 contentType: "application/json",
                 data: JSON.stringify(data),
                 success: function (data) {
-                    $("#r_name").append(data.姓名);
-                    $("#r_id").append(data.身份证号);
-                    $("#r_sex").append(data.性别);
-                    $("#r_fname").append(data.父亲姓名);
-                    $("#r_mname").append(data.母亲姓名);
+                    $("#r_name").text('姓名:'+data.姓名);
+                    $("#r_id").text('身份证号码:'+data.身份证号);
+                    $("#r_sex").text('性别:'+data.性别);
+                    $("#r_fname").text('父亲姓名:'+data.父亲姓名);
+                    $("#r_mname").text('母亲姓名'+data.母亲姓名);
                     if(data.配偶姓名 === ""){
-                        $("#r_sname").append("未婚");
+                        $("#r_sname").text('配偶姓名:'+"未婚");
                     }else{
-                        $("#r_sname").append(data.配偶姓名);
+                        $("#r_sname").text('配偶姓名:'+data.配偶姓名);
                     }
 
                 }
@@ -96,5 +101,10 @@
         }
     });
 </script>
+<script type="text/javascript">
 
+    $("#btn_submit2").click(function () {
+        window.location.href = "police_office";
+    });
+</script>
 </html>

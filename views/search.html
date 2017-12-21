@@ -1,89 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>search</title>
-	<link rel="stylesheet" href="stylesheets/bootstrap.min.css" />
-	<style type="text/css">
-		
-		.myform{
-			margin-top:100px;
-			margin-left: 400px;
-		}
-        #mypanel{
-            display: none;
-        }
-	</style>
-   
+  <meta charset="UTF-8">
+  <title>居民个人信息查询</title>
+  <link rel="stylesheet" href="stylesheets/bootstrap.min.css"/>
+
+  <script src="javascripts/jquery-1.11.1.min.js"></script>
+  <script src="javascripts/bootstrap.min.js"></script>
+
+  <style type="text/css">
+    .myform {
+      margin-top: 100px;
+      margin-left: 400px;
+    }
+    #mypanel {
+      display: none;
+    }
+  </style>
 
 </head>
 <body>
 <div class="panel panel-primary">
-    <div class="panel-heading">居民个人信息查询</div>
-    <div class="panel-body">
-        <form role = "form" class="form-horizontal"> 
-            <div class="myform"> 
+  <div class="panel-heading">居民个人信息查询</div>
+  <div class="panel-body">
+    <form role="form" class="form-horizontal">
+      <div class="myform">
 
-                 <div class ="form-group">  
-                    <label class="col-lg-2 control-label" for = "num">身份证号码</label>
-                    <div class="col-lg-3">
-                        <input type="text" class="form-control" id = "num"   
-                                placeholder = "输入身份证号码"></input>  
-                    </div>  
-                </div>  
-                <div class="form-group" style="margin-left: 140px;">
-                    <div class="col-lg-2">
-                    <!-- 写死了，需要根据最后后台结果再改 -->
-                        <button type = "submit" class="btn-info btn-lg" id="mybutton">查询</button>
-                    </div>
-                    <div class="col-lg-2">
-                        <button type = "submit" class="btn-info btn-lg" id="mybutton2" onclick="javascript:history.back(-1);">返回</button>
-                    </div>
-                </div> 
-              </div>  
-     	 </form>
-    </div>
-<div class="panel-footer"></div>
+        <div class="form-group">
+          <label class="col-lg-2 control-label" for="num">身份证号码</label>
+          <div class="col-lg-3">
+            <input type="text" class="form-control" id="num"
+                   placeholder="输入身份证号码"/>
+          </div>
+        </div>
+        <div class="form-group" style="margin-left: 140px;">
+          <div class="col-lg-2">
+            <!-- 写死了，需要根据最后后台结果再改 -->
+            <button type="button" class="btn-info btn-lg" id="mybutton">查询</button>
+          </div>
+          <div class="col-lg-2">
+            <button type="button" class="btn-info btn-lg" id="back">返回
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="panel-footer"></div>
 </div>
 
 <!-- 返回用户自己户口信息 -->
 <div id="mypanel">
-    <div class="panel panel-primary">
-        <div class="panel-heading">用户信息表</div>
-        <div class="panel-body">
-            <ul>
-                <li>用户姓名:张三</li>
-                <li>用户身份证号码：1234567</li>
-                <li>用户性别：男</li>
-                <li>父亲身份证号码：1234567</li>
-                <li>母亲身份证号码：1234567</li>
-                <li>结婚状态</li>
-                <li>配偶姓名：李四</li>
-                <li>配偶身份证号码：1234567</li>
-                <li>社保信息</li>
-                <li>孩子ID：6666</li>
-                <li>孩子出生证编号：</li>
-                <li>新生儿ID：7777</li>
-                <li>新生儿出生证编号：</li>
-
-
-            </ul>
-        </div>
-        <div class="panel-footer" style="text-align: center;">户口信息</div>
+  <div class="panel panel-primary">
+    <div class="panel-heading">用户信息表</div>
+    <div class="panel-body">
+      <ul>
+        <li>用户姓名:张三</li>
+        <li>用户身份证号码：1234567</li>
+        <li>用户性别：男</li>
+        <li>父亲身份证号码：1234567</li>
+        <li>母亲身份证号码：1234567</li>
+        <li>结婚状态</li>
+        <li>配偶姓名：李四</li>
+        <li>配偶身份证号码：1234567</li>
+        <li>社保信息</li>
+        <li>孩子ID：6666</li>
+        <li>孩子出生证编号：</li>
+        <li>新生儿ID：7777</li>
+        <li>新生儿出生证编号：</li>
+      </ul>
     </div>
+    <div class="panel-footer" style="text-align: center;">户口信息</div>
+  </div>
 </div>
 
-
-<script src="javascripts/jquery-1.11.1.min.js"></script>
-<script src="javascripts/bootstrap.min.js"></script>
-
-
 <script type="text/javascript">
-    $("#mybutton").click(function(event) {
-        var pnel = document.getElementById("mypanel");
-        pnel.style.display = "block";
-        event.preventDefault();
-    });
+  $("#mybutton").click(function (event) {
+    var pnel = document.getElementById("mypanel");
+    pnel.style.display = "block";
+    event.preventDefault();
+  });
+  $("#back").click(function () {
+    window.location.href = "user";
+  });
 </script>
 
 </body>

@@ -7,7 +7,7 @@ router.get('/', function (req, res, next) {
   if (req.session.user) {
     var user = req.session.user;
     var name = user.name;
-    res.render('idcard_application');
+    res.render('securityCard_application');
   } else {
     res.render('need_login');
   }
