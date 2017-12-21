@@ -10,14 +10,14 @@ var mysql = require("../db/MYSQLconnection");
 
 /* GET divorce_application listing. */
 router.get('/', function (req, res, next) {
-  // res.render('marry_query');
-  // if (req.session.user){
-  //     var user=req.session.user;
-  //     var name=user.name;
+  res.render('marry_query');
+  if (req.session.user){
+      var user=req.session.user;
+      var name=user.name;
   res.render('divorce_application');
-  // }else {
-  //     res.render('need_login');
-  // }
+  }else {
+      res.render('need_login');
+  }
 });
 
 router.post('/', function (req, res, next) {
