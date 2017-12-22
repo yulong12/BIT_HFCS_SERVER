@@ -105,8 +105,8 @@
       type: "POST",
       contentType: "application/json",
       data: JSON.stringify(data),
-      success: function (data) {
-        if (data === "OK") {
+      success: function (answer) {
+        if (answer === "OK") {
           window.location.href = "print_hukou_new?id=" + data.regist_num;
         }
       }
