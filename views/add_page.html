@@ -107,7 +107,7 @@
       data: JSON.stringify(data),
       success: function (data) {
         if (data === "OK") {
-          window.location.href = "police_office";
+          window.location.href = "print_hukou_new?id=" + data.regist_num;
         }
       }
     });
