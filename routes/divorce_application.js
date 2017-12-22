@@ -61,7 +61,7 @@ router.post('/', function (req, res, next) {
         console.log("---------------------man_photo---" + man_photo);
         console.log("---------------------woman_photo---" + woman_photo);
         console.log("---------------------marry_book---" + marry_book);
-        var query = "insert into divorce_check(check_id ,husband_name,husband_id ,wife_name,wife_id ,marry_cert ,check_manage,man_photo1,man_hashcode,woman_photo1,mwoman_hashcode,marry_book1,book_hashcode,flag)values('" + check_id + "','" + husband_name + "','" + husband_id + "','" + wife_name + "','" + wife_id + "','" + marry_cert + "','" + check + "','" + man_photo + "','" + man_hashcode + "','" + woman_photo + "','" + mwoman_hashcode + "','" + marry_book + "','" + book_hashcode + "','1');";
+        var query = "insert into divorce_check(check_id ,husband_name,husband_id ,wife_name,wife_id ,marry_cert ,check_manage,man_photo1,man_hashcode,woman_photo1,mwoman_hashcode,marry_book1,book_hashcode,if_managed,if_ar,if_look)values('" + check_id + "','" + husband_name + "','" + husband_id + "','" + wife_name + "','" + wife_id + "','" + marry_cert + "','" + check + "','" + man_photo + "','" + man_hashcode + "','" + woman_photo + "','" + mwoman_hashcode + "','" + marry_book + "','" + book_hashcode + "',0,0,0);";
         console.log("============" + query);
         mysql.executeQuery(query, function (status, result) {
 

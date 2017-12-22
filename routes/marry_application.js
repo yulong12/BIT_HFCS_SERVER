@@ -54,8 +54,8 @@ router.post('/', function (req, res, next) {
     var hashcode = hash.digest('hex');
     console.log("---------------------------hash--" + hashcode);
     console.log("------------base64Data-----" + base64Data);
-    //if_managed =1代表已处理，if_look=1代表已查看
-    var query = "insert into marry_check(check_id,husband_name,husband_id, husband_state,wife_name,wife_id,wife_state,checkflag,photo,hashcode,if_managed ,if_look )values('" + checkID + "','" + Husband_Name + "','" + Husband_ID + "','" + HusbandState + "','" + Wife_Name + "','" + Wife_ID + "','" + WifeState + "','" + check + "','" + base64Data + "','" + hashcode + "',"+"0,"+"0"+");";
+    //if_managed =1代表已处理，if_look=1代表已查看,if_ar=1代表接受
+    var query = "insert into marry_check(check_id,husband_name,husband_id, husband_state,wife_name,wife_id,wife_state,checkflag,photo,hashcode,if_managed ,if_ar,if_look )values('" + checkID + "','" + Husband_Name + "','" + Husband_ID + "','" + HusbandState + "','" + Wife_Name + "','" + Wife_ID + "','" + WifeState + "','" + check + "','" + base64Data + "','" + hashcode + "',"+"0,"+"0"+"0"+");";
 
     console.log("check----" + query);
     mysql.executeQuery(query, function (status, result) {

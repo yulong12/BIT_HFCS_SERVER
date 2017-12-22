@@ -41,7 +41,7 @@ router.post('/', function (req, res, next) {
      var checks=str.判断结果;
      var check=checks[0]+checks[1]+checks[2]+checks[3]+checks[4]+checks[5]+checks[6]+checks[7]+checks[8];
 
-     var query="insert into create_check(check_id,name,father_name,father_id,mother_name,mother_id,marry_cert,birth_id,birth_date,sex,hospital_id,checkflag,if_managed,if_look)values('"+check_id+"','"+name+"','"+father_name+"','"+father_id+"','"+mother_name+"','"+mother_id+"','"+marry_cert+"','"+birth_id+"','"+birth_date+"','"+sex+"','"+hospital_id+"','"+check+"',0,0"+");";
+     var query="insert into create_check(check_id,name,father_name,father_id,mother_name,mother_id,marry_cert,birth_id,birth_date,sex,hospital_id,checkflag,if_managed,if_ar,if_look)values('"+check_id+"','"+name+"','"+father_name+"','"+father_id+"','"+mother_name+"','"+mother_id+"','"+marry_cert+"','"+birth_id+"','"+birth_date+"','"+sex+"','"+hospital_id+"','"+check+"',0,0,0"+");";
     console.log(str);
     console.log("==========================="+query);
       mysql.executeQuery(query,function (status, result) {
