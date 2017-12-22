@@ -5,8 +5,7 @@ var router = express.Router();
 router.get('/', function (req, res, next) {
   // res.render('police_office');
   if (req.session.user) {
-    var user = req.session.user;
-    var name = user.name;
+
     res.render('print_hukou');
   } else {
     res.render('need_login');

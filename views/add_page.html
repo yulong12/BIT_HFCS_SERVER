@@ -106,7 +106,9 @@
       contentType: "application/json",
       data: JSON.stringify(data),
       success: function (data) {
-        alert("审批完成");
+        if (data === "OK") {
+          window.location.href = "police_office";
+        }
       }
     });
   });
