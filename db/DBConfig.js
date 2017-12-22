@@ -1,6 +1,6 @@
 module.exports =
     {
-        host: '10.4.20.139',
+        host: '202.5.22.22',
         user: 'root',
         password: 'root',
         database: 'bit_users',

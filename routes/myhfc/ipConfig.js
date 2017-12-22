@@ -1,5 +1,5 @@
 //ip config
-var ip = '10.4.20.139';
+var ip = '148.100.5.0';
 var ipConfig = {
     //org1
     org1_peer_network: 'grpcs://'+ip+':7051',//因为启用了TLS，所以是grpcs,如果没有启用TLS，那么就是grpc
