@@ -58,7 +58,7 @@ router.post('/', function (req, res, next) {
       res.send(str.Reason);
     }
     else {
-      var query_checked = "update create_check set if_managed = 1, if_look = 1 WHERE check_id = \"" + req.body.regist_num + "\"";
+      var query_checked = "update create_check set if_managed = 1, if_ar = 1, if_look = 1 WHERE check_id = \"" + req.body.regist_num + "\"";
       mysql.executeQuery(query_checked, function (status, result) {
 
       })
