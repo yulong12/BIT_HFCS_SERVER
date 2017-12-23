@@ -172,7 +172,7 @@ CREATE TABLE `login_user` (
 
 LOCK TABLES `login_user` WRITE;
 /*!40000 ALTER TABLE `login_user` DISABLE KEYS */;
-INSERT INTO `login_user` VALUES (1,'张玉龙','123456','用户'),(2,'王小龙','123456','医院'),(3,'黄屹','123456','公安局'),(4,'孙文华','123456','民政局'),(5,'sf','saf','sdf'),(6,'sf','saf','sdf'),(7,'sf','saf','sdf'),(8,'qq','qq','qq');
+INSERT INTO `login_user` VALUES (1,'110105199409026605','123456','用户'),(2,'hospital','123456','医院'),(3,'police','123456','公安局'),(4,'civil','123456','民政局'),(5,'security','123456','社保局'),(6,'qq','qq','qq');
 /*!40000 ALTER TABLE `login_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
