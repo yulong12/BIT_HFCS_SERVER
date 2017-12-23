@@ -124,7 +124,8 @@
       contentType: "application/json",
       data: JSON.stringify(data),
       success: function (data) {
-        alert(JSON.stringify(data));
+        alert("出生证明办理成功！");
+        window.location.href = "print_birthcard_new?birth_id=" + data.出生证书编号;
       }
     });
   });
