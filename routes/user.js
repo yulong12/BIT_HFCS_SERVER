@@ -18,68 +18,23 @@ router.get('/user', function (req, res, next) {
                 var if_look = result.rows[0].if_look;
                 //判断结婚申请是否被申请
                 if (if_ar === 1 && if_look === 1) {
-                    //   res.render('user', {comment: '您的结婚申请已被审批'});
+                    res.render('user', {comment: '您的结婚申请已被审批'});
                     data.marry_check="您的结婚申请已被审批";
+                    console.log("-----------none----------------------"+data.marry_check);
                 } else if (if_ar == 0 && if_look == 1) {
                     data.marry_check="您的结婚申请已被拒绝";
-                    //   res.render('user', {comment: '您的结婚申请已被拒绝'})
+                   res.render('user', {comment: '您的结婚申请已被拒绝'});
+                    console.log("-----------none----------------------"+data.marry_check);
                 }
 
             } else {
-                console.log("-----------none----------------------");
-                //   res.render('user', {comment: "none"});
+                console.log("-----------none----------------------"+data.marry_check);
+                 res.render('user', {comment: "none"});
                 data.marry_check="您未申请";
-
+                res.render('user',{comment:'您未申请'});
             }
-            mysql.executeQuery(select1,function (status1,result2) {
-                //户口本申请
-                if (result.rows[0]) {
-                    var if_ar = result2.rows[0].if_ar;
-                    var if_look = result2.rows[0].if_look;
-                    //判断户口本申请是否被申请
-                    if (if_ar === 1 && if_look === 1) {
-                        // res.render('user', {comment2: '您的户口本申请已被审批'});
-                        data.hukou="您的户口本申请已被审批";
-                    } else if (if_ar == 0 && if_look == 1) {
-                        // res.render('user', {comment2: '您的户口本申请已被拒绝'})
-                        data.hukou="您的户口本申请已被拒绝";
-                    }
-
-                } else {
-                    data.hukou="您未申请";
-
-                }
-                mysql.executeQuery(select2,function (status2, result1) {
-
-                    //离婚申请
-                    if (result.rows[0]) {
-                        var if_ar = result1.rows[0].if_ar;
-                        var if_look = result1.rows[0].if_look;
-                        //判断户口本申请是否被申请
-                        if (if_ar === 1 && if_look === 1) {
-                            // res.render('user', {comment2: '您的户口本申请已被审批'});
-                            data.hukou="您的户口本申请已被审批";
-                        } else if (if_ar == 0 && if_look == 1) {
-                            // res.render('user', {comment2: '您的户口本申请已被拒绝'})
-                            data.hukou="您的户口本申请已被拒绝";
-                        }
-
-                    } else {
-                        console.log("-----------none----------------------");
-                        //   res.render('user', {comment2: "none"});
-                        data.hukou="您未申请";
-
-                    }
-
-
-                });
-            });
-
-
-
         });
-
-        res.render('user',{comment:data.marry_check,comment1:data.divorce,comment2:data.hukou});
+      //  res.render('user',{comment:data.marry_check});
 
     } else {
         res.render('need_login');

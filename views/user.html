@@ -10,7 +10,7 @@
   <meta name="author" content="">
 
 
-    <title>便民服务系统</title>
+  <title>便民服务系统</title>
 
 
   <!-- Bootstrap Core CSS -->
@@ -33,9 +33,9 @@
   <script src="javascripts/sb-admin-2.js"></script>
 
   <script type="text/javascript">
-    window.onload = function () {
-      setInterval("show_time.innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay());", 1000);
-    };
+      window.onload = function () {
+          setInterval("show_time.innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay());", 1000);
+      };
   </script>
 
 </head>
@@ -85,7 +85,7 @@
             <li>
               <a href="#">
                 <div>
-                  <i class="fa fa-twitter fa-fw"><%=comment1%></i>
+                  <i class="fa fa-twitter fa-fw"></i>
                   <span class="pull-right text-muted small">12 minutes ago</span>
                 </div>
               </a>
@@ -94,7 +94,7 @@
             <li>
               <a href="#">
                 <div>
-                  <i class="fa fa-envelope fa-fw"><%=comment2%></i>
+                  <i class="fa fa-envelope fa-fw"></i>
                   <span class="pull-right text-muted small">4 minutes ago</span>
                 </div>
               </a>
@@ -171,7 +171,7 @@
           </li>
           <li>
             <a href="#"><span class="glyphicon glyphicon-th-list"></span>&nbsp;&nbsp;&nbsp;服务<span
-              class="fa arrow"></span></a>
+                    class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
               <li>
                 <a href="flot.html">在线服务</a>
@@ -190,7 +190,7 @@
           </li>
           <li>
             <a href="#"><span class="glyphicon glyphicon-thumbs-up"></span>&nbsp;&nbsp;&nbsp;合作单位<span
-              class="fa arrow"></span></a>
+                    class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
               <li>
                 <a href="#">民政局</a>
@@ -397,110 +397,110 @@
             </div>
           </a>
         </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-12">
-        <h2 class="page-header"><span class="glyphicon glyphicon-print"></span>&nbsp;&nbsp;申请打印服务</h2>
       </div>
-      <!-- /.col-lg-12 -->
-    </div>
-    <!-- /.row -->
-    <div class="row">
-      <div class="col-lg-3 col-md-6">
-        <div class="panel panel-primary">
-          <div class="panel-heading">
-            <div class="row">
-              <div class="col-xs-3">
-                <i class="fa fa-credit-card fa-5x"></i>
-              </div>
-              <div class="col-xs-9 text-right">
-                <div style="margin-top: 25px;">打印身份证</div>
+      <div class="row">
+        <div class="col-lg-12">
+          <h2 class="page-header"><span class="glyphicon glyphicon-print"></span>&nbsp;&nbsp;申请打印服务</h2>
+        </div>
+        <!-- /.col-lg-12 -->
+      </div>
+      <!-- /.row -->
+      <div class="row">
+        <div class="col-lg-3 col-md-6">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <div class="row">
+                <div class="col-xs-3">
+                  <i class="fa fa-credit-card fa-5x"></i>
+                </div>
+                <div class="col-xs-9 text-right">
+                  <div style="margin-top: 25px;">打印身份证</div>
+                </div>
               </div>
             </div>
-          </div>
-          <a href="#">
-            <div class="panel-footer" onclick="switch_to_print_idcard()">
-              <span class="pull-left">详细</span>
-              <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-              <div class="clearfix"></div>
+            <a href="#">
+              <div class="panel-footer" onclick="switch_to_print_idcard()">
+                <span class="pull-left">详细</span>
+                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                <div class="clearfix"></div>
 
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="panel panel-green">
-          <div class="panel-heading">
-            <div class="row">
-              <div class="col-xs-3">
-                <i class="fa fa-tasks fa-5x"></i>
               </div>
-              <div class="col-xs-9 text-right">
-                <div style="margin-top: 25px;">打印出生证</div>
-              </div>
-            </div>
+            </a>
           </div>
-          <a href="#">
-            <div class="panel-footer" onclick="switch_to_print_birthcard()">
-              <span class="pull-left">详细</span>
-              <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-              <div class="clearfix"></div>
-            </div>
-          </a>
         </div>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="panel panel-yellow">
-          <div class="panel-heading">
-            <div class="row">
-              <div class="col-xs-3">
-                <i class="fa fa-newspaper-o fa-5x"></i>
-              </div>
-              <div class="col-xs-9 text-right">
-                <div style="margin-top: 25px;">打印新增户口页</div>
+        <div class="col-lg-3 col-md-6">
+          <div class="panel panel-green">
+            <div class="panel-heading">
+              <div class="row">
+                <div class="col-xs-3">
+                  <i class="fa fa-tasks fa-5x"></i>
+                </div>
+                <div class="col-xs-9 text-right">
+                  <div style="margin-top: 25px;">打印出生证</div>
+                </div>
               </div>
             </div>
+            <a href="#">
+              <div class="panel-footer" onclick="switch_to_print_birthcard()">
+                <span class="pull-left">详细</span>
+                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                <div class="clearfix"></div>
+              </div>
+            </a>
           </div>
-          <a href="#">
-            <div class="panel-footer" onclick="switch_to_print_hukou()">
-              <span class="pull-left">详细</span>
-              <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-              <div class="clearfix"></div>
-            </div>
-          </a>
         </div>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="panel panel-red">
-          <div class="panel-heading">
-            <div class="row">
-              <div class="col-xs-3">
-                <i class="fa fa-film fa-5x"></i>
-              </div>
-              <div class="col-xs-9 text-right">
-                <div style="margin-top: 25px;">打印户口变更页</div>
+        <div class="col-lg-3 col-md-6">
+          <div class="panel panel-yellow">
+            <div class="panel-heading">
+              <div class="row">
+                <div class="col-xs-3">
+                  <i class="fa fa-newspaper-o fa-5x"></i>
+                </div>
+                <div class="col-xs-9 text-right">
+                  <div style="margin-top: 25px;">打印新增户口页</div>
+                </div>
               </div>
             </div>
+            <a href="#">
+              <div class="panel-footer" onclick="switch_to_print_hukou()">
+                <span class="pull-left">详细</span>
+                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                <div class="clearfix"></div>
+              </div>
+            </a>
           </div>
-          <a href="#">
-            <div class="panel-footer" onclick="switch_to_print_hukou()">
-              <span class="pull-left">详细</span>
-              <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-              <div class="clearfix"></div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="panel panel-red">
+            <div class="panel-heading">
+              <div class="row">
+                <div class="col-xs-3">
+                  <i class="fa fa-film fa-5x"></i>
+                </div>
+                <div class="col-xs-9 text-right">
+                  <div style="margin-top: 25px;">打印户口变更页</div>
+                </div>
+              </div>
             </div>
-          </a>
+            <a href="#">
+              <div class="panel-footer" onclick="switch_to_print_hukou()">
+                <span class="pull-left">详细</span>
+                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                <div class="clearfix"></div>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
     </div>
+    <!-- /#page-wrapper -->
+
+
   </div>
-  <!-- /#page-wrapper -->
+  <!-- /#wrapper -->
 
 
-</div>
-<!-- /#wrapper -->
-
-
-<script src="javascripts/page_switch.js"></script>
+  <script src="javascripts/page_switch.js"></script>
 
 </body>
 
