@@ -54,15 +54,17 @@ router.post('/', function (req, res, next) {
   };
   createHuman(request, function (str) {
     console.log(str);
-    if (str.Reason) {
-      res.send(str.Reason);
+    if (str.原因) {
+      var query_err_checked = "update create_check set if_managed = 1, if_ar = 1, if_look = 1 WHERE check_id = \"" + req.body.regist_num + "\"";
+      mysql.executeQuery(query_err_checked, function (status, result) {
+        res.send(str.原因);
+      });
     }
     else {
-      // var query_checked = "update create_check set if_managed = 1, if_ar = 1, if_look = 1 WHERE check_id = \"" + req.body.regist_num + "\"";
-      // mysql.executeQuery(query_checked, function (status, result) {
-      //   res.send("OK");
-      // })
-      res.send("OK");
+      var query_checked = "update create_check set if_managed = 1, if_ar = 1, if_look = 1 WHERE check_id = \"" + req.body.regist_num + "\"";
+      mysql.executeQuery(query_checked, function (status, result) {
+        res.send("OK");
+      });
     }
   });
 

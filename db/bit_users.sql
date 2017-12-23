@@ -69,6 +69,7 @@ CREATE TABLE `create_check` (
   `hospital_id` varchar(20) DEFAULT NULL,
   `checkflag` varchar(20) DEFAULT NULL,
   `if_managed` tinyint(4) DEFAULT NULL,
+  `if_ar` tinyint(4) DEFAULT NULL,
   `if_look` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -106,6 +107,7 @@ CREATE TABLE `divorce_check` (
   `marry_book1` blob,
   `book_hashcode` blob,
   `if_managed` tinyint(4) DEFAULT NULL,
+  `if_ar` tinyint(4) DEFAULT NULL,
   `if_look` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -225,6 +227,7 @@ CREATE TABLE `marry_check` (
   `photo` blob,
   `hashcode` blob,
   `if_managed` tinyint(4) DEFAULT NULL,
+  `if_ar` tinyint(4) DEFAULT NULL,
   `if_look` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) AUTO_INCREMENT=7 ENGINE=InnoDB DEFAULT CHARSET=utf8;
