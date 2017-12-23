@@ -22,12 +22,12 @@ router.get('/user', function (req, res, next) {
                         data.create_check = "户口申请被同意";
                     } else if (if_manage === 1 && if_ar === 0 && if_look === 0) {
                         data.create_check = "户口申请未被同意";
-                    } else if (if_manage === 0&&if_ar===0&&if_look===0) {
+                    } else if (if_manage === 0 && if_ar === 0 && if_look === 0) {
                         data.create_check = "户口申请正在被处理";
 
                     }
                 } else {
-                    data.create_check = "未申请";
+                    data.create_check = "";
                 }
                 console.log("=======data.create_check======" + data.create_check);
                 console.log("==========rend=========" + data.marry_check + data.create_check);
@@ -42,16 +42,16 @@ router.get('/user', function (req, res, next) {
                 console.log("=======if_look======" + if_look);
                 console.log("=======if_manage======" + if_managed);
                 //判断户口是否被审批，以及是否被查看
-                if (if_managed == 1 && if_ar == 1 && if_look == 0) {
+                if (if_managed === 1 && if_ar === 1 && if_look === 0) {
                     data.marry_check = "结婚申请被同意";
-                } else if (if_managed == 1 && if_ar == 0 && if_look == 0) {
+                } else if (if_managed === 1 && if_ar === 0 && if_look === 0) {
                     data.marry_check = "结婚申请未被同意";
-                } else if (if_managed == 0&&if_ar==0&&if_look==0) {
+                } else if (if_managed === 0 && if_ar === 0 && if_look === 0) {
                     data.marry_check = "结婚申请正在被处理";
                     console.log("=======data.结婚申请正在被处理======" + data.create_check);
                 }
             } else {
-                data.marry_check = "未申请";
+                data.marry_check = "";
             }
 
             console.log("=======data.marry_check======" + data.marry_check);
