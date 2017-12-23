@@ -8,26 +8,23 @@ router.get('/user', function (req, res, next) {
         var user = req.session.user;
         var name = user.name;
         var data = {};
-        var select = "select * from marry_check where if_managed=1 and if_look=1;";
-        var select2 = "select * from create_check where if_managed=1 and if_look=1;";
-        var update="update marry_check set if_look=0;"
-        var update1="update create_check set if_look=0;"
+        var select = "select * from marry_check where  if_look=0;";
+        var select2 = "select * from create_check where if_look=0;";
         mysql.executeQuery(select, function (status, result) {
             mysql.executeQuery(select2, function (status1, result1) {
-                //执行更新语句，表明已经用户已经查看
-                mysql.executeQuery(update,function (status2,result2) {
-                    mysql.executeQuery(update1,function (status3,result3) {
 
-                    });
-                });
                 if (result1.rows[0]) {
                     var if_ar = result1.rows[0].if_ar;
                     var if_look = result1.rows[0].if_look;
+                    var if_manage = result1.rows[0].if_managed;
                     //判断户口是否被审批，以及是否被查看
-                    if (if_ar == 1 && if_look == 1) {
-                        data.create_check = "户口申请被审批";
-                    } else if(if_ar==0){
-                        data.create_check = "户口申请未被审批";
+                    if (if_manage === 1 && if_ar === 1 && if_look === 0) {
+                        data.create_check = "户口申请被同意";
+                    } else if (if_manage === 1 && if_ar === 0 && if_look === 0) {
+                        data.create_check = "户口申请未被同意";
+                    } else if (if_manage === 0&&if_ar===0&&if_look===0) {
+                        data.create_check = "户口申请正在被处理";
+
                     }
                 } else {
                     data.create_check = "未申请";
@@ -35,14 +32,23 @@ router.get('/user', function (req, res, next) {
                 console.log("=======data.create_check======" + data.create_check);
                 console.log("==========rend=========" + data.marry_check + data.create_check);
                 res.render('user', {comment_marry: data.marry_check, comment_create: data.create_check});
+
             });
             if (result.rows[0]) {
                 var if_ar = result.rows[0].if_ar;
                 var if_look = result.rows[0].if_look;
-                if (if_ar == 1 && if_look == 1) {
-                    data.marry_check = "结婚申请被审批";
-                } else {
-                    data.marry_check = "结婚申请未被审批";
+                var if_managed = result.rows[0].if_managed;
+                console.log("=======data.if_ar======" + if_ar);
+                console.log("=======if_look======" + if_look);
+                console.log("=======if_manage======" + if_managed);
+                //判断户口是否被审批，以及是否被查看
+                if (if_managed == 1 && if_ar == 1 && if_look == 0) {
+                    data.marry_check = "结婚申请被同意";
+                } else if (if_managed == 1 && if_ar == 0 && if_look == 0) {
+                    data.marry_check = "结婚申请未被同意";
+                } else if (if_managed == 0&&if_ar==0&&if_look==0) {
+                    data.marry_check = "结婚申请正在被处理";
+                    console.log("=======data.结婚申请正在被处理======" + data.create_check);
                 }
             } else {
                 data.marry_check = "未申请";
