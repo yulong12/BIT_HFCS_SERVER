@@ -1,112 +1,86 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>离婚登记</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
-    <script src="javascripts/jquery-1.11.1.min.js"></script>
-    <script src="javascripts/bootstrap.min.js"></script>
-    <script src="javascripts/page_switch.js"></script>
-    <script src="jquery.min.js"></script>
-    <script src="bootstrap.min.js"></script>
-    <script src="bootstrap-table.js"></script>
-    <link rel="stylesheet" href="bootstrap.min.css">
-    <link rel="stylesheet" href="bootstrap-table.css">
-    <script src="bootstrap-table-zh-CN.js"></script>
-    <style type="text/css">
-        .form-horizontal{
-            padding-top: 90px;
-        }
-        .form-group{
-            color: black;
-        }
-        #mypanel{
-            padding-top: 30px;
-            padding-left: 60px;
-            width:500px;
-            float:left;
-        }
-        #mypanel1{
-            padding-top: 30px;
-            padding-left:180px;
-            width:600px;
-            float:left;
-        }
-
-        #aa{
-            padding-top: 330px;
-            padding-left: 60px;
-        }
-        #bb{
-            margin-top: -70px;
-            padding-left: 800px;
-        }
-    </style>
+  <title>离婚登记</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
+  <script src="javascripts/jquery-1.11.1.min.js"></script>
+  <script src="javascripts/bootstrap.min.js"></script>
+  <script src="javascripts/page_switch.js"></script>
+  <script src="jquery.min.js"></script>
+  <script src="bootstrap.min.js"></script>
+  <script src="bootstrap-table.js"></script>
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet" href="bootstrap-table.css">
+  <script src="bootstrap-table-zh-CN.js"></script>
 </head>
+
 <body>
-<div id="mypanel">
-    <div class="panel panel-primary">
+
+<h1></h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4 col-lg-offset-1">
+      <div class="panel panel-primary">
         <div class="panel-heading">男方</div>
         <div class="panel-body">
-            <ul>
-                <li><img src="images/boy.jpg" style="width:100px;" ></li>
-                <li id="r_name">男方姓名:&nbsp;</li>
-                <li id="r_id">男方身份证号码：&nbsp;</li>
-                <li id="r_state">结婚证书编号：&nbsp;</li>
-
-            </ul>
+          <ul>
+            <li><img src="images/boy.jpg" style="width:100px;"></li>
+            <li id="r_name">男方姓名:&nbsp;</li>
+            <li id="r_id">男方身份证号码：&nbsp;</li>
+            <li id="r_state">结婚证书编号：&nbsp;</li>
+          </ul>
         </div>
-
+      </div>
     </div>
-</div>
 
-<div id="mypanel1">
-    <div class="panel panel-primary">
+    <div class="col-lg-4 col-lg-offset-2">
+      <div class="panel panel-primary">
         <div class="panel-heading">女方</div>
         <div class="panel-body">
-            <ul>
-                <li><img src="images/girl.jpg" style="width:100px;" ></li>
-                <li id="r_name1">女方姓名:&nbsp;</li>
-                <li id="r_id1">女方身份证号码：&nbsp;</li>
-                <li id="r_state1">结婚证书编号：&nbsp;</li>
-
-            </ul>
+          <ul>
+            <li><img src="images/girl.jpg" style="width:100px;"></li>
+            <li id="r_name1">女方姓名:&nbsp;</li>
+            <li id="r_id1">女方身份证号码：&nbsp;</li>
+            <li id="r_state1">结婚证书编号：&nbsp;</li>
+          </ul>
         </div>
-
+      </div>
     </div>
-</div>
-<!--判断-->
-<div id="aa">
-    <p>身份证照片是否和结婚证照片一致：&nbsp;<span  class="glyphicon glyphicon-ok"></span></p>
-    <p>是否存在结婚证书编号：&nbsp;<span  class="glyphicon glyphicon-ok"></span></p>
+  </div>
 
-</div>
+  <div class="row">
+    <!--判断-->
+    <div class="col-lg-4 col-lg-offset-1">
+      <p>身份证照片是否和结婚证照片一致：&nbsp;<span class="glyphicon glyphicon-ok"></span></p>
+      <p>是否存在结婚证书编号：&nbsp;<span class="glyphicon glyphicon-ok"></span></p>
+    </div>
 
-<!--判断-->
-<div id="bb">
-    <p>身份证照片是否和结婚证照片一致：&nbsp;<span  class="glyphicon glyphicon-ok"></span></p>
-    <p>是否存在结婚证书编号：&nbsp;<span  class="glyphicon glyphicon-ok"></span></p>
+    <!--判断-->
+    <div class="col-lg-4 col-lg-offset-2">
+      <p>身份证照片是否和结婚证照片一致：&nbsp;<span class="glyphicon glyphicon-ok"></span></p>
+      <p>是否存在结婚证书编号：&nbsp;<span class="glyphicon glyphicon-ok"></span></p>
+    </div>
+  </div>
 
-</div>
-<form role = "form" class="form-horizontal">
-
-
-        <div class = "form-group">
-            <label class="col-lg-5 control-label" for = "date">离婚日期</label>
-            <div class="col-lg-3">
-                <input type="text" class="form-control" id = "date"
-                       placeholder = "yymmdd"/>
-            </div>
-        </div>
+  <form role="form" class="form-horizontal">
+    <div class="form-group">
+      <label class="col-lg-5 control-label" for="date">离婚日期</label>
+      <div class="col-lg-3">
+        <input type="text" class="form-control" id="date"
+               placeholder="yymmdd"/>
+      </div>
+    </div>
 
     <div class="form-group">
-        <div class="col-lg-4 col-lg-offset-5">
-            <button type = "button" class="btn-info btn" id="btn_submit">接受提交</button>
-            <button type = "button" class="btn-info btn" id="btn_submit1">拒绝登记</button>
-        </div>
+      <div class="col-lg-4 col-lg-offset-5">
+        <button type="button" class="btn-info btn" id="btn_submit">接受提交</button>
+        <button type="button" class="btn-info btn" id="btn_submit1">拒绝登记</button>
+      </div>
     </div>
-
-</form>
+  </form>
+</div>
 
 </body>
 

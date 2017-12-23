@@ -34,6 +34,16 @@ router.get('/', function (req, res, next) {
         });
 
       });
+    } else {
+      var hukou_detail = {};
+      hukou_detail.身份证号 = "";
+      hukou_detail.性别 = "";
+      hukou_detail.姓名 = "";
+      hukou_detail.出生日期 = "";
+      hukou_detail.婚姻状态 = "";
+      res.render('print_hukou', {
+        hukou_detail: hukou_detail
+      })
     }
   } else {
     res.render('need_login');

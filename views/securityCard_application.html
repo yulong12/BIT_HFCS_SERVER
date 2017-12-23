@@ -11,7 +11,8 @@
       margin-top: 90px;
       margin-left: 400px;
     }
-    #print{
+
+    #print {
       display: none;
     }
   </style>
@@ -38,13 +39,13 @@
           </div>
         </div>
         <!--<div class="form-group">-->
-          <!--<label class="col-lg-2 control-label" for="print" style="margin-top: 60px;">上传指纹</label>-->
-          <!--<div class="col-lg-2">-->
-            <!--<img src="images/fingerprint.png" class="img-circle" id="print" style="width: 100%;">-->
-          <!--</div>-->
+        <!--<label class="col-lg-2 control-label" for="print" style="margin-top: 60px;">上传指纹</label>-->
+        <!--<div class="col-lg-2">-->
+        <!--<img src="images/fingerprint.png" class="img-circle" id="print" style="width: 100%;">-->
+        <!--</div>-->
         <!--</div>-->
         <div class="form-group">
-          <label class="col-lg-2 control-label" for="print1">上传指纹</label>
+          <label class="col-lg-2 control-label">上传指纹</label>
           <div class="col-lg-3">
             <button type="button" class="btn" id="button">上传指纹</button>
             <img src="images/fingerprint.png" class="img-circle" id="print" style="width: 100px;">
@@ -53,10 +54,10 @@
 
         <div class="form-group" style="margin-right: 300px;">
           <div class="col-lg-2 col-lg-offset-2">
-            <button type="button" class="btn-info btn-lg" id="send1">申请</button>
+            <button type="button" class="btn-info btn" id="send1">申请</button>
           </div>
           <div class="col-lg-2 col-lg-offset-2">
-            <button type="button" class="btn-info btn-lg" id="back1">返回</button>
+            <button type="button" class="btn-info btn" id="back1">返回</button>
           </div>
         </div>
       </div>
@@ -72,39 +73,39 @@
   });
   $(document).ready(function () {
 
-  $("#send1").click(function () {
-      var data={};
-      data.id_num=$("#fanum1").val();
+    $("#send1").click(function () {
+      var data = {};
+      data.id_num = $("#fanum1").val();
       var reader = new FileReader();
-      var reader1=new FileReader();
+      var reader1 = new FileReader();
       reader.readAsDataURL($("#babyphoto1").get(0).files[0]);
       reader1.readAsDataURL($("#print1").get(0).files[0]);
       reader.onload = function () {
-          data.pic = this.result;
-      reader1.onload=function () {
-          data.print=this.result;
+        data.pic = this.result;
+        reader1.onload = function () {
+          data.print = this.result;
           $.ajax({
-              url: 'idcard_application',
-              type: "POST",
-              contentType: "application/json",
-              data: JSON.stringify(data),
-              success: function (data) {
+            url: 'idcard_application',
+            type: "POST",
+            contentType: "application/json",
+            data: JSON.stringify(data),
+            success: function (data) {
 
 
-              }
+            }
           });
-      }
+        }
 
       };
-  });
+    });
   });
 </script>
 <script type="text/javascript">
-    $("#button").click(function (event) {
-        var pnel = document.getElementById("print");
-        pnel.style.display = "block";
+  $("#button").click(function (event) {
+    var pnel = document.getElementById("print");
+    pnel.style.display = "block";
 
-        event.preventDefault();
-    });
+    event.preventDefault();
+  });
 </script>
 </html>

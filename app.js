@@ -7,7 +7,6 @@ var bodyParser = require('body-parser');
 var session=require('express-session');
 
 var app = express();
-var index = require('./routes/index');
 var users = require('./routes/users');
 var login=require('./routes/login');
 var user=require('./routes/user');
@@ -75,7 +74,6 @@ app.use(session({
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/',login);
-app.use('/index', index);
 app.use('/users', users);
 app.use('/',user);
 app.use('/register',register);
