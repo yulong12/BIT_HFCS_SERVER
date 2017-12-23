@@ -26,12 +26,11 @@ router.get('/', function (req, res, next) {
         hukou_detail.姓名 = answer.姓名;
         hukou_detail.出生日期 = answer.出生日期;
         hukou_detail.婚姻状态 = answer.婚姻状态;
-        hukou_detail.配偶姓名 = answer.配偶姓名;
-
-        res.render()
+        res.render('print_hukou_new', {
+          hukou_detail: hukou_detail
+        })
       });
     }
-    res.render('print_hukou_new');
   } else {
     res.render('need_login');
   }

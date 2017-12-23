@@ -15,15 +15,15 @@
     <table class="table table-bordered">
         <tr>
             <td class="col-lg-3 text-center">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名</td>
-            <td class=" text-center"></td>
+            <td class=" text-center"><%= hukou_detail.姓名 %></td>
             <td class=" text-center">户主或与户主关系</td>
-            <td class=" text-center">户主</td>
+            <td class=" text-center"></td>
         </tr>
         <tr>
             <td class="col-lg-3 text-center">曾&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名</td>
             <td class="col-lg-4 text-center"></td>
             <td class="col-lg-3 text-center">性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别</td>
-            <td class="col-lg-4 text-center"></td>
+            <td class="col-lg-4 text-center"><%= hukou_detail.性别 %></td>
         </tr>
         <tr>
             <td class="col-lg-3 text-center">出&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;生&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;地</td>
@@ -35,7 +35,7 @@
             <td class="col-lg-3 text-center">籍&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;贯</td>
             <td class="col-lg-4 text-center">北京市</td>
             <td class="col-lg-3 text-center">出&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;生&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;日&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;期</td>
-            <td class="col-lg-4 text-center"></td>
+            <td class="col-lg-4 text-center"><%= hukou_detail.出生日期 %></td>
         </tr>
         <tr>
             <td>&nbsp;&nbsp;&nbsp;&nbsp;本市（县）其他住址</td>
@@ -45,14 +45,14 @@
         </tr>
         <tr>
             <td>&nbsp;&nbsp;&nbsp;&nbsp;公民身份证件编号</td>
-            <td></td>
+            <td><%= hukou_detail.身份证号 %></td>
             <td>身高</td>
             <td>血型</td>
         </tr>
         <tr>
             <td id="first">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;文&nbsp;&nbsp;化&nbsp;&nbsp;程&nbsp;&nbsp;度</td>
             <td></td>
-            <td>婚姻状况</td>
+            <td>婚姻状况&nbsp;&nbsp;&nbsp;&nbsp;<%= hukou_detail.婚姻状态 %></td>
             <td>兵役状况</td>
         </tr>
         <tr>
