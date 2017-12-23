@@ -2,9 +2,7 @@ var express = require('express');
 var router = express.Router();
 var mysql = require("../db/MYSQLconnection");
 
-/* GET policeoffice listing. */
 router.get('/', function (req, res, next) {
-  // res.render('police_office');
   if (req.session.user) {
 
     if (req.query.cert_id) {

@@ -443,14 +443,7 @@
         </div>
       </div>
     </div>
-    <!-- /#page-wrapper -->
-
-
   </div>
-  <!-- /#wrapper -->
-
-
-
 </div>
 </body>
 
@@ -460,12 +453,12 @@
   var minutes_before = "<span class=\"pull-right text-muted small\">3 minutes ago</span>";
 
   if (comment_marry) {
-    var href_marry = "#";
-    $("#alert_list").append("<li><a href=\"" + href_marry +"\">" + comment_marry + minutes_before + "</a></li>")
+    var href_marry = "<%= marry_app_id %>";
+    $("#alert_list").append("<li><a href=\"print_marry_cert?cert_id=" + href_marry +"\">" + comment_marry + minutes_before + "</a></li>")
   }
   if (comment_create) {
-    var href_hukou = "#";
-    $("#alert_list").append("<li><a href=\"" + href_hukou + "\">" + comment_create + minutes_before + "</a></li>")
+    var href_hukou = "<%= resi_app_id %>";
+    $("#alert_list").append("<li><a href=\"print_hukou?id=" + href_hukou + "\">" + comment_create + minutes_before + "</a></li>")
   }
 
 </script>

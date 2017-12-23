@@ -2,73 +2,77 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>结婚证</title>
+  <title>打印结婚证</title>
   <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
   <script src="javascripts/jquery-1.11.1.min.js"></script>
   <script src="javascripts/bootstrap.min.js"></script>
 </head>
 <body>
- <h3 style="margin-left: 625px;">结婚证</h3>
+ <h3 style="margin-left: 625px;">打印结婚证</h3>
 <div class="container" style="width: 600px;margin-top: 10px;border:1px solid black;">
   <table>
     <tr>
       <td class="col-lg-4"><h4 style="margin-top: 40px;">持证人</h4></td>
-      <td class="col-lg-2"></td>
+      <td class="col-lg-2"><%= marry_cert_detail.丈夫姓名 %></td>
       <td>
-        <div class="container"
-             style="width: 200px;height: 100px;border: 1px solid black;margin-top: 10px; margin-right: -5px;">
-
-        </div>
+        <img src="data:image/png;base64,<%= marry_photo %>"
+             style="width:200px;border: 1px solid black;margin-top: 10px; margin-right: -75px;">
       </td>
     </tr>
     <tr>
       <td class="col-lg-4"><h4 style="margin-top: -2px;">登记日期</h4></td>
-      <td class="col-lg-2"><h4></h4></td>
+      <td class="col-lg-2"><%= marry_cert_detail.登记日期 %></td>
     </tr>
     <tr>
       <td class="col-lg-4"><h4>结婚证字号</h4></td>
-      <td class="col-lg-6"><h4></h4></td>   
+      <td class="col-lg-6"><%= marry_cert_detail.证书编号 %></td>
     </tr>
     <tr>
       <td class="col-lg-4"><h4>备注</h4></td>
       <td class="col-lg-2"></td>
     </tr>
     <tr>
-        <td><hr></td>
-        <td><hr></td>
-        <td><hr></td>
+      <td>
+        <hr>
+      </td>
+      <td>
+        <hr>
+      </td>
+      <td>
+        <hr>
+      </td>
     </tr>
     <tr>
       <td class="col-lg-4"><h4>姓名</h4></td>
-      <td class="col-lg-1"></td>
+      <td class="col-lg-1"><%= marry_cert_detail.丈夫姓名 %></td>
       <td class="col-lg-1"><h4>性别</h4></td>
-      <td class="col-lg-1"></td>       
+      <td class="col-lg-1">男</td>
     </tr>
-     <tr>
+    <tr>
       <td class="col-lg-4"><h4>国籍</h4></td>
-      <td class="col-lg-1"></td>
+      <td class="col-lg-1">中国</td>
       <td class="col-lg-1"><h4>出生日期</h4></td>
-      <td class="col-lg-1"></td>       
+      <td class="col-lg-1"><%= marry_cert_detail.丈夫身份证号.substr(6, 8) %></td>
     </tr>
     <tr>
       <td class="col-lg-4"><h4>身份证件号</h4></td>
-      <td class="col-lg-1"></td>      
+      <td class="col-lg-1"><%= marry_cert_detail.丈夫身份证号 %></td>
     </tr>
     <tr>
       <td class="col-lg-4"><h4>姓名</h4></td>
-      <td class="col-lg-1"></td>
+      <td class="col-lg-1"><%= marry_cert_detail.妻子姓名 %></td>
       <td class="col-lg-1"><h4>性别</h4></td>
-      <td class="col-lg-1"></td>       
+      <td class="col-lg-1">女</td>
     </tr>
-     <tr>
+    <tr>
       <td class="col-lg-4"><h4>国籍</h4></td>
-      <td class="col-lg-1"></td>
+      <td class="col-lg-1">中国</td>
       <td class="col-lg-1"><h4>出生日期</h4></td>
-      <td class="col-lg-1"></td>       
+      <td class="col-lg-1"><%= marry_cert_detail.妻子身份证号.substr(6, 8) %></td>
     </tr>
     <tr>
       <td class="col-lg-4"><h4>身份证件号</h4></td>
-      <td class="col-lg-1"></td>      
+      <td class="col-lg-1"><%= marry_cert_detail.妻子身份证号 %></td>
     </tr>
   </table>
 </div>
@@ -81,5 +85,11 @@
   </div>
 </div>
 </body>
+
+<script type="text/javascript">
+  $("#back").click(function () {
+    window.location.href = "user";
+  });
+</script>
 
 </html>
