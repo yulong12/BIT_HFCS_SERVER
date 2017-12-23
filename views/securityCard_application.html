@@ -11,6 +11,9 @@
       margin-top: 90px;
       margin-left: 400px;
     }
+    #print{
+      display: none;
+    }
   </style>
 </head>
 <body>
@@ -43,7 +46,8 @@
         <div class="form-group">
           <label class="col-lg-2 control-label" for="print1">上传指纹</label>
           <div class="col-lg-3">
-            <input type="file" id="print1"/>
+            <button type="button" class="btn" id="button">上传指纹</button>
+            <img src="images/fingerprint.png" class="img-circle" id="print" style="width: 100px;">
           </div>
         </div>
 
@@ -95,5 +99,12 @@
   });
   });
 </script>
+<script type="text/javascript">
+    $("#button").click(function (event) {
+        var pnel = document.getElementById("print");
+        pnel.style.display = "block";
 
+        event.preventDefault();
+    });
+</script>
 </html>
