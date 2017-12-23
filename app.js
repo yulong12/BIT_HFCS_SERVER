@@ -46,6 +46,8 @@ var print_birthcard_new=require('./routes/print_birthcard_new');
 var print_hukou=require('./routes/print_hukou');
 var print_hukou_new=require('./routes/print_hukou_new');
 var print_idcard=require('./routes/print_idcard');
+var print_marry_cert=require('./routes/print_marry_cert');
+var print_marry_cert_new=require('./routes/print_marry_cert_new');
 
 var need_login=require('./routes/need_login');
 
@@ -109,6 +111,8 @@ app.use('/print_birthcard_new',print_birthcard_new);
 app.use('/print_hukou',print_hukou);
 app.use('/print_hukou_new',print_hukou_new);
 app.use('/print_idcard',print_idcard);
+app.use('/print_marry_cert',print_marry_cert);
+app.use('/print_marry_cert_new',print_marry_cert_new);
 
 app.use('/need_login', need_login);
 
