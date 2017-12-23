@@ -1,140 +1,140 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>新生儿登记</title>
-	<meta charset="utf-8">
-	<link rel="stylesheet" href="stylesheets/bootstrap.min.css">
-	<script src="javascripts/jquery-1.11.1.min.js"></script>
-	<script src="javascripts/bootstrap.min.js"></script>
-	<script src="javascripts/page_switch.js"></script>
-<style type="text/css">
-.form-horizontal{
-	padding-top: 10px;
-}
+  <title>新生儿登记</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
+  <script src="javascripts/jquery-1.11.1.min.js"></script>
+  <script src="javascripts/bootstrap.min.js"></script>
+  <script src="javascripts/page_switch.js"></script>
+  <style type="text/css">
+    .form-horizontal {
+      padding-top: 10px;
+    }
 
-</style>
+  </style>
 </head>
 <body>
 
-<form role = "form" class="form-horizontal">
-	    <div class="myform">
-			<div class = "form-group">
-				<label class="col-lg-5 control-label" for = "id1">父亲身份证号</label>
-				<div class="col-lg-3">
-					<input type = "text" class = "form-control" id = "id1"
-						   placeholder = ""/>
-				</div>
+<form role="form" class="form-horizontal">
+  <div class="myform">
+    <div class="form-group">
+      <label class="col-lg-5 control-label" for="id1">父亲身份证号</label>
+      <div class="col-lg-3">
+        <input type="text" class="form-control" id="id1"
+               placeholder=""/>
+      </div>
 
-			</div>
-			<div class = "form-group">
-				<label class="col-lg-5 control-label" for = "id2">母亲身份证号</label>
-				<div class="col-lg-3">
-					<input type = "text" class = "form-control" id = "id2"
-						   placeholder = ""/>
-				</div>
+    </div>
+    <div class="form-group">
+      <label class="col-lg-5 control-label" for="id2">母亲身份证号</label>
+      <div class="col-lg-3">
+        <input type="text" class="form-control" id="id2"
+               placeholder=""/>
+      </div>
 
-			</div>
-	        <div class = "form-group">
-	            <label class="col-lg-5 control-label" for = "name">新生儿姓名</label>
-	            <div class="col-lg-3">
-	                <input type = "text" class = "form-control" id = "name"
-	                    placeholder = ""/>
-	            </div>
+    </div>
+    <div class="form-group">
+      <label class="col-lg-5 control-label" for="name">新生儿姓名</label>
+      <div class="col-lg-3">
+        <input type="text" class="form-control" id="name"
+               placeholder=""/>
+      </div>
 
-	        </div>
-			<div class = "form-group"/>
-				<label class="col-lg-5 control-label" for = "weight">新生儿体重</label>
-				<div class="col-lg-3">
-					<input type="text" class="form-control" id = "weight"
-						   placeholder = ""/>
-				</div>
-			</div>
-			<div class = "form-group">
+    </div>
+    <div class="form-group"/>
+    <label class="col-lg-5 control-label" for="weight">新生儿体重</label>
+    <div class="col-lg-3">
+      <input type="text" class="form-control" id="weight"
+             placeholder=""/>
+    </div>
+  </div>
+  <div class="form-group">
 
-				<label class="col-lg-5 control-label" for = "sex">新生儿性别</label>
-				<div class="col-lg-3">
-					<input type="text" class="form-control" id = "sex"
-						   placeholder = ""/>
-				</div>
-			</div>
-			<div class = "form-group">
-	            <label class="col-lg-5 control-label" for = "date">出生日期</label>
-	            <div class="col-lg-3">
-	                <input type="text" class="form-control" id = "date"
-	                        placeholder = ""/>
-	            </div>
+    <label class="col-lg-5 control-label" for="sex">新生儿性别</label>
+    <div class="col-lg-3">
+      <input type="text" class="form-control" id="sex"
+             placeholder=""/>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-lg-5 control-label" for="date">出生日期</label>
+    <div class="col-lg-3">
+      <input type="text" class="form-control" id="date"
+             placeholder=""/>
+    </div>
 
-	        </div>
-			<div class = "form-group">
-				<label class="col-lg-5 control-label" for = "place">出生地</label>
-				<div class="col-lg-3">
-					<input type="text" class="form-control" id = "place"
-						   placeholder = ""/>
-				</div>
-			</div>
+  </div>
+  <div class="form-group">
+    <label class="col-lg-5 control-label" for="place">出生地</label>
+    <div class="col-lg-3">
+      <input type="text" class="form-control" id="place"
+             placeholder=""/>
+    </div>
+  </div>
 
-	        <div class = "form-group">
-	            <label class="col-lg-5 col-sm-3 control-label" for = "health">健康情况</label>
-	            <div class="col-lg-3 col-sm-3" >
-	                <input type="text" class="form-control" id = "health"
-	                        placeholder = ""/>
-	            </div>
-	        </div>
-	        <div class = "form-group">
-	            <label class="col-lg-5 control-label" for = "hospital_name">接生机构名称</label>
-	            <div class="col-lg-3">
-	                <input type="text" class="form-control" id = "hospital_name"
-	                        placeholder = ""/>
-	            </div>
-	        </div>
-	<div class = "form-group">
-		<label class="col-lg-5 control-label" for = "finger">采集指纹</label>
-		<div class="col-lg-3">
+  <div class="form-group">
+    <label class="col-lg-5 col-sm-3 control-label" for="health">健康情况</label>
+    <div class="col-lg-3 col-sm-3">
+      <input type="text" class="form-control" id="health"
+             placeholder=""/>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-lg-5 control-label" for="hospital_name">接生机构名称</label>
+    <div class="col-lg-3">
+      <input type="text" class="form-control" id="hospital_name"
+             placeholder=""/>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-lg-5 control-label" for="finger">采集指纹</label>
+    <div class="col-lg-3">
 
-			<img id="aa" src="images\fingerprint.png" style="width: 60px;">
-		</div>
-	</div>
-	        <div class="form-group">
-	            <div class="col-lg-4 col-lg-offset-5">
-	                <button type = "button" class="btn-info btn" id="btn_submit1">提交</button>
-					<button type = "button" class="btn-info btn" id="btn_submit2">返回</button>
-	            </div>
+      <img id="aa" src="images\fingerprint.png" style="width: 60px;">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-lg-4 col-lg-offset-5">
+      <button type="button" class="btn-info btn" id="btn_submit1">提交</button>
+      <button type="button" class="btn-info btn" id="btn_submit2">返回</button>
+    </div>
 
-	        </div>
-	      </div>
-	 	 </form>
+  </div>
+  </div>
+</form>
 </body>
 <script>
-        $("#btn_submit1").click(function () {
+  $("#btn_submit1").click(function () {
 
-            //get infomation
-            var data = {};
-            data.child_sex = $("#sex").val();
-            data.child_date = $("#date").val();
-            data.mother_ID = $("#id2").val();
-            data.father_ID = $("#id1").val();
-            data.hospital = $("#hospital_name").val();
-			data.child_name=$("#name").val();
-			data.weight=$("#weight").val();
-			data.health=$("#health").val();
-            data.place=$("#place").val();
-            $.ajax({
-                url: 'child_register',
-                type: "POST",
-                contentType: "application/json",
-                data: JSON.stringify(data),
-                success: function (data) {
-                    alert(JSON.stringify(data));
-                }
-            });
-        });
-        $("#btn_submit2").click(function () {
-            window.location.href = "hospital";
-        });
+    //get infomation
+    var data = {};
+    data.child_sex = $("#sex").val();
+    data.child_date = $("#date").val();
+    data.mother_ID = $("#id2").val();
+    data.father_ID = $("#id1").val();
+    data.hospital = $("#hospital_name").val();
+    data.child_name = $("#name").val();
+    data.weight = $("#weight").val();
+    data.health = $("#health").val();
+    data.place = $("#place").val();
+    $.ajax({
+      url: 'child_register',
+      type: "POST",
+      contentType: "application/json",
+      data: JSON.stringify(data),
+      success: function (data) {
+        alert(JSON.stringify(data));
+      }
+    });
+  });
+  $("#btn_submit2").click(function () {
+    window.location.href = "hospital";
+  });
 </script>
 <!--<script type="text/javascript">-->
-    <!--$("#btn_submit1").click(function () {-->
-        <!--window.location.href = "new_birthcard";-->
-    <!--});-->
+<!--$("#btn_submit1").click(function () {-->
+<!--window.location.href = "new_birthcard";-->
+<!--});-->
 
 </html>
