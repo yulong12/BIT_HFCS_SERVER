@@ -68,14 +68,16 @@
       reader.readAsDataURL($("#babyphoto").get(0).files[0]);
       reader.onload = function () {
           data.pic = this.result;
-
           $.ajax({
               url: 'idcard_application',
               type: "POST",
               contentType: "application/json",
               data: JSON.stringify(data),
               success: function (data) {
-
+                if (data === "OK") {
+                  alert("身份证办理成功");
+                  window.location.href = "user";
+                }
 
               }
           });
