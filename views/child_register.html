@@ -124,8 +124,14 @@
       contentType: "application/json",
       data: JSON.stringify(data),
       success: function (data) {
-        alert("出生证明办理成功！");
-        window.location.href = "print_birthcard_new?birth_id=" + data.出生证书编号;
+        if (data.原因){
+          alert("出生证明办理失败！原因：" + data.原因);
+          window.location.href = "hospital";
+        }
+        else {
+          alert("出生证明办理成功！");
+          window.location.href = "print_birthcard_new?birth_id=" + data.出生证书编号;
+        }
       }
     });
   });
