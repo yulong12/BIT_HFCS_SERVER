@@ -76,7 +76,10 @@
         contentType: "application/json",
         data: JSON.stringify(data),
         success: function (data) {
-          alert(JSON.stringify(data));
+          if (data === "OK") {
+            alert("新生儿落户申请提交成功");
+            window.location.href = "user";
+          }
         }
       });
     }
