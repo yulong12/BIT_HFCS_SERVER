@@ -59,16 +59,10 @@ router.post('/', function (req, res, next) {
 
     console.log("check----" + query);
     mysql.executeQuery(query, function (status, result) {
-
+      res.send("OK");
     });
 
   });
-  // var select="select * from marry_check where if_managed=1 and if_look=1;";
-  // mysql.executeQuery(select,function (status,result) {
-  //      console.log("===========================result==========="+result);
-    //
-  // });
-  res.render('marry_application');
 });
 
 module.exports = router;

@@ -51,32 +51,6 @@
             <button type="button" class="btn-info btn-lg" id="back">返回</button>
           </div>
         </div>
-        <script>
-          $(document).ready(function () {
-            $("#send").click(function () {
-              var data = {};
-              data.men_id = $("#mannum").val();
-              data.women_id = $("#womannum").val();
-
-
-              var reader = new FileReader();
-              reader.readAsDataURL($("#marryphoto").get(0).files[0]);
-              reader.onload = function () {
-                data.marry_photo = this.result;
-                // console.log("--------marry_photo-----"+this.result);
-                $.ajax({
-                  url: 'marry_application',
-                  type: "POST",
-                  contentType: "application/json",
-                  data: JSON.stringify(data),
-                  success: function (data) {
-
-                  }
-                });
-              };
-            });
-          });
-        </script>
       </div>
     </form>
   </div>
@@ -85,6 +59,33 @@
 </body>
 
 <script type="text/javascript">
+  $(document).ready(function () {
+    $("#send").click(function () {
+      var data = {};
+      data.men_id = $("#mannum").val();
+      data.women_id = $("#womannum").val();
+
+      var reader = new FileReader();
+      reader.readAsDataURL($("#marryphoto").get(0).files[0]);
+      reader.onload = function () {
+        data.marry_photo = this.result;
+        // console.log("--------marry_photo-----"+this.result);
+        $.ajax({
+          url: 'marry_application',
+          type: "POST",
+          contentType: "application/json",
+          data: JSON.stringify(data),
+          success: function (data) {
+            if (data === "OK") {
+              alert("结婚申请提交成功");
+              window.location.href = "user";
+            }
+          }
+        });
+      };
+    });
+  });
+
   $("#back").click(function () {
     window.location.href = "user";
   });
