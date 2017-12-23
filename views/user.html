@@ -72,58 +72,8 @@
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">
             <i class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i>
           </a>
-          <ul class="dropdown-menu dropdown-alerts">
-            <li>
-              <a href="#">
-                <div>
-                  <%= comment_marry %>
-                  <span class="pull-right text-muted small">4 minutes ago</span>
-                </div>
-              </a>
-            </li>
-            <li class="divider"></li>
-            <li>
-              <a href="#">
-                <div>
-                  <%= comment_create %>
-                  <span class="pull-right text-muted small">12 minutes ago</span>
-                </div>
-              </a>
-            </li>
-            <!--<li class="divider"></li>-->
-            <!--<li>-->
-              <!--<a href="#">-->
-                <!--<div>-->
-                  <!--<i class="fa fa-envelope fa-fw"></i>-->
-                  <!--<span class="pull-right text-muted small">4 minutes ago</span>-->
-                <!--</div>-->
-              <!--</a>-->
-            <!--</li>-->
-            <!--<li class="divider"></li>-->
-            <!--<li>-->
-              <!--<a href="#">-->
-                <!--<div>-->
-                  <!--<i class="fa fa-tasks fa-fw"></i> New Task-->
-                  <!--<span class="pull-right text-muted small">4 minutes ago</span>-->
-                <!--</div>-->
-              <!--</a>-->
-            <!--</li>-->
-            <!--<li class="divider"></li>-->
-            <!--<li>-->
-              <!--<a href="#">-->
-                <!--<div>-->
-                  <!--<i class="fa fa-upload fa-fw"></i> Server Rebooted-->
-                  <!--<span class="pull-right text-muted small">4 minutes ago</span>-->
-                <!--</div>-->
-              <!--</a>-->
-            <!--</li>-->
-            <!--<li class="divider"></li>-->
-            <!--<li>-->
-              <!--<a class="text-center" href="#">-->
-                <!--<strong>See All Alerts</strong>-->
-                <!--<i class="fa fa-angle-right"></i>-->
-              <!--</a>-->
-            <!--</li>-->
+          <ul class="dropdown-menu dropdown-alerts" id="alert_list">
+            <!--Javascript dynamically append here-->
           </ul>
           <!-- /.dropdown-alerts -->
         </li>
@@ -500,8 +450,26 @@
   <!-- /#wrapper -->
 
 
-  <script src="javascripts/page_switch.js"></script>
 
+</div>
 </body>
+
+<script type="text/javascript">
+  var comment_marry = "<%= comment_marry %>";
+  var comment_create = "<%= comment_create %>";
+  var minutes_before = "<span class=\"pull-right text-muted small\">3 minutes ago</span>";
+
+  if (comment_marry) {
+    var href_marry = "#";
+    $("#alert_list").append("<li><a href=\"" + href_marry +"\">" + comment_marry + minutes_before + "</a></li>")
+  }
+  if (comment_create) {
+    var href_hukou = "#";
+    $("#alert_list").append("<li><a href=\"" + href_hukou + "\">" + comment_create + minutes_before + "</a></li>")
+  }
+
+</script>
+
+<script src="javascripts/page_switch.js"></script>
 
 </html>
