@@ -9,7 +9,7 @@
   <script src="javascripts/page_switch.js"></script>
   <style type="text/css">
     .form-horizontal {
-      padding-top: 260px;
+      margin-top: 100px;
     }
 
     .form-group {
@@ -19,7 +19,7 @@
     #mypanel {
       padding-top: 30px;
       padding-left: 60px;
-      width: 500px;
+      width: 400px;
       float: left;
     }
 
@@ -32,16 +32,24 @@
 
     #mypanel1 {
       padding-top: 30px;
-      padding-left: 180px;
-      width: 600px;
+      padding-left: 380px;
+      width: 700px;
       float: left;
     }
 
     #mypanel3 {
-      padding-top: 30px;
-      padding-left: 60px;
-      width: 350px;
+      margin-top: -170px;
+      margin-left: 460px;
+      width: 250px;
       float: left;
+    }
+    #aa{
+      padding-top: 300px;
+      padding-left: 130px;
+    }
+    #bb{
+      margin-top: -70px;
+      padding-left: 800px;
     }
   </style>
 </head>
@@ -49,81 +57,70 @@
 
 <!-- 返回用户自己户口信息 -->
 
-
+<div class="col-lg-4">
 <div id="mypanel">
   <div class="panel panel-primary">
     <div class="panel-heading">男方</div>
     <div class="panel-body">
       <ul>
-        <li id="r_name">男方姓名：<%= human_detail.husband_name %>&nbsp;<span class="glyphicon glyphicon-ok"></span></li>
-        <li id="r_id">男方身份证号码：<%= human_detail.husband_id %>&nbsp;<span class="glyphicon glyphicon-ok"></span></li>
-        <li id="r_state">男方婚姻状态：<%= human_detail.husband_state %>&nbsp;<span class="glyphicon glyphicon-ok"></span></li>
+        <li><img src="data:image/png;base64,<%= human_detail.husband_photo %>" style="width:250px;"></li>
+        <li id="r_name">男方姓名：<%= human_detail.husband_name %>&nbsp;</li>
+        <li id="r_id">男方身份证号码：<%= human_detail.husband_id %>&nbsp;</li>
+        <li id="r_state">男方婚姻状态：<%= human_detail.husband_state %>&nbsp;</span></li>
 
       </ul>
     </div>
 
-    <div>
-      <table id="table"></table>
-    </div>
-
-    <div class="panel-footer" style="text-align: center;">个人信息</div>
   </div>
 </div>
+
+<div id="mypanel3" >
+  <div class="panel panel-primary">
+    <div class="panel-heading">结婚证照片</div>
+    <div class="panel-body">
+      <img src="data:image/png;base64,<%= human_detail.marry_photo %>" style="width:250px;">
+    </div>
+  </div>
+</div>
+<!-- 返回用户自己户口信息 -->
 </div>
 <div id="mypanel1">
   <div class="panel panel-primary">
     <div class="panel-heading">女方</div>
     <div class="panel-body">
       <ul>
-        <li id="r_name1">女方姓名：<%= human_detail.wife_name %>&nbsp;<span class="glyphicon glyphicon-ok"></span></li>
-        <li id="r_id1">女方身份证号码：<%= human_detail.wife_id %>&nbsp;<span class="glyphicon glyphicon-ok"></span></li>
-        <li id="r_state1">女方婚姻状态：<%= human_detail.wife_state %>&nbsp;<span class="glyphicon glyphicon-ok"></span></li>
+        <li><img src="data:image/png;base64,<%= human_detail.wife_photo %>" style="width:250px;"></li>
+        <li id="r_name1">女方姓名：<%= human_detail.wife_name %>&nbsp;</li>
+        <li id="r_id1">女方身份证号码：<%= human_detail.wife_id %>&nbsp;</li>
+        <li id="r_state1">女方婚姻状态：<%= human_detail.wife_state %>&nbsp;</li>
 
       </ul>
     </div>
-
-    <div>
-      <table id="table1"></table>
-    </div>
-
-    <div class="panel-footer" style="text-align: center;">个人信息</div>
   </div>
 </div>
 </div>
 
-<form role="form" class="form-horizontal">
-  <div id="mypanel2">
-    <div class="panel panel-primary">
-      <div class="panel-heading">男方</div>
-      <div class="panel-body">
-        <img src="data:image/png;base64,<%= human_detail.husband_photo %>" style="width:250px;">
-      </div>
-    </div>
-  </div>
+<!--判断-->
 
-  <div id="mypanel3">
-    <div class="panel panel-primary">
-      <div class="panel-heading">结婚照</div>
-      <div class="panel-body">
-        <img src="data:image/png;base64,<%= human_detail.marry_photo %>" style="width:250px;">
-      </div>
-    </div>
-  </div>
+<div id="aa">
+  <p>身份证照片是否和结婚证照片一致：&nbsp;<span  class="glyphicon glyphicon-ok"></span></p>
+  <p>是否是未婚状态：&nbsp;<span  class="glyphicon glyphicon-ok"></span></p>
 
-  <div id="mypanel3">
-    <div class="panel panel-primary">
-      <div class="panel-heading">女方</div>
-      <div class="panel-body">
-        <img src="data:image/png;base64,<%= human_detail.wife_photo %>" style="width:250px;">
-      </div>
-    </div>
-  </div>
-</form>
+</div>
+
+<!--判断-->
+<div id="bb">
+  <p>身份证照片是否和结婚证照片一致：&nbsp;<span  class="glyphicon glyphicon-ok"></span></p>
+  <p>是否是未婚状态：&nbsp;<span  class="glyphicon glyphicon-ok"></span></p>
+
+</div>
+
+
 <form role="form" class="form-horizontal">
   <!--<table id="table"></table>-->
   <div class="myform">
     <div class="form-group">
-      <label class="col-lg-4 control-label" for="date">结婚年份</label>
+      <label class="col-lg-5 control-label" for="date">结婚日期</label>
       <div class="col-lg-3">
         <input type="text" class="form-control" id="date"
                placeholder="yyyymmdd"/>
@@ -133,14 +130,11 @@
   </div>
   <div class="form-group">
     <div class="col-lg-4 col-lg-offset-5">
-      <button type="button" class="btn-info btn-lg" id="btn_accept">接受提交</button>
+      <button type="button" class="btn-info btn" id="btn_accept">接受提交</button>
+      <button type="button" class="btn-info btn" id="btn_deny">拒绝登记</button>
     </div>
   </div>
-  <div class="form-group">
-    <div class="col-lg-4 col-lg-offset-5">
-      <button type="button" class="btn-info btn-lg" id="btn_deny">拒绝登记</button>
-    </div>
-  </div>
+
 </form>
 
 </body>
