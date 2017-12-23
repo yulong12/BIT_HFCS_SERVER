@@ -186,13 +186,10 @@ DROP TABLE IF EXISTS `marry_card`;
 CREATE TABLE `marry_card` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `marry_cert` varchar(20) DEFAULT NULL,
-  `state` varchar(20) DEFAULT NULL,
-  `husband_name` varchar(20) DEFAULT NULL,
-  `husband_id` varchar(20) DEFAULT NULL,
-  `wife_name` varchar(20) DEFAULT NULL,
-  `wife_id` varchar(20) DEFAULT NULL,
-  `date` varchar(20) DEFAULT NULL,
+  `photo` blob,
+  `hashcode` blob,
   `if_managed` tinyint(4) DEFAULT NULL,
+  `if_ar` tinyint(4) DEFAULT NULL,
   `if_look` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
