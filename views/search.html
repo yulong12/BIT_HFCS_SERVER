@@ -55,21 +55,23 @@
     <div class="panel-heading">用户信息表</div>
     <div class="panel-body">
       <ul>
-        <li id="name"></li>
-        <li id="sex"></li>
-        <li id="shen_fen_id"></li>
-        <li id="date"></li>
-        <li id="father_name"></li>
-        <li id="father_id"></li>
-        <li id="mother_name"></li>
-        <li id="mother_id"></li>
-        <li id="marry_state"></li>
-        <li id="spouse_name"></li>
-        <li id="spouse_id">：</li>
-        <li id="marry_cert"></li>
-        <li id="child_ids"></li>
-        <li id="child_names"></li>
-        <li id="new_chids"></li>
+        <li id="r_name">姓名:</li>
+        <li id="r_id">身份证号码:</li>
+        <li id="r_sex">性别:</li>
+        <li id="address">地址:</li>
+        <li id="tel">手机号:</li>
+        <li id="r_fname">父亲姓名：</li>
+        <li id="r_fid">父亲身份证号:</li>
+        <li id="r_mname">母亲姓名：</li>
+        <li id="r_mid">母亲身份证号:</li>
+        <li id="r_sname">配偶姓名：</li>
+        <li id="r_sid">配偶身份证号:</li>
+        <li id="r_cnum">子女数量：</li>
+        <li id="r_cname1">长子/女姓名:</li>
+        <li id="r_cid1">长子/女身份证号:</li>
+        <li id="r_cname2">次子/女姓名:</li>
+        <li id="r_cid2">次子/女身份证号:</li>
+
       </ul>
     </div>
     <div class="panel-footer" style="text-align: center;">户口信息</div>
@@ -89,38 +91,50 @@
             timeout : 10000,
             contentType: "application/json",
             data: JSON.stringify(data),
-            success: function (str) {
-                var shen_fen_id= str.身份证号;
-                var sex=   str.性别;
-                var name= str.姓名;
-                var date=str.出生日期;
-                var father_name=str.父亲姓名;
-                var father_id=str.父亲身份证号;
-                var mother_name=str.母亲姓名;
-                var mother_id=str.母亲身份证号;
-                var marry_state=str.婚姻状态;
-                var spouse_name=str.配偶姓名;
-                var spouse_id=  str.配偶身份证号;
-                var marry_cert= str.结婚证书;
-                var child_ids=str.子女身份证号;
-                var child_names=str.子女姓名;
-                var new_chids=str.子女出生证明;
-                $("#name").text('姓名:'+name);
-                $("#shen_fen_id").text('身份证号: '+shen_fen_id);
-                $("#sex").text('性别: '+sex);
-                $("#date").text('出生日期: '+date);
-                $("#father_name").text('父亲姓名: '+father_name);
-                $("#father_id").text('父亲身份证号: '+father_id);
-                $("#mother_name").text('母亲姓名: '+mother_name);
-                $("#mother_id").text('母亲身份证号: '+mother_id);
-                $("#marry_state").text('婚姻状态: '+marry_state);
-                $("#spouse_name").text('配偶姓名: '+spouse_name);
-                $("#spouse_id").text('配偶身份证号: '+spouse_id);
-                $("#marry_cert").text('结婚证书: '+marry_cert);
-                $("#child_ids").text('子女身份证号: '+child_ids);
-                $("#child_names").text('母亲身份证号: '+child_names);
-                $("#new_chids").text('子女出生证明: '+new_chids);
-                console.log("=========shen_fen_id=========");
+            success: function (data) {
+                $("#r_name").text('姓名:' + data.姓名);
+                $("#r_id").text('身份证号码:' + data.身份证号);
+                $("#r_sex").text('性别:' + data.性别);
+                $("#address").text('地址:北京市东城区');
+                $("#tel").text('手机号:18801898888');
+                $("#r_fname").text('父亲姓名:' + data.父亲姓名);
+                $("#r_fid").text('父亲身份证号:' + data.父亲身份证号);
+                $("#r_mname").text('母亲姓名：' + data.母亲姓名);
+                $("#r_mid").text('母亲身份证号:' + data.母亲身份证号);
+                if (data.配偶姓名 === "") {
+                    $("#r_sname").text('配偶姓名:' + "未婚");
+                    $("#r_sid").text('配偶身份证号:' + "无");
+                    $("#r_cnum").text('子女数量:' + "0");
+                    $("#r_cname1").text('长子/女姓名:' + "无");
+                    $("#r_cid1").text('长子/女身份证号码:' + "无");
+                    $("#r_cname2").text('次子/女姓名:' + "无");
+                    $("#r_cid2").text('次子/女身份证号码:' + "无");
+
+                } else if (data.子女身份证号[0] === "0") {
+                    $("#r_sname").text('配偶姓名:' + data.配偶姓名);
+                    $("#r_sid").text('配偶身份证号:' + data.配偶身份证号);
+                    $("#r_cnum").text('子女数量:' + "0");
+                    $("#r_cname1").text('长子/女姓名:' + "无");
+                    $("#r_cid1").text('长子/女身份证号码:' + "无");
+                    $("#r_cname2").text('次子/女姓名:' + "无");
+                    $("#r_cid2").text('次子/女身份证号码:' + "无");
+                } else if (data.子女身份证号[0] === "1") {
+                    $("#r_sname").text('配偶姓名:' + data.配偶姓名);
+                    $("#r_sid").text('配偶身份证号:' + data.配偶身份证号);
+                    $("#r_cnum").text('子女数量:' + "1");
+                    $("#r_cname1").text('长子/女姓名:' + data.子女姓名[1]);
+                    $("#r_cid1").text('长子/女身份证号码:' + data.子女身份证号[1]);
+                    $("#r_cname2").text('次子/女姓名:' + "无");
+                    $("#r_cid2").text('次子/女身份证号码:' + "无");
+                } else if (data.子女身份证号[0] === "2") {
+                    $("#r_sname").text('配偶姓名:' + data.配偶姓名);
+                    $("#r_sid").text('配偶身份证号:' + data.配偶身份证号);
+                    $("#r_cnum").text('子女数量:' + "2");
+                    $("#r_cname1").text('长子/女姓名:' + data.子女姓名[1]);
+                    $("#r_cid1").text('长子/女身份证号码:' + data.子女身份证号[1]);
+                    $("#r_cname2").text('次子/女姓名:' + data.子女姓名[2]);
+                    $("#r_cid2").text('次子/女身份证号码:' + data.子女身份证号[2]);
+                }
             }
         });
     });
