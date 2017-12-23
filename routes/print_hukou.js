@@ -1,9 +1,8 @@
 var express = require('express');
 var router = express.Router();
+var mysql = require("../db/MYSQLconnection");
 
-/* GET policeoffice listing. */
 router.get('/', function (req, res, next) {
-  // res.render('police_office');
   if (req.session.user) {
 
     if (req.query.id) {
@@ -26,9 +25,14 @@ router.get('/', function (req, res, next) {
         hukou_detail.姓名 = answer.姓名;
         hukou_detail.出生日期 = answer.出生日期;
         hukou_detail.婚姻状态 = answer.婚姻状态;
-        res.render('print_hukou', {
-          hukou_detail: hukou_detail
-        })
+
+        var update_if_look = "update create_check set if_look = 1;";
+        mysql.executeQuery(update_if_look, function (status, result) {
+          res.render('print_hukou', {
+            hukou_detail: hukou_detail
+          })
+        });
+
       });
     }
   } else {

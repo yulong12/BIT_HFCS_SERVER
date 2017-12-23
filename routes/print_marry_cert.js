@@ -31,14 +31,16 @@ router.get('/', function (req, res, next) {
       marry_cert_detail.登记日期 = answer.登记日期;
 
       var query_cert_photo = "select photo from marry_card where marry_cert = \"" + answer.证书编号 + "\";";
-      mysql.executeQuery(query_cert_photo, function (status, result) {
-        marry_photo = result.rows[0].photo;
-        res.render('print_marry_cert', {
-          marry_cert_detail: marry_cert_detail,
-          marry_photo: marry_photo
-        })
+      mysql.executeQuery(query_cert_photo, function (status, cert_photo_result) {
+        var update_if_look = "update marry_check set if_look = 1;";
+        mysql.executeQuery(update_if_look, function (status, result) {
+          var marry_photo = cert_photo_result.rows[0].photo;
+          res.render('print_marry_cert', {
+            marry_cert_detail: marry_cert_detail,
+            marry_photo: marry_photo
+          })
+        });
       });
-
     });
   } else {
     var marry_cert_detail = {};
