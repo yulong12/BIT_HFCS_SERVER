@@ -19,6 +19,7 @@ router.get('/', function (req, res, next) {
         human_detail.wife_id = result.rows[0].wife_id;
         human_detail.wife_state = result.rows[0].wife_state;
         human_detail.marry_photo = result.rows[0].photo;
+        human_detail.checkflag = result.rows[0].checkflag;
 
         var query_husband = "select photo from human where id = \"" + human_detail.husband_id + "\"";
         var query_wife = "select photo from human where id = \"" + human_detail.wife_id + "\"";
