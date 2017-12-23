@@ -461,10 +461,16 @@
 
   if (comment_marry) {
     var href_marry = "#";
+    if (comment_marry === "结婚申请被同意") {
+      href_marry = "print_marry_cert?cert_id=<%= marry_app_id %>";
+    }
     $("#alert_list").append("<li><a href=\"" + href_marry +"\">" + comment_marry + minutes_before + "</a></li>")
   }
   if (comment_create) {
     var href_hukou = "#";
+    if (comment_create === "户口申请被同意") {
+      href_hukou = "print_hukou?id=<%= resi_app_id %>";
+    }
     $("#alert_list").append("<li><a href=\"" + href_hukou + "\">" + comment_create + minutes_before + "</a></li>")
   }
 
