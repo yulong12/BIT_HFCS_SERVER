@@ -53,7 +53,11 @@
         <!--<div class="panel-footer" style="text-align: center;">户口信息</div>-->
     </div>
 </div>
-
+<div class="form-group" style="margin-top: 50px;margin-left: 220px;">
+    <div class="col-lg-2 col-lg-offset-4">
+        <button type="button" class="btn-info btn" id="back">返回</button>
+    </div>
+</div>
 </body>
 <script>
     $("#select_btn").click(function () {
@@ -97,6 +101,11 @@
                 }
             });
         }
+    });
+</script>
+<script type="text/javascript">
+    $("#back").click(function () {
+        window.location.href = "civil_affairs";
     });
 </script>
 

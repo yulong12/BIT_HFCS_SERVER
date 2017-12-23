@@ -41,6 +41,7 @@ var securityCard_application=require('./routes/securityCard_application');
 var social_query=require('./routes/social_query');
 var social_register=require('./routes/social_register');
 
+
 var print_birthcard=require('./routes/print_birthcard');
 var print_birthcard_new=require('./routes/print_birthcard_new');
 var print_hukou=require('./routes/print_hukou');
@@ -48,6 +49,7 @@ var print_hukou_new=require('./routes/print_hukou_new');
 var print_idcard=require('./routes/print_idcard');
 var print_marry_cert=require('./routes/print_marry_cert');
 var print_marry_cert_new=require('./routes/print_marry_cert_new');
+var print_socialcard=require('./routes/print_socialcard');
 
 var need_login=require('./routes/need_login');
 
@@ -113,6 +115,7 @@ app.use('/print_hukou_new',print_hukou_new);
 app.use('/print_idcard',print_idcard);
 app.use('/print_marry_cert',print_marry_cert);
 app.use('/print_marry_cert_new',print_marry_cert_new);
+app.use('/print_socialcard',print_socialcard);
 
 app.use('/need_login', need_login);
 
