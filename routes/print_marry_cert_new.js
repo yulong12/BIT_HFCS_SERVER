@@ -32,9 +32,10 @@ router.get('/', function (req, res, next) {
 
         var query_cert_photo = "select photo from marry_card where marry_cert = \"" + answer.证书编号 + "\";";
         mysql.executeQuery(query_cert_photo, function (status, result) {
+          marry_photo = result.rows[0].photo;
           res.render('print_marry_cert_new', {
             marry_cert_detail: marry_cert_detail,
-            marry_photo: result
+            marry_photo: marry_photo
           })
         });
 
