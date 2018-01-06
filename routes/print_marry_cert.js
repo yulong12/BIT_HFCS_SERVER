@@ -22,15 +22,15 @@ router.get('/', function (req, res, next) {
       console.log(answer);
 
       var marry_cert_detail = {};
-      marry_cert_detail.证书编号 = answer.证书编号;
-      marry_cert_detail.状态 = answer.状态;
-      marry_cert_detail.丈夫姓名 = answer.丈夫姓名;
-      marry_cert_detail.丈夫身份证号 = answer.丈夫身份证号;
-      marry_cert_detail.妻子姓名 = answer.妻子姓名;
-      marry_cert_detail.妻子身份证号 = answer.妻子身份证号;
-      marry_cert_detail.登记日期 = answer.登记日期;
+      marry_cert_detail.marry_cert = answer.marry_cert;
+      marry_cert_detail.state = answer.state;
+      marry_cert_detail.husband_name = answer.husband_name;
+      marry_cert_detail.husband_id = answer.husband_id;
+      marry_cert_detail.wife_name = answer.wife_name;
+      marry_cert_detail.wife_id = answer.wife_id;
+      marry_cert_detail.date = answer.date;
 
-      var query_cert_photo = "select photo from marry_card where marry_cert = \"" + answer.证书编号 + "\";";
+      var query_cert_photo = "select photo from marry_card where marry_cert = \"" + answer.marry_cert + "\";";
       mysql.executeQuery(query_cert_photo, function (status, cert_photo_result) {
         var update_if_look = "update marry_check set if_look = 1;";
         mysql.executeQuery(update_if_look, function (status, result) {
@@ -44,13 +44,13 @@ router.get('/', function (req, res, next) {
     });
   } else {
     var marry_cert_detail = {};
-    marry_cert_detail.证书编号 = "";
-    marry_cert_detail.状态 = "";
-    marry_cert_detail.丈夫姓名 = "";
-    marry_cert_detail.丈夫身份证号 = "";
-    marry_cert_detail.妻子姓名 = "";
-    marry_cert_detail.妻子身份证号 = "";
-    marry_cert_detail.登记日期 = "";
+    marry_cert_detail.marry_cert = "";
+    marry_cert_detail.state = "";
+    marry_cert_detail.husband_name = "";
+    marry_cert_detail.husband_id = "";
+    marry_cert_detail.wife_name = "";
+    marry_cert_detail.wife_id = "";
+    marry_cert_detail.date = "";
     res.render('print_marry_cert', {
       marry_cert_detail: marry_cert_detail,
       marry_photo: null

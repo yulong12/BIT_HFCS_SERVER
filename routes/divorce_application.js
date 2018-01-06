@@ -34,13 +34,13 @@ router.post('/', function (req, res, next) {
         const hash3 = crypto.createHash('md5');
         var mysql = require("../db/MYSQLconnection");
         console.log(str);
-        var check_id = str.审查编号;
-        var husband_name = str.丈夫姓名;
-        var husband_id = str.丈夫身份证号;
-        var wife_name = str.妻子姓名;
-        var wife_id = str.妻子身份证号;
-        var marry_cert = str.结婚证书编号;
-        var check0 = str.判断结果;
+        var check_id = str.checkid;
+        var husband_name = str.husband_name;
+        var husband_id = str.husband_id;
+        var wife_name = str.wife_name;
+        var wife_id = str.wife_id;
+        var marry_cert = str.marry_cert;
+        var check0 = str.check;
         var check = check0[0] + check0[1] + check0[2] + check0[3] + check0[4];
 
         var man_photo1 = req.body.man_photo;

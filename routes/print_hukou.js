@@ -20,11 +20,11 @@ router.get('/', function (req, res, next) {
       myhfcQuery(request, function (str) {
         var answer = JSON.parse(str);
         var hukou_detail = {};
-        hukou_detail.身份证号 = answer.身份证号;
-        hukou_detail.性别 = answer.性别;
-        hukou_detail.姓名 = answer.姓名;
-        hukou_detail.出生日期 = answer.出生日期;
-        hukou_detail.婚姻状态 = answer.婚姻状态;
+        hukou_detail.id = answer.id;
+        hukou_detail.sex = answer.sex;
+        hukou_detail.name = answer.name;
+        hukou_detail.date = answer.date;
+        hukou_detail.marrystate = answer.marrystate;
 
         var update_if_look = "update create_check set if_look = 1;";
         mysql.executeQuery(update_if_look, function (status, result) {
@@ -36,11 +36,11 @@ router.get('/', function (req, res, next) {
       });
     } else {
       var hukou_detail = {};
-      hukou_detail.身份证号 = "";
-      hukou_detail.性别 = "";
-      hukou_detail.姓名 = "";
-      hukou_detail.出生日期 = "";
-      hukou_detail.婚姻状态 = "";
+      hukou_detail.id = "";
+      hukou_detail.sex = "";
+      hukou_detail.name = "";
+      hukou_detail.date = "";
+      hukou_detail.marrystate = "";
       res.render('print_hukou', {
         hukou_detail: hukou_detail
       })

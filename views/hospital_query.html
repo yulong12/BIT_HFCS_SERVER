@@ -104,20 +104,20 @@
                 contentType: "application/json",
                 data: JSON.stringify(data),
                 success: function (data) {
-                    $("#r_name").append(data.姓名);
-                    $("#r_id").append(data.身份证号);
-                    if(data.配偶姓名 === ""){
+                    $("#r_name").append(data.name);
+                    $("#r_id").append(data.id);
+                    if(data.spousename === ""){
                         $("#r_state").append("未婚");
                         $("#r_sname").append("无");
                     }else{
                         $("#r_state").append("已婚");
-                        $("#r_sname").append(data.配偶姓名);
-                        $("#r_sid").append(data.配偶身份证号);
-                        if(data.子女身份证号[0] < 2){
-                            $("#r_snum").append(data.子女身份证号[0]);
+                        $("#r_sname").append(data.spousename);
+                        $("#r_sid").append(data.spouseid);
+                        if(data.childid[0] < 2){
+                            $("#r_snum").append(data.childid[0]);
                             $("#r_s").append("符合");
                         }else{
-                            $("#r_snum").append(data.子女身份证号[0]);
+                            $("#r_snum").append(data.childid[0]);
                             $("#r_s").append("不符合");
                         }
                     }

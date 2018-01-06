@@ -39,14 +39,14 @@ router.post('/', function (req, res, next) {
     console.log(typeof (str));
     console.log("-----from-------")
     console.log("_________str____---" + str);
-    var checkID = str.审查编号;
-    var Husband_Name = str.丈夫姓名;
-    var Husband_ID = str.丈夫身份证号;
-    var HusbandState = str.丈夫婚姻状态;
-    var Wife_Name = str.妻子姓名;
-    var Wife_ID = str.妻子身份证号;
-    var WifeState = str.妻子婚姻状态;
-    var check_out = str.判断结果;
+    var checkID = str.checkid;
+    var Husband_Name = str.husband_name;
+    var Husband_ID = str.husband_id;
+    var HusbandState = str.husbandstate;
+    var Wife_Name = str.wife_name;
+    var Wife_ID = str.wife_id;
+    var WifeState = str.wifestate;
+    var check_out = str.check;
     var check = check_out[0] + check_out[1] + check_out[2] + check_out[3] + check_out[4] + check_out[5];
     var photo = req.body.marry_photo;
     var base64Data = photo.replace(/^data:image\/\w+;base64,/, "");

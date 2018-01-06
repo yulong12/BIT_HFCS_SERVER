@@ -54,12 +54,12 @@ router.post('/', function (req, res, next) {
   };
   createHuman(request, function (str) {
     console.log(str);
-    if (str.原因) {
+    if (str.reason) {
       var query_err_checked = "update create_check set if_managed = 1, if_ar = 0, if_look = 0 WHERE check_id = \"" + req.body.regist_num + "\"";
       mysql.executeQuery(query_err_checked, function (status, result) {
         res.send({
           "status": "error",
-          "detail": str.原因
+          "detail": str.reason
         });
       });
     }

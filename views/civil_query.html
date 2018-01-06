@@ -74,30 +74,12 @@
                 contentType: "application/json",
                 data: JSON.stringify(data),
                 success: function (data) {
-                    $("#r_name").text('姓名:'+data.姓名);
-                    $("#r_id").text('身份证号码：'+data.身份证号);
-                    $("#r_sex").text('性别：'+data.性别);
-                    $("#r_state").text('婚姻状态：'+data.婚姻状态);
-                    $("#r_sname").text('配偶姓名：'+data.配偶姓名);
-                    $("#r_sid").text('配偶身份证号：'+data.配偶身份证号);
-                    // if(data.配偶姓名 === ""){
-                    //     $("#r_state").text('婚姻状态：'+"未婚");
-                    //     $("#r_sname").text('配偶姓名：'+"无");
-                    //     $("#r_snum").text('子女个数：'+data.子女身份证号[0]);
-                    //     $("#r_s").text('是否符合生育标准：'+"符合");
-                    // }else{
-                    //     $("#r_state").text('婚姻状态：'+"已婚");
-                    //     $("#r_sname").text('配偶姓名：'+data.配偶姓名);
-                    //     $("#r_sid").text('配偶身份证号：'+data.配偶身份证号);
-                    //     if(data.子女身份证号[0] < 2){
-                    //         $("#r_snum").text('子女个数：'+data.子女身份证号[0]);
-                    //         $("#r_s").text('是否符合生育标准：'+"符合");
-                    //     }else{
-                    //         $("#r_snum").text('子女个数：'+data.子女身份证号[0]);
-                    //         $("#r_s").text('是否符合生育标准：'+"不符合");
-                    //     }
-                    // }
-
+                    $("#r_name").text('姓名:'+data.name);
+                    $("#r_id").text('身份证号码：'+data.id);
+                    $("#r_sex").text('性别：'+data.sex);
+                    $("#r_state").text('婚姻状态：'+data.marrystate);
+                    $("#r_sname").text('配偶姓名：'+data.spousename);
+                    $("#r_sid").text('配偶身份证号：'+data.spouseid);
                 }
             });
         }

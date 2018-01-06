@@ -92,16 +92,16 @@
             contentType: "application/json",
             data: JSON.stringify(data),
             success: function (data) {
-                $("#r_name").text('姓名:' + data.姓名);
-                $("#r_id").text('身份证号码:' + data.身份证号);
-                $("#r_sex").text('性别:' + data.性别);
+                $("#r_name").text('姓名:' + data.name);
+                $("#r_id").text('身份证号码:' + data.id);
+                $("#r_sex").text('性别:' + data.sex);
                 $("#address").text('地址:北京市东城区');
                 $("#tel").text('手机号:18801898888');
-                $("#r_fname").text('父亲姓名:' + data.父亲姓名);
-                $("#r_fid").text('父亲身份证号:' + data.父亲身份证号);
-                $("#r_mname").text('母亲姓名：' + data.母亲姓名);
-                $("#r_mid").text('母亲身份证号:' + data.母亲身份证号);
-                if (data.配偶姓名 === "") {
+                $("#r_fname").text('父亲姓名:' + data.fathername);
+                $("#r_fid").text('父亲身份证号:' + data.fatherid);
+                $("#r_mname").text('母亲姓名：' + data.mothername);
+                $("#r_mid").text('母亲身份证号:' + data.motherid);
+                if (data.spousename === "") {
                     $("#r_sname").text('配偶姓名:' + "未婚");
                     $("#r_sid").text('配偶身份证号:' + "无");
                     $("#r_cnum").text('子女数量:' + "0");
@@ -110,30 +110,30 @@
                     $("#r_cname2").text('次子/女姓名:' + "无");
                     $("#r_cid2").text('次子/女身份证号码:' + "无");
 
-                } else if (data.子女身份证号[0] === "0") {
-                    $("#r_sname").text('配偶姓名:' + data.配偶姓名);
-                    $("#r_sid").text('配偶身份证号:' + data.配偶身份证号);
+                } else if (data.childid[0] === "0") {
+                    $("#r_sname").text('配偶姓名:' + data.spousename);
+                    $("#r_sid").text('配偶身份证号:' + data.spouseid);
                     $("#r_cnum").text('子女数量:' + "0");
                     $("#r_cname1").text('长子/女姓名:' + "无");
                     $("#r_cid1").text('长子/女身份证号码:' + "无");
                     $("#r_cname2").text('次子/女姓名:' + "无");
                     $("#r_cid2").text('次子/女身份证号码:' + "无");
-                } else if (data.子女身份证号[0] === "1") {
-                    $("#r_sname").text('配偶姓名:' + data.配偶姓名);
-                    $("#r_sid").text('配偶身份证号:' + data.配偶身份证号);
+                } else if (data.childid[0] === "1") {
+                    $("#r_sname").text('配偶姓名:' + data.spousename);
+                    $("#r_sid").text('配偶身份证号:' + data.spouseid);
                     $("#r_cnum").text('子女数量:' + "1");
-                    $("#r_cname1").text('长子/女姓名:' + data.子女姓名[1]);
-                    $("#r_cid1").text('长子/女身份证号码:' + data.子女身份证号[1]);
+                    $("#r_cname1").text('长子/女姓名:' + data.childname[1]);
+                    $("#r_cid1").text('长子/女身份证号码:' + data.childid[1]);
                     $("#r_cname2").text('次子/女姓名:' + "无");
                     $("#r_cid2").text('次子/女身份证号码:' + "无");
-                } else if (data.子女身份证号[0] === "2") {
-                    $("#r_sname").text('配偶姓名:' + data.配偶姓名);
-                    $("#r_sid").text('配偶身份证号:' + data.配偶身份证号);
+                } else if (data.childid[0] === "2") {
+                    $("#r_sname").text('配偶姓名:' + data.spousename);
+                    $("#r_sid").text('配偶身份证号:' + data.spouseid);
                     $("#r_cnum").text('子女数量:' + "2");
-                    $("#r_cname1").text('长子/女姓名:' + data.子女姓名[1]);
-                    $("#r_cid1").text('长子/女身份证号码:' + data.子女身份证号[1]);
-                    $("#r_cname2").text('次子/女姓名:' + data.子女姓名[2]);
-                    $("#r_cid2").text('次子/女身份证号码:' + data.子女身份证号[2]);
+                    $("#r_cname1").text('长子/女姓名:' + data.childname[1]);
+                    $("#r_cid1").text('长子/女身份证号码:' + data.childid[1]);
+                    $("#r_cname2").text('次子/女姓名:' + data.childname[2]);
+                    $("#r_cid2").text('次子/女身份证号码:' + data.childid[2]);
                 }
             }
         });

@@ -107,7 +107,7 @@
       data: JSON.stringify(data),
       success: function (answer) {
         if (answer.status === "OK") {
-          window.location.href = "print_hukou_new?id=" + answer.detail.身份证号;
+          window.location.href = "print_hukou_new?id=" + answer.detail.id;
         }
         else {
           alert("拒绝审批！原因：" + answer);

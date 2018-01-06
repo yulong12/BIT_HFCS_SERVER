@@ -63,19 +63,19 @@ router.post('/', function (req, res, next) {
   };
   marry(request, function (str) {
     console.log(str);
-    if (str.原因) {
+    if (str.reason) {
       var query_err_checked = "update marry_check set if_managed = 1, if_ar = 0, if_look = 0 WHERE check_id = \"" + req.body.regist_num + "\"";
       mysql.executeQuery(query_err_checked, function (status, result) {
         res.send({
           "status": "error",
-          "detail": str.原因
+          "detail": str.reason
         });
       });
     }
     else {
       var query_checked = "update marry_check set if_managed = 1, if_ar = 1, if_look = 0 WHERE check_id = \"" + req.body.regist_num + "\";";
       mysql.executeQuery(query_checked, function (status, result) {
-        var update_photo = "insert into marry_card (marry_cert, photo) values (\"" + str.证书编号 + "\", \"" + req.body.photo + "\");";
+        var update_photo = "insert into marry_card (marry_cert, photo) values (\"" + str.marry_cert + "\", \"" + req.body.photo + "\");";
         mysql.executeQuery(update_photo, function (status, result) {
           res.send({
             "status": "OK",

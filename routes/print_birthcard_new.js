@@ -19,18 +19,18 @@ router.get('/', function (req, res, next) {
       myhfcQuery(request, function (str) {
         var answer = JSON.parse(str);
         var birth_detail = {};
-        birth_detail.新生儿姓名 = answer.新生儿姓名;
-        birth_detail.出生证书编号 = answer.出生证书编号;
-        birth_detail.出生日期 = answer.出生日期;
-        birth_detail.性别 = answer.性别;
-        birth_detail.体重 = answer.体重;
-        birth_detail.健康情况 = answer.健康情况;
-        birth_detail.出生地 = answer.出生地;
-        birth_detail.父亲姓名 = answer.父亲姓名;
-        birth_detail.父亲身份证号 = answer.父亲身份证号;
-        birth_detail.母亲姓名 = answer.母亲姓名;
-        birth_detail.母亲身份证号 = answer.母亲身份证号;
-        birth_detail.接生机构 = answer.接生机构;
+        birth_detail.birthname = answer.birthname;
+        birth_detail.birthid = answer.birthid;
+        birth_detail.date = answer.date;
+        birth_detail.sex = answer.sex;
+        birth_detail.weight = answer.weight;
+        birth_detail.health = answer.health;
+        birth_detail.place = answer.place;
+        birth_detail.fathername = answer.fathername;
+        birth_detail.fatherid = answer.fatherid;
+        birth_detail.mothername = answer.mothername;
+        birth_detail.motherid = answer.motherid;
+        birth_detail.hosptialid = answer.hosptialid;
         res.render('print_birthcard_new', {
           birth_detail: birth_detail
         })

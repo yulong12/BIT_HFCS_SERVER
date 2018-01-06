@@ -130,7 +130,7 @@
       data: JSON.stringify(data),
       success: function (answer) {
         if (answer.status === "OK") {
-          window.location.href = "print_marry_cert_new?cert_id=" + answer.detail.证书编号;
+          window.location.href = "print_marry_cert_new?cert_id=" + answer.detail.marry_cert;
         }
         else {
           alert("拒绝审批！原因：" + answer);
