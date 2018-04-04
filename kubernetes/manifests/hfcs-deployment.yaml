@@ -1,0 +1,47 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: hfcs
+  namespace: hfcs
+  labels:
+    k8s-app: hfcs
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      k8s-app: hfcs
+  template:
+    metadata:
+      labels:
+        k8s-app: hfcs
+    spec:
+      containers:
+      - name: hfcs
+        args:
+        - peer
+        - node
+        - start
+        image: hfcs:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 3000
+        volumeMounts:
+        - name: crypto-config
+          mountPath: /BIT_HFCS_SERVER/crypto-config
+      - name: mysql
+        image: mysql:5.7
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 3306
+        volumeMounts:
+        - name: mysql-initdb
+          mountPath: /docker-entrypoint-initdb.d
+      restartPolicy: Always
+      volumes:
+      - name: crypto-config
+        hostPath:
+          path: /var/fabric-net/crypto-config
+      - name: mysql-initdb
+        configMap:
+          name: mysql-initdb-config
+
