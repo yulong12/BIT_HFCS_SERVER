@@ -2,6 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: mysql-initdb-config
+  namespace: hfcs
 data:
   initdb.sql: |
     -- MySQL dump 10.13  Distrib 5.7.20, for Linux (x86_64)

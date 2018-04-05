@@ -11,8 +11,9 @@ spec:
   ports:
   - name: hfcs
     port: 3000
+    targetPort: 3000
     protocol: TCP
     nodePort: 30005
   selector:
-    app: hfcs
+    k8s-app: hfcs
 

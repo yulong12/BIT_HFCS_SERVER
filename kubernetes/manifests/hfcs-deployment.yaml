@@ -17,22 +17,23 @@ spec:
     spec:
       containers:
       - name: hfcs
-        args:
-        - peer
-        - node
-        - start
         image: hfcs:latest
         imagePullPolicy: Never
         ports:
-        - containerPort: 3000
+        - protocol: TCP
+          containerPort: 3000
         volumeMounts:
         - name: crypto-config
-          mountPath: /BIT_HFCS_SERVER/crypto-config
+          mountPath: /crypto-config
       - name: mysql
         image: mysql:5.7
         imagePullPolicy: Never
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: root
         ports:
-        - containerPort: 3306
+        - name: mysql
+          containerPort: 3306
         volumeMounts:
         - name: mysql-initdb
           mountPath: /docker-entrypoint-initdb.d
